@@ -1,0 +1,128 @@
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\ShopCaPhe.dll.config
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\ShopCaPhe.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\ShopCaPhe.pdb
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\csc.exe
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\csc.exe.config
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\csc.rsp
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\csi.exe
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\csi.rsp
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\System.AppContext.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\vbc.exe
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\vbc.exe.config
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\vbc.rsp
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\VBCSCompiler.exe
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Antlr3.Runtime.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Newtonsoft.Json.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Helpers.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Mvc.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Optimization.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Razor.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.WebPages.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.WebPages.Razor.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\WebGrease.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Helpers.xml
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Mvc.xml
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Optimization.xml
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Razor.xml
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.WebPages.xml
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.WebPages.Razor.xml
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Newtonsoft.Json.xml
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Antlr3.Runtime.pdb
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\obj\Debug\ShopCaPhe.csprojAssemblyReference.cache
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\obj\Debug\ShopCaPhe.csproj.CoreCompileInputs.cache
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\obj\Debug\ShopCaPhe.csproj.CopyComplete
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\obj\Debug\ShopCaPhe.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\obj\Debug\ShopCaPhe.pdb
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\EntityFramework.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\EntityFramework.SqlServer.dll
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\EntityFramework.xml
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\EntityFramework.SqlServer.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\ShopCaPhe.dll.config
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\ShopCaPhe.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\ShopCaPhe.pdb
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\csc.exe
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\csc.exe.config
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\csc.rsp
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\csi.exe
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\csi.rsp
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\System.AppContext.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\vbc.exe
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\vbc.exe.config
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\vbc.rsp
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\VBCSCompiler.exe
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Antlr3.Runtime.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\EntityFramework.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\EntityFramework.SqlServer.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Newtonsoft.Json.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Helpers.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Mvc.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Optimization.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Razor.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.WebPages.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.WebPages.Razor.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\WebGrease.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\EntityFramework.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\EntityFramework.SqlServer.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Helpers.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Mvc.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Optimization.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.Razor.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.WebPages.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Web.WebPages.Razor.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Newtonsoft.Json.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Antlr3.Runtime.pdb
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\obj\Debug\ShopCaPhe.csproj.CoreCompileInputs.cache
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\obj\Debug\ShopCaPhe.csproj.CopyComplete
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\obj\Debug\ShopCaPhe.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\obj\Debug\ShopCaPhe.pdb
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\obj\Debug\ShopCaPhe.csprojAssemblyReference.cache

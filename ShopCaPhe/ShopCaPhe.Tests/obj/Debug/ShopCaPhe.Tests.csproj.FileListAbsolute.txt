@@ -1,0 +1,4 @@
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe.Tests\obj\Debug\ShopCaPhe.Tests.csprojAssemblyReference.cache
+C:\Users\Phuc NE\Desktop\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe.Tests\obj\Debug\ShopCaPhe.Tests.csproj.CoreCompileInputs.cache
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe.Tests\obj\Debug\ShopCaPhe.Tests.csprojAssemblyReference.cache
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe.Tests\obj\Debug\ShopCaPhe.Tests.csproj.CoreCompileInputs.cache

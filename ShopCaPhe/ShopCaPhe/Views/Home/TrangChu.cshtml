@@ -1,0 +1,458 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="BookManage.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+          integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link href="~/Content/Home.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <script type="text/javascript">
+        var gmap = new google.maps.LatLng(11.0282148, 106.6229131, 17);
+        var marker;
+        function initialize() {
+            var mapProp = {
+                center: new google.maps.LatLng(11.0282148, 106.6229131, 17),
+                zoom: 16,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var map = new google.maps.Map(document.getElementById("googleMap")
+                , mapProp);
+
+            var styles = [
+                {
+                    featureType: 'road.arterial',
+                    elementType: 'all',
+                    stylers: [
+                        { hue: '#ffffff' },
+                        { saturation: 100 },
+                        { lightness: -45 },
+                        { visibility: 'on' }
+                    ]
+                }, {
+                    featureType: 'road',
+                    elementType: 'all',
+                    stylers: [
+
+                    ]
+                },
+                {
+                    featureType: 'water',
+                    elementType: 'geometry.fill',
+                    stylers: [
+                        { color: '#ffffff' }
+                    ]
+                }, {
+                    featureType: 'landscape.natural',
+                    elementType: 'all',
+                    stylers: [
+                        { hue: '#ffffff' },
+                        { lightness: -35 }
+                    ]
+                }
+            ];
+
+            var styledMapType = new google.maps.StyledMapType(styles);
+            map.mapTypes.set('Styled', styledMapType);
+
+            marker = new google.maps.Marker({
+                map: map,
+                draggable: true,
+                animation: google.maps.Animation.DROP,
+                position: gmap
+            });
+            google.maps.event.addListener(marker, 'click', toggleBounce);
+        }
+
+        function toggleBounce() {
+
+            if (marker.getAnimation() !== null) {
+                marker.setAnimation(null);
+            } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    @*<style>
+            .activetop:focus{
+                background-color:red;
+            }
+            [tabindex="-1"]:focus {
+                outline: 0 !important;
+            }
+
+            .topnav a[href]:visited {
+                background-color: red;
+            }
+            .topnav a[href]:active{
+                background-color: red;
+            }
+            .topnav a[href]:hover {
+                background-color: red;
+            }
+            .topav a:not([href]):not([tabindex]) {
+                 background-color: red;
+            }
+        </style>*@
+</head>
+
+<body>
+    <nav>
+        <div class="topnav">
+            <a class="active" href="#home">Trang Chủ</a>
+            <a href="@Url.Action("TrangChu","Home")" class="activetop">Giới Thiệu</a>
+            <a href="@Url.Action("Index","Home")" class="activetop">Sản Phẩm</a>
+            <a href="#contact" class="activetop">Tin Tức - Bài Viết</a>
+            <a href="#contact" class="activetop">Liên Hệ</a>
+            <a href="#contact" class="rightz activetop">En <i class='fas fa-angle-down'></i></a>
+            <a href="#" class="rightz">
+                <i class='fas fa-shopping-cart'> </i> CART: 0 ITEM($) $0.00 <i class='fas fa-angle-down'></i>
+            </a>
+            <a href="#contact" class="rightz activetop">Đăng Nhập</a>
+            @*<form action="#" class="searchform">
+                    <input type="text" placeholder="" name="search" />
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>*@
+
+
+        </div>
+        <hr>
+
+    </nav>
+    <header class="header">
+        <div class="textbox">
+            <h1 class="heading">
+                <span class="heading-main">PMPCOFFEE</span>
+                <span class="heading-sub">COFFEE AND HEALTH</span>
+            </h1>
+            <a href="#" class="btn btn-animation">Go To Product</a>
+        </div>
+    </header>
+    <aside>
+        <div class="content">
+            <div class="contentleft">
+                <video width="320" height="240" controls>
+                    <source src="~/Video/History of Coffee in 5 Minutes or Less..mp4">
+                    Trình duyệt của bạn không hỗ trợ HTML5.
+                </video>
+
+            </div>
+            <div class="contentright">
+                <div class="pincontent">
+                    <h2 class="title-h2">LEGEND REVIVED</h2>
+                    <b>Về Chúng Tôi</b>
+                    <p>
+                        Sự hồi sinh của Cà phê Chồn, một sứ mệnh đơn giản nhưng nhiều mồ hôi và nước mắt. Tự chủ trong khâu nguyên liệu và quá trình sản xuất thành phẩm, Legend Revived cam kết cung cấp Cà phê và Cà phê Chồn chính gốc, mang đến cho người tiêu dùng những tách Cà phê “thật” với những trải nghiệm khác biệt.
+                    </p>
+                    <a href="#" style="background-color:#795548; color:white" class="btn btn-animation btn2">VIEW MORE PRODUCT!</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <section>
+        <div class="baotrum">
+            <div class="section-right">
+                <h2 class="title-h2">OVERVIEW MY PRODUCT</h2>
+                <p>Cà phê 100% tự nhiên không sử dụng bất kì một loại thuốc kích thích hay tăng trưởng nào. Tự hào là nhà sản xuất và phân phối Cà phê Chồn thứ thiệt hàng đầu Việt Nam. Mang đến những sản phẩm Cà phê an toàn và bảo đảm sức khỏe người dùng.</p>                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="~/Images/coffee-bean.png" class="img-icon" alt="">
+                            <span>Cà phê hạt</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="~/Images/ferret1.png" class="img-icon" alt="">
+                            <span>Cà phê chồn</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="~/Images/espresso.png" class="img-icon" alt="">
+                            <span>Máy xay cà phê</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="~/Images/coffee-shop.png" class="img-icon" alt="">
+                            <span>Chi nhánh</span>
+                        </a>
+
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-animation">VIEW MORE PRODUCT!</a>
+
+            </div>
+            <div class="section-left">
+                <img src="~/Images/coffee-machine-5.jpg" alt="" id="pic1">
+                <img src="~/Images/coffee-machine-1.jpg" alt="" id="pic2">
+                <img src="~/Images/coffee-machine-4.jpg" alt="" id="pic3">
+
+            </div>
+
+        </div>
+
+    </section>
+    <article>
+        <div class="popular">
+            <h2 class="title-h2">MOST POPULAR PRODUCT</h2>
+            <div class="three-card">
+                <div class="cardd">
+                    @*--------------CARD-SIDE-1-------------*@
+                    <div class="card1-side card-side-front">
+                        <div class="card-picture picture-1">
+
+                        </div>
+                        <h4 class="card-heading">
+                            <span class="card-heading-span card-heading-span1">The Beans Coffee</span>
+                        </h4>
+                        <div class="card-detail">
+                            <ul>
+                                <li>5$ for 1kg</li>
+                                <li>Use more than 100 mugs</li>
+                                <li>Excellent coffee quality</li>
+                                <li>Easy to use and process</li>
+                                <li>Enjoy now be populars</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card1-side card-side-back card-side-back1">
+                        <div class="card-content-back">
+                            <div class="card-price">
+                                <p class="card-price-only">Only</p>
+                                <p class="card-price-value">$5.00/Kg</p>
+                            </div>
+                            <a href="#" class="btn btn-animation">Buy now!</a>
+                        </div>
+                    </div>
+                    @*---------------------------------------------*@
+                </div>
+                <div class="cardd">
+                    @*--------------------------CARD-SIDE-2------------------------*@
+                    <div class="card2-side card-side-front">
+                        <div class="card-picture picture-2">
+
+                        </div>
+                        <h4 class="card-heading">
+                            <span class="card-heading-span card-heading-span2">The Ferret Coffee</span>
+                        </h4>
+                        <div class="card-detail">
+                            <ul>
+                                <li>8$ for 1kg</li>
+                                <li>Use more than 100 mugs</li>
+                                <li>Excellent coffee quality</li>
+                                <li>Easy to use and process</li>
+                                <li>Enjoy now be populars</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="card2-side card-side-back card-side-back2">
+                        <div class="card-content-back">
+                            <div class="card-price">
+                                <p class="card-price-only">Only</p>
+                                <p class="card-price-value">$8.00/Kg</p>
+                            </div>
+                            <a href="#" class="btn btn-animation">Buy now!</a>
+                        </div>
+                    </div>
+
+                    @* --------------------------------------------------*@
+                </div>
+                <div class="cardd">
+                    <div class="card3-side card-side-front">
+                        <div class="card-picture picture-3">
+
+                        </div>
+                        <h4 class="card-heading">
+                            <span class="card-heading-span card-heading-span3">The Machine Coffee</span>
+                        </h4>
+                        <div class="card-detail">
+                            <ul>
+                                <li>20$</li>
+                                <li>For perfect coffee</li>
+                                <li>Excellent coffee quality</li>
+                                <li>Easy to use and process</li>
+                                <li>Enjoy now be populars</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="card3-side card-side-back card-side-back3">
+                        <div class="card-content-back">
+                            <div class="card-price">
+                                <p class="card-price-only">Only</p>
+                                <p class="card-price-value">$20.00</p>
+                            </div>
+                            <a href="#" class="btn btn-animation">Buy now!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn btn-animation btn2 btn-popular">VIEW MORE PRODUCT!</a>
+
+
+        </div>
+
+    </article>
+    <footer>
+        <div class="footer-left">
+            <img src="~/Images/bocongthuong.png" width="60%" class="bct" />
+            <p>
+                <img src="~/Images/map-icon.png" class="footer-icon" /> Số 421, đường Lê Chí Dân, Khu Phố 7, Phường Tân An, Thị Xã Thủ Dầu Một, Tỉnh Bình Dương.
+            </p>
+            <p> <img src="~/Images/telephone-icon.png" class="footer-icon" />0913 691 933 - 024 3830219</p>
+            <p>   <img src="~/Images/email-icon.png" class="footer-icon" /> phamminhphuc990@gmail.com</p>
+
+        </div>
+        <div class="footer-center1">
+            <h2>HỖ TRỢ</h2>
+            <ul>
+                <li><img src="~/Images/check-icon.png" />     Giới thiệu</li>
+                <li><img src="~/Images/check-icon.png" />     Giá cả và vận chuyển</li>
+                <li><img src="~/Images/check-icon.png" />     Chính sách thanh toán</li>
+                <li><img src="~/Images/check-icon.png" />     Chính sách đổi trả</li>
+            </ul>
+        </div>
+        <div class="footer-center2">
+            <h2>SẢN PHẨM</h2>
+            <ul>
+                <li><img src="~/Images/check-icon.png" />  Cà phê chồn</li>
+                <li><img src="~/Images/check-icon.png" />  Cà phê hạt</li>
+                <li><img src="~/Images/check-icon.png" />  Cà phê xay sẳn</li>
+                <li><img src="~/Images/check-icon.png" />  Máy pha cà phê</li>
+            </ul>
+        </div>
+        <div class="footer-right">
+
+            <div id="baogg">
+                <iframe class="gg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.138753394701!2d106.6229131142504!3d11.028214792150933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d22130b338fd%3A0x62bbcee38d8a2314!2zNDIxIEzDqiBDaMOtIETDom4sIFTDom4gQW4sIELhur9uIEPDoXQsIELDrG5oIETGsMahbmcsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1544575307779" frameborder="0"></iframe>
+            </div>
+
+        </div>
+        <div class="contact">
+            <div class="gotop">
+                <i onclick="topFunction()"><img src="~/Images/up-arrow.png" /></i>
+            </div>
+        </div>
+        <div class="contact1">
+
+        </div>
+        <div class="texxxt">
+            <div class="p"><p>POWERED BY OPENCART REALBOOK © 2004</p></div>
+            <div class="pp"><p>PayPal</p></div>
+            <div class="ppp">
+                <div class="link">
+                    <div class="network">
+                        <a><img src="~/Images/facebook-icon.png" /></a>
+                        <a><img src="~/Images/instagram-icon.png" /></a>
+                        <a><img src="~/Images/twitter-icon.png" /></a>
+                        <a><img src="~/Images/pinterest-icon.png" /></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    @*<div class="headfooter">
+            <a href="#" class="vv">INFORMATION</a>
+            <a href="#" class="ZZ">COSTOMER SERVICE</a>
+            <a href="#" class="ZZ">EXTRAS</a>
+            <a href="#" class="nn">MY ACCOUNT</a>
+        </div>
+        <footer>
+            <div class="footercontext aa">
+                <!-- <li class="tentfirsr">INFORMATION</li> -->
+                <li>ABOUT</li>
+                <li>DELIVERY</li>
+                <li>PRIVACY POLICY</li>
+                <li>TEAMS & CONDITIONS</li>
+            </div>
+            <div class="footercontext bb">
+                <!-- <li class="tentfirsr">COSTOMER SERVICE</li> -->
+                <li>CONTACT US</li>
+                <li>RETURNS</li>
+                <li>SITE MAP</li>
+                <li>SITE MAP</li>
+            </div>
+            <div class="footercontext cc">
+                <!-- <li class="tentfirsr">EXTRAS</li> -->
+                <li>BRANDS</li>
+                <li>GIFT VOUCHERS</li>
+                <li>AFFILIATES</li>
+                <li>SPECIALS</li>
+            </div>
+            <div class="footercontext dd">
+                <!-- <li class="tentfirsr">MY ACCOUNT</li> -->
+                <li>MY ACCOUNT</li>
+                <li>ORDER HISTORY</li>
+                <li>WISH LIST</li>
+                <li>NEWSLETTER</li>
+            </div>
+        </footer>
+        <div class="contact">
+            <div class="gotop">
+                <i onclick="topFunction()" id="myIc" class="fa fa-arrow-circle-o-up" style="font-size:24px"></i>
+            </div>
+        </div>
+        <div class="contact1">
+
+        </div>
+        <div class="texxxt">
+            <div class="p"><p>POWERED BY OPENCART REALBOOK © 2004</p></div>
+            <div class="pp"><p>PayPal</p></div>
+            <div class="ppp">
+                <div class="link">
+                    <i class="fa fa-facebook-f" style="font-size:20px"></i>
+                    <i class="fa fa-google-plus" style="font-size:20px"></i>
+                    <i class="fa fa-rss" style="font-size:20px"></i>
+                    <i class="fa fa-instagram" style="font-size:20px"></i>
+                </div>
+
+            </div>
+
+        </div>*@
+</body>
+</html>
+
