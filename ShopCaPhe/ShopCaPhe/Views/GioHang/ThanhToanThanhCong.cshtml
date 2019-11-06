@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "ThanhToanThanhCong";
+    Layout = "~/Views/Shared/_LayoutCaPhe.cshtml";
+}
+@using ShopCaPhe.Models;
+<link href="~/Content/Thanhtoan.css" rel="stylesheet" />
+<div class="ThanhToanThanhCong">
+    <table>
+        <tr>
+            <td>
+                <img alt="dathang" src="~/Images/dathang.png" />
+            </td>
+            <td>
+                <h1>Thanh toán thành công</h1>
+                <h2>Đơn hàng của bạn đã được thanh toán thành công.</h2>
+                <h2>Shop CaPhe sẽ liên hệ với quý khách hàng sớm để bàn giao sản phẩm đã đặt hàng.</h2>
+                <h2>
+                    Thời gian giao hàng: Từ <span id="ngaynhanhang"></span> đến <span id="ngaynhanhang1"></span>
+                    <script type="text/javascript">
+                        var day = new Date();
+                        var d = day.getDate();
+                        var d1 = day.getDate() + 5;
+                        var m = day.getMonth() + 1;
+                        var y = day.getFullYear();
+                        document.getElementById('ngaynhanhang').innerHTML = + d + "/" + m + "/" + y;
+                        document.getElementById('ngaynhanhang1').innerHTML = + d1 + "/" + m + "/" + y;
+                    </script>
+                </h2>
+                <h3><span style="color:red;">Lưu ý:</span> Nếu quý khách hàng đặt hàng vào ngày nghỉ cuối tuần(thứ 7, chủ nhật) hoặc ngày nghỉ lễ chúng tối sẽ liên hệ lại với quý khách vào thời gian làm việc tiếp theo.</h3>
+                <br /><br />
+                <a href="@Url.Action("Index","Home")" style="background-color:#795548; color:white" class="btn btn-animation btn2">Trang Chủ</a>
+
+            </td>
+        </tr>
+
+    </table>
+</div>
+

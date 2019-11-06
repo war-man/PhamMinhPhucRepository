@@ -107,9 +107,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -203,9 +200,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ChiTietSanPham.css" />
-    <Content Include="Content\GioHang1.css" />
+    <Content Include="Content\GioHang.css" />
     <Content Include="Content\Home.css" />
-    <Content Include="Content\Index.css" />
+    <Content Include="Content\Index12.css" />
     <Content Include="Content\Layout.css" />
     <Content Include="Content\LoginAdmin.css" />
     <Content Include="favicon.ico" />
@@ -221,9 +218,25 @@
     <Content Include="Images\caphechon1.jpg" />
     <Content Include="Images\caphechon2.jpg" />
     <Content Include="Images\caphechon3.jpg" />
+    <Content Include="Images\caphechon4.jpg" />
+    <Content Include="Images\caphechon5.jpg" />
+    <Content Include="Images\caphechon6.jpg" />
+    <Content Include="Images\caphechon7.jpg" />
+    <Content Include="Images\caphechon8.jpg" />
+    <Content Include="Images\caphechon9.jpg" />
+    <Content Include="Images\caphehoatan1.jpg" />
+    <Content Include="Images\caphehoatan2.jpg" />
+    <Content Include="Images\caphehoatan3.jpg" />
+    <Content Include="Images\caphehoatan4.jpg" />
     <Content Include="Images\caphexaysan1.png" />
     <Content Include="Images\caphexaysan2.png" />
     <Content Include="Images\caphexaysan3.jpg" />
+    <Content Include="Images\caphexaysan4.jpg" />
+    <Content Include="Images\caphexaysan5.jpg" />
+    <Content Include="Images\caphexaysan6.jpg" />
+    <Content Include="Images\caphexaysan7.jpg" />
+    <Content Include="Images\caphexaysan8.jpg" />
+    <Content Include="Images\caphexaysan9.jpg" />
     <Content Include="Images\cat.jpg" />
     <Content Include="Images\check-icon.png" />
     <Content Include="Images\coffee-bean-big.jpg" />
@@ -238,9 +251,18 @@
     <Content Include="Images\email-icon.png" />
     <Content Include="Images\espresso.png" />
     <Content Include="Images\facebook-icon.png" />
+    <Content Include="Images\Fail.jpg" />
     <Content Include="Images\ferret1.png" />
     <Content Include="Images\instagram-icon.png" />
     <Content Include="Images\map-icon.png" />
+    <Content Include="Images\mayphacaphe1.jpg" />
+    <Content Include="Images\mayphacaphe2.jpg" />
+    <Content Include="Images\mayphacaphe3.jpg" />
+    <Content Include="Images\mayphacaphe4.jpg" />
+    <Content Include="Images\mayxacaphe2.jpg" />
+    <Content Include="Images\mayxaycaphe1.jpg" />
+    <Content Include="Images\mayxaycaphe3.jpg" />
+    <Content Include="Images\mayxaycaphe4.jpg" />
     <Content Include="Images\morning-coffee.jpg" />
     <Content Include="Images\phone-icon.png" />
     <Content Include="Images\pic-left.jpg" />
@@ -276,7 +298,7 @@
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Chitiet.js" />
-    <Content Include="Scripts\GioHang.js" />
+    <Content Include="Scripts\GioHang1.js" />
     <Content Include="Scripts\jquery-1.8.0.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -289,8 +311,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Search.js" />
     <Content Include="Video\History of Coffee in 5 Minutes or Less..mp4" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -306,6 +331,10 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\GioHang\GioHang.cshtml" />
     <Content Include="Views\ViewSP\ChiTietSanPham.cshtml" />
+    <Content Include="Views\GioHang\ThanhToanThanhCong.cshtml" />
+    <Content Include="Views\Home\timkiem.cshtml" />
+    <Content Include="Views\Home\MayxayPartial.cshtml" />
+    <Content Include="Views\Home\MayphaPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

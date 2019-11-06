@@ -10,7 +10,7 @@
     overflow: hidden;
     width: 100%;
     height: auto;
-    padding: 0 200px;
+    padding: 0 150px;
 }
 .searchform{
     padding:5px 2px;
@@ -54,7 +54,7 @@ header {
 
 .search-container {
     float: right;
-    margin-top: 20px;
+    margin-top: -3rem;
 }
 
 header input[type=text] {
@@ -115,7 +115,24 @@ aside {
     height: 100%;
     padding: 30px 2rem;
 }
-
+/*Search*/
+.search-container button:hover {
+    background: #ccc;
+}
+input[type=text] {
+    margin-right: 5px;
+    padding: 5px;
+    font-size: 17px;
+    border: solid 1px #edf0e9;
+}
+.search-container button {
+    float: right;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+/*------------------------------------------------------------------*/
 .button {
     background-color: white;
     border: solid 1px #ddd;

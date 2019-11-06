@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="BookManage.css">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
           integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="~/Content/Layout.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @*<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>*@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -30,7 +30,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="~/Scripts/GioHang.js"></script>
+    <script src="~/Scripts/GioHang1.js"></script>
     <script src="~/Scripts/Chitiet.js"></script>
     <script type="text/javascript">
         var gmap = new google.maps.LatLng(11.0282148, 106.6229131, 17);
@@ -132,24 +132,27 @@
             <a href="@Url.Action("Index","Home")" class="activetop">Sản Phẩm</a>
             <a href="#contact" class="activetop">Tin Tức - Bài Viết</a>
             <a href="#contact" class="activetop">Liên Hệ</a>
-            <div id="cart">
-                <a href="/GioHang/GioHang" class="rightz">
-                    <h4 class="fa fa-shopping-cart"></h4>
-                    <span>@Session["TongSL"] Sản phẩm - @Session["TongTien"] VND</span>
-                </a>
-            </div>
-            <a href="#contact" class="rightz activetop">En <i class='fas fa-angle-down'></i></a>
-
-
+            <a href="#contact" class=" ">En <i class='fas fa-angle-down'></i></a>
+            <a href="/GioHang/GioHang" class="rightz">
+                <i class="fa fa-shopping-cart"></i>
+                <span><p style="color:red; display:inline-block;padding:0;margin:0">@Session["TongSL"] </p> Sản phẩm - <p style="color:red;display:inline-block;padding:0;margin:0">@Session["TongTien"]</p> VND</span>
+            </a>
             @if (Session["Email"] == null)
             {
                 <a href="@Url.Action("Login","Home")" class="rightz activetop">Đăng Nhập</a>
             }
             else
             {
-                <a href="@Url.Action("Login","Home")" class="rightz activetop">Xin chào @Session["Email"]</a>
+                @Html.ActionLink("Đăng xuất", "DangXuat", "Home", null, new { @class = "rightz activetop" }) <a href="@Url.Action("Login","Home")" class="rightz activetop">Xin chào @Session["Email"]</a>
+
 
             }
+
+
+
+
+
+
 
 
             @*@if (ViewBag.error != null)
@@ -232,6 +235,7 @@
                 <hr>
             </div>*@
         <div class="content-book">
+          
             @RenderBody()
         </div>
     </aside>

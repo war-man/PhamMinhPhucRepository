@@ -10,7 +10,7 @@
         <meta name="keywords" content="Giỏ hàng của bạn" />
         <meta name="description" content="Giỏ hàng của bạn" />
     }*@
-<link href="~/Content/GioHang1.css" rel="stylesheet" />
+<link href="~/Content/GioHang.css" rel="stylesheet" />
 <input id="MaSach1" type="text" style="visibility:hidden" />
 <h1 style="border-bottom:solid 1px; padding:5px 5px 5px 5px;">Giỏ hàng của bạn:</h1>
 <br />
@@ -39,7 +39,7 @@
                         <td><span id="DonGia"> @string.Format("{0:0,0}", item.DonGia)</span></td>
                         <td>@string.Format("{0:0,0}", item.TongTien)</td>
                     </tr>
-                    TongTien+=@item.DonGia * @item.SoLuongMua;
+                    TongTien += @item.DonGia * @item.SoLuongMua;
                 }
 
             </tbody>
@@ -50,59 +50,111 @@
         <br />
         <div id="frm-thanhtoan">
             <p>Tiến trình thanh toán</p>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>Tên người nhận</td>
-                        <td><input type="text" name="tennguoinhan" id="tennguoinhan" /></td>
-                    </tr>
-                    <tr>
-                        <td>Địa chỉ nhận hàng</td>
-                        <td><input type="text" name="diachinhanhang" id="diachinhanhang" /></td>
-                    </tr>
-                    <tr>
-                        <td>Điện thoại nhận hàng</td>
-                        <td><input type="text" name="dienthoainhanhang" id="dienthoainhanhang" /></td>
-                    </tr>
-                    <tr>
-                        <td>Ngày nhận hàng</td>
-                        <td>
-                            <div id="ngaynhanhang">
-                                <script type="text/javascript">
-                                    var day = new Date();
-                                    var d = day.getDate() + 5;
-                                    var m = day.getMonth() + 1;
-                                    var y = day.getFullYear();
-                                    document.getElementById('ngaynhanhang').innerHTML = + d + "/" + m + "/" + y;
-                                </script>
-                            </div>
-                           
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Tổng tiền cần thanh toán: @TongTien VNĐ</td>
-                    </tr>
-                </tbody>
-            </table>
+                @foreach (var dg in (IList<KHACHHANG>)ViewData["lstKH"])
+                {
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Tên người nhận</td>
+                                <td><input type="text" name="tennguoinhan" id="tennguoinhan" value="@dg.HoTenKH" /></td>
+                            </tr>
+                            <tr>
+                                <td>Địa chỉ nhận hàng</td>
+                                <td><input type="text" name="diachinhanhang" id="diachinhanhang" value="@dg.DiaChiKH" /></td>
+                            </tr>
+                            <tr>
+                                <td>Điện thoại nhận hàng</td>
+                                <td><input type="text" name="dienthoainhanhang" id="dienthoainhanhang" value="@dg.DienThoaiKH" /></td>
+                            </tr>
+                            <tr>
+                                    <td>Giới tính</td>
+                                    <td><input type="text" value="@dg.GioiTinh" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td><input type="text"  value="@dg.Email" /></td>
+                                </tr>
+                            <tr>
+                                <td>Ngày nhận hàng</td>
+                                <td>
+                                    <div id="ngaynhanhang">
+                                        <script type="text/javascript">
+                                            var day = new Date();
+                                            var d = day.getDate() + 5;
+                                            var m = day.getMonth() + 1;
+                                            var y = day.getFullYear();
+                                            document.getElementById('ngaynhanhang').innerHTML = + d + "/" + m + "/" + y;
+                                        </script>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Tổng tiền cần thanh toán: @TongTien VNĐ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+            
+
             <input onclick="DatHang();" type="submit" value="Đặt hàng" />
         </div>
     </div>
 </form>
 <br />
 <div id="TongTien">
-    <h4>Tổng Cộng:<span> @TongTien</span>VND</h4><p style="float:right;"><input id="ThanhToan" onclick="ThanhToan();" type="button" value="Thanh Toán" style="color:white; background-color:red;border-radius:3px;border-color:red;padding:10px 10px 10px 10px; font-size:15px;" /></p>
+    <h4>Tổng Cộng:<span id="tongtien">@Session["TongTien"]</span>VND</h4>    <input style="visibility:hidden" value="@Session["Email"]" id="checkemail" /><p style="float:right;"><input id="ThanhToan" onclick="ThanhToan()" type="button" value="Thanh Toán" style="color:white; background-color:#3b8e22 ;border-radius:3px;border-color:#3b8e22 ;padding:10px 10px 10px 10px; font-size:15px;" /></p>
 </div>
 
 
+@*<script type="text/javascript">
+        function ThanhToan() {
+
+            if ($('#MaSach').val() != null) {
+                $('#frm-thanhtoan').css('display', 'block');
+                $('#TongTien').css('display', 'none');
+            }
+            else if (s == null)
+            {
+                  window.location.href = "/Home/Login";
+            }
+            else {
+                alert("Vui lòng chọn sách cần mua trước khi thanh toán!")
+                //window.location.href = "/Home/Login";
+
+            }
+
+            if (@Session["Email"]== null) {
+
+                window.location.href = "/Home/Login";
+            }
+            else {
+                alert("zz");
+            }
+        }
+    </script>*@
 <script type="text/javascript">
+
     function ThanhToan() {
-        if ($('#MaSach').val() != null) {
+        var s = $('#checkemail').val();
+        if (s == "") {
+            window.location.href = "/Home/Login";
+        }
+        else if ($('#MaSach').val() != null) {
             $('#frm-thanhtoan').css('display', 'block');
             $('#TongTien').css('display', 'none');
         }
         else {
             alert("Vui lòng chọn sách cần mua trước khi thanh toán!")
         }
+
+
+
     }
+    //$('#btntimkiem').on('click', function () {
+    //    var giatrinhapvao = $('#searchcontent').val();
+    //    alert("yeu");
+    //});
 </script>

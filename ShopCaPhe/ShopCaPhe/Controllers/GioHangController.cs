@@ -21,19 +21,32 @@ namespace ShopCaPhe.Controllers
             }
             return lstSP;
         }
+       
         public ActionResult GioHang()
         {
-            List<SanPhamGH> listSP = LayGioHang();
-            int TongSL = 0;
-            double TongTien = 0;
-            foreach (var item in listSP)
+            if(Session["Email"] == null)
             {
-                TongSL += item.SoLuongMua;
-                TongTien += item.TongTien;
+                return RedirectToAction("Login", "Home");
             }
-            Session["TongSL"] = TongSL.ToString();
-            Session["TongTien"] = TongTien.ToString();
-            return View(listSP);
+            else
+            {
+                int x = int.Parse(Session["MaKH"].ToString());
+                List<KHACHHANG> KH = db.KHACHHANGs.Where(n => n.MaKH == x).ToList();
+                ViewData["lstKH"] = KH;
+                // List<KHACHHANG> lstKH
+                List<SanPhamGH> listSP = LayGioHang();
+                int TongSL = 0;
+                double TongTien = 0;
+                foreach (var item in listSP)
+                {
+                    TongSL += item.SoLuongMua;
+                    TongTien += item.TongTien;
+                }
+                Session["TongSL"] = TongSL.ToString();
+                Session["TongTien"] = TongTien.ToString();
+                return View(listSP);
+            }
+           
         }
         [HttpPost]
         public ActionResult ThemGioHang(int iMaSP, int? SL)
@@ -57,7 +70,6 @@ namespace ShopCaPhe.Controllers
                     SP.SoLuongMua = int.Parse(SL.ToString());
                 }
                 lstSP.Add(SP);
-
                 Session["GioHang"] = lstSP;
                 return Json(lstSP,JsonRequestBehavior.AllowGet);
             }
@@ -88,28 +100,38 @@ namespace ShopCaPhe.Controllers
         [HttpPost]
         public ActionResult GioHang(FormCollection frm, DONDATHANG donhang)
         {
-            if (Session["MaKH"] == null)
+            if (Session["Email"] == null)
             {
                 return RedirectToAction("Login", "Home");
             }
             else
             {
+              
+
+                bool a = false;
+                donhang.MaKH = int.Parse(Session["MaKH"].ToString());
+                donhang.NgayDH = DateTime.Parse(DateTime.Now.ToString());
+                //donhang.NgayGiaoHang = DateTime.Parse(frm["ngaynhanhang"].ToString());
+                donhang.TriGia = int.Parse(Session["TongTien"].ToString());
+                donhang.TrangThai = a;
+                donhang.TenNguoiNhan = frm["tennguoinhan"];
+                donhang.DienThoaiNhan = frm["dienthoainhanhang"];
+                donhang.DiaChiNhan = frm["diachinhanhang"];
+                db.DONDATHANGs.Add(donhang);
+                db.SaveChanges();
                 List<SanPhamGH> listSP = LayGioHang();
                 foreach (var item in listSP)
                 {
-                    bool a = false;
-                    donhang.MaKH = int.Parse(Session["MaKH"].ToString());
-                    donhang.NgayDH = DateTime.Parse(DateTime.Now.ToString());
-                    //donhang.NgayGiaoHang = DateTime.Parse(frm["ngaynhanhang"].ToString());
-                    donhang.TriGia = int.Parse(Session["TongTien"].ToString());
-                    donhang.TrangThai = a;
-                    donhang.TenNguoiNhan = frm["tennguoinhan"];
-                    donhang.DienThoaiNhan = frm["dienthoainhanhang"];
-                    donhang.DiaChiNhan = frm["diachinhanhang"];
-                    db.DONDATHANGs.Add(donhang);
+                    CTDONHANG ctdh = new CTDONHANG();
+                    ctdh.SoDH = donhang.SoDH;
+                    ctdh.MaSP = item.MaSP;
+                    ctdh.SoLuong = item.SoLuongMua;
+                    ctdh.DonGia =(decimal) item.DonGia;
+                    db.CTDONHANGs.Add(ctdh);
                     db.SaveChanges();
+                    
                 }
-
+                Session["GioHang"] = null;
                 return RedirectToAction("ThanhToanThanhCong", "GioHang");
             }
         }

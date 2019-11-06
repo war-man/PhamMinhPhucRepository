@@ -16,7 +16,8 @@
     margin-left: 40%;
 }
 
-    .info-right > h1 {
+    .info-right > h1 {  
+        color: #3b8e22;
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
         margin-bottom: 10px;
@@ -31,14 +32,14 @@
 
     .Description > h3 {
         display: inline-block;
-        color: #f89406;
+        color: black;
         font-size: 20px;
         margin-right: 15px;
     }
 
         .Description > h3 + h3 {
             display: block;
-            color: #f89406;
+            color: black;
             font-size: 20px;
         }
 
@@ -48,13 +49,13 @@
 
     .Product-Price > h3 {
         display: inline-block;
-        color: #f89406;
+        color: black;
         font-size: 20px;
         padding: 20px 15px 20px 10px;
     }
 
     .Product-Price > span {
-        background: #f89406 url(../Images/price-tag.png) no-repeat top left;
+        background: #3b8e22 url(../Images/price-tag.png) no-repeat top left;
         background-size: 19px;
         padding: 6px 25px;
         border: 0px;
@@ -69,7 +70,7 @@
 
     .Cart > h3 {
         display: inline-block;
-        color: #f89406;
+        color: black;
         font-size: 20px;
         padding: 10px 15px 10px 10px;
     }
@@ -83,7 +84,7 @@
     height: 35px;
     text-align: center;
     background: #eee;
-    border: 1px solid #f89406;
+    border: 1px solid #3b8e22;
 }
 
 .btn-Tru {
@@ -97,7 +98,7 @@
 }
 
 .btn-Cong {
-    border: 1px solid #ccc;
+    border: 1px solid #3b8e22;
     background: #fff;
     opacity: 0.4;
     padding: 0 5px;
@@ -109,7 +110,7 @@
 #btn-Cart {
     width: 160px;
     height: 35px;
-    background: #f89406;
+    background: #3b8e22;
     border: 1px;
     border-radius: 5px;
     font-size: 14px;
@@ -119,7 +120,7 @@
 }
 
     #btn-Cart:hover {
-        background: #7e6035;
+        background: #3b8e22;
     }
 
 .review {
@@ -160,7 +161,7 @@ h5{
 }
 
     .Tab-Description > h2 {
-        color: #f89406;
+        color: #5cb85c;
         padding: 30px;
     }
 
@@ -212,7 +213,7 @@ h5{
 }
 
 .star {
-    color: #e9900b !important;
+    color: #ff9f1a !important;
 }
 
 .Tab-Review > h2 {
@@ -223,7 +224,6 @@ h5{
 }
 
 .frm-Rating {
-    margin-top: 20px;
 }
 
 #txt-frmRating {
@@ -252,7 +252,8 @@ h5{
     }
 
 .btn-Rating {
-    background: #f89406;
+    color: white;
+    background: #3b8e22;
     padding: 10px 25px;
     border: 0;
     border-radius: 5px;
