@@ -12,37 +12,136 @@
     height: auto;
     padding: 0 150px;
 }
-.searchform{
-    padding:5px 2px;
-    display:inline-block;
+
+.searchform {
+    padding: 5px 2px;
+    display: inline-block;
 }
-    .topnav a {
+
+.topnav > ul > li > a {
+    float: left;
+    display: block;
+    color: gray;
+    text-align: center;
+    padding: 19px 10px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.topnav .rightz {
+    float: right;
+}
+
+.topnav > ul > li > a:hover {
+    background-color: rgb(146, 146, 146);
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li {
+}
+
+    nav ul li ol {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 330px;
+    }
+
+nav ol li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 19px 10px;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: rgb(146, 146, 146);
+
+}
+h6 {
+    color: #ff9800;
+}
+nav ol li{
+    float:left;
+}
+.sub-li:hover ol {
+    display: block;
+}
+
+nav ol li a:hover {
+    background-color: white;
+    color:gray;
+    text-decoration:none;
+}
+/*-----------------------------------------Menu đa cấp----------------------------------------*/
+/*.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position:unset;
+}
+
+    .navbar a {
         float: left;
-        display: block;
-        color: gray;
-        text-align: center;
-        padding: 19px 10px;
-        text-decoration: none;
-        font-size: 15px;
-    }
-
-    .topnav .rightz {
-        float: right;
-    }
-
-    .topnav a:hover {
-        background-color: rgb(146, 146, 146);
+        font-size: 16px;
         color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
     }
 
-nav{
-    background-color:white;
-    position:fixed;
-    z-index:100;
-    opacity:1;
-    width:100%;
-    border-bottom:none;
+.subnav {
+    float: left;
+    overflow: hidden;
 }
+
+    .subnav .subnavbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+    .navbar a:hover, .subnav:hover .subnavbtn {
+        background-color: red;
+    }
+
+.subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: red;
+    width: 100%;
+    z-index: 1;
+}
+
+    .subnav-content a {
+        float: left;
+        color: white;
+        text-decoration: none;
+    }
+
+        .subnav-content a:hover {
+            background-color: #eee;
+            color: black;
+        }
+
+.subnav:hover .subnav-content {
+    display: block;
+}*/
+/*-------------------------------------------------------------------*/
+nav {
+    background-color: white;
+    position: fixed;
+    z-index: 100;
+    opacity: 1;
+    width: 100%;
+    border-bottom: none;
+}
+
 hr {
     margin: 0;
 }
@@ -62,6 +161,7 @@ header input[type=text] {
     font-size: 17px;
     border: none;
 }
+
 .header {
     width: 100%;
     height: 500px;
@@ -72,6 +172,7 @@ header input[type=text] {
     background-position: center;
     background-attachment: fixed
 }
+
 .search-container button {
     float: right;
     padding: 6px 10px;
@@ -119,12 +220,14 @@ aside {
 .search-container button:hover {
     background: #ccc;
 }
+
 input[type=text] {
     margin-right: 5px;
     padding: 5px;
     font-size: 17px;
     border: solid 1px #edf0e9;
 }
+
 .search-container button {
     float: right;
     background: #ddd;
@@ -369,6 +472,7 @@ h6 {
     padding-left: 10px;
     /* animation-delay: 1s; */
 }
+
 @keyframes moveinleft {
     0% {
         opacity: 0;
@@ -413,6 +517,7 @@ h6 {
         transform: translate(0);
     }
 }
+
 .btn:link, /* Dinh dang cho cac lien ket chua duoc click */
 .btn:visited /*Dinh dang cho cac lien  ket sau khi  click*/ {
     text-decoration: none;
@@ -523,13 +628,14 @@ li {
 footer ul li {
     padding: .5rem 5px;
 }
-footer ul  {
-    padding:0;
+
+footer ul {
+    padding: 0;
 }
 
 .network {
-    padding-top:15px;
-    float:right;
+    padding-top: 15px;
+    float: right;
 }
 
     .network a {

@@ -192,6 +192,9 @@ cursor:pointer;
         background-color: #5cb85c;
     }
 
+h6 {
+    color: #ff9800;
+}
 
 .tooltip-content ul li {
         display: inline-block;

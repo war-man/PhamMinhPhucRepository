@@ -164,6 +164,9 @@
     <Compile Include="Models\LOAISP.cs">
       <DependentUpon>ShopCaPhe.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MENU.cs">
+      <DependentUpon>ShopCaPhe.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\NHACUNGCAP.cs">
       <DependentUpon>ShopCaPhe.tt</DependentUpon>
     </Compile>
@@ -202,8 +205,8 @@
     <Content Include="Content\ChiTietSanPham.css" />
     <Content Include="Content\GioHang.css" />
     <Content Include="Content\Home.css" />
-    <Content Include="Content\Index12.css" />
-    <Content Include="Content\Layout.css" />
+    <Content Include="Content\Index.css" />
+    <Content Include="Content\Layout1.css" />
     <Content Include="Content\LoginAdmin.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -335,6 +338,7 @@
     <Content Include="Views\Home\timkiem.cshtml" />
     <Content Include="Views\Home\MayxayPartial.cshtml" />
     <Content Include="Views\Home\MayphaPartial.cshtml" />
+    <Content Include="Views\ViewSP\LoaiSP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

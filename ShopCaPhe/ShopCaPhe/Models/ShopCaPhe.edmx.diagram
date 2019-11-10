@@ -28,6 +28,7 @@
         <AssociationConnector Association="CàPheModel.FK_DONDATHANG_HINHTHUCGIAOHANG" ManuallyRouted="false" />
         <AssociationConnector Association="CàPheModel.FK_DONDATHANG_HINHTHUCTHANHTOAN" ManuallyRouted="false" />
         <AssociationConnector Association="CàPheModel.FK_SANPHAM_LOAISP" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CàPheModel.MENU" Width="1.5" PointX="10.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

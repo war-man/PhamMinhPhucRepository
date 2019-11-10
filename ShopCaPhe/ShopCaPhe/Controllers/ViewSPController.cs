@@ -11,7 +11,15 @@ namespace ShopCaPhe.Controllers
     {
         CàPheEntities db = new CàPheEntities();
         // GET: ViewSP
+        public ActionResult LoaiSP(int? MaLoai)
+        {
+            ViewBag.name = db.LOAISPs.SingleOrDefault(n => n.MaLoai == MaLoai).TenLoai;
 
+            List<SANPHAM> sp = db.SANPHAMs.Where(n => n.MaLoai == MaLoai).ToList();
+
+            return View(sp);
+
+        }
         public ActionResult ChiTietSanPham(int? MaSP)
         {
             if (Session["Email"] == null)

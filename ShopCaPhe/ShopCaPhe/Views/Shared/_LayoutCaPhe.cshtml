@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="BookManage.css">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
           integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-    <link href="~/Content/Layout.css" rel="stylesheet" />
+    <link href="~/Content/Layout1.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @*<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>*@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -127,54 +127,106 @@
 <body>
     <nav>
         <div class="topnav">
-            <a class="active" href="@Url.Action("TrangChu","Home")">Trang Chủ</a>
-            <a href="@Url.Action("Home","Home")" class="activetop">Giới Thiệu</a>
-            <a href="@Url.Action("Index","Home")" class="activetop">Sản Phẩm</a>
-            <a href="#contact" class="activetop">Tin Tức - Bài Viết</a>
-            <a href="#contact" class="activetop">Liên Hệ</a>
-            <a href="#contact" class=" ">En <i class='fas fa-angle-down'></i></a>
-            <a href="/GioHang/GioHang" class="rightz">
-                <i class="fa fa-shopping-cart"></i>
-                <span><p style="color:red; display:inline-block;padding:0;margin:0">@Session["TongSL"] </p> Sản phẩm - <p style="color:red;display:inline-block;padding:0;margin:0">@Session["TongTien"]</p> VND</span>
-            </a>
-            @if (Session["Email"] == null)
-            {
-                <a href="@Url.Action("Login","Home")" class="rightz activetop">Đăng Nhập</a>
-            }
-            else
-            {
-                @Html.ActionLink("Đăng xuất", "DangXuat", "Home", null, new { @class = "rightz activetop" }) <a href="@Url.Action("Login","Home")" class="rightz activetop">Xin chào @Session["Email"]</a>
+            <ul>
+                <li><a class="active" href="@Url.Action("TrangChu","Home")">Trang Chủ</a></li>
+                <li>
+                    <a href="@Url.Action("Home","Home")" class="activetop">Giới Thiệu</a>
+                </li>
+                <li class="sub-li">
+                    <a href="@Url.Action("Index","Home")" class="activetop">Sản Phẩm  <i class='fas fa-angle-down'></i></a>
+                    <ol class="sub-content">
+                        <li class=""><a href="/ViewSP/LoaiSP?MaLoai=1" class="sub-menu">Cà Phê Chồn</a></li>
+                        <li class=""><a href="/ViewSP/LoaiSP?MaLoai=3" class="sub-menu">Cà Phê Bột</a></li>
+                        <li class=""><a href="/ViewSP/LoaiSP?MaLoai=6" class="sub-menu">Cà Phê Hòa Tan</a></li>
+                        <li class=""><a href="/ViewSP/LoaiSP?MaLoai=5" class="sub-menu">Máy Xay Cà Phê</a></li>
+                        <li class=""><a href="/ViewSP/LoaiSP?MaLoai=4" class="sub-menu">Máy Pha Cà Phê</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#contact" class="activetop">Tin Tức - Bài Viết</a>
+                </li>
+                <li>
+                    <a href="#contact" class="activetop">Liên Hệ</a>
+                </li>
+                <li>
+                    <a href="#contact" class=" ">En <i class='fas fa-angle-down'></i></a>
+                </li>
+                <li>
+                    <a href="/GioHang/GioHang" class="rightz">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span><p style="color:red; display:inline-block;padding:0;margin:0">@Session["TongSL"] </p> Sản phẩm - <p style="color:red;display:inline-block;padding:0;margin:0">@Session["TongTien"]</p> VND</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                    @if (Session["Email"] == null)
+                    {
+                        <a href="@Url.Action("Login","Home")" class="rightz activetop">Đăng Nhập</a>
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Đăng xuất", "DangXuat", "Home", null, new { @class = "rightz activetop" }) <a href="@Url.Action("Login","Home")" class="rightz activetop">Xin chào @Session["Email"]</a>
 
 
-            }
+                    }
 
+                </li>
+            </ul>
 
-
-
-
+            @*<div class="navbar">
+                <a href="#home">Home</a>
+                <div class="subnav">
+                    <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content">
+                        <a href="#company">Company</a>
+                        <a href="#team">Team</a>
+                        <a href="#careers">Careers</a>
+                    </div>
+                </div>
+                <div class="subnav">
+                    <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content">
+                        <a href="#bring">Bring</a>
+                        <a href="#deliver">Deliver</a>
+                        <a href="#package">Package</a>
+                        <a href="#express">Express</a>
+                    </div>
+                </div>
+                <div class="subnav">
+                    <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content">
+                        <a href="#link1">Link 1</a>
+                        <a href="#link2">Link 2</a>
+                        <a href="#link3">Link 3</a>
+                        <a href="#link4">Link 4</a>
+                    </div>
+                </div>*@
 
 
 
             @*@if (ViewBag.error != null)
-        {
-            <p style="color:red">@ViewBag.error</p>
+                {
+                    <p style="color:red">@ViewBag.error</p>
 
-        }
-        else
-        {
-            <p style="color:white">Hi there! Please Sign in</p>
+                }
+                else
+                {
+                    <p style="color:white">Hi there! Please Sign in</p>
 
 
-        }*@
+                }*@
 
             @*<form action="#" class="searchform">
-            <input type="text" placeholder="" name="search" />
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>*@
+                    <input type="text" placeholder="" name="search" />
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>*@
 
 
         </div>
-       
+        </div>
+
+
+
 
     </nav>
     <header class="header">
@@ -187,43 +239,43 @@
         </div>
     </header>
     @*<header class="header">
-                    <div class="logo-box">
-                        <img src="Img/logo.png" alt="No IMG" class="logo">
-                    </div>
-                    <div class="textbox">
-                        <h1 class="heading">
-                            <span class="heading-main">EVENTSEA</span>
-                            <span class="heading-sub">SEA AND NATURALS</span>
-                        </h1>
-                        <a href="#" class="btn btn-animation">Go To Event</a>
-                    </div>
-                    <nav class="menu">
-                        <header>Menu <span>×</span></header>
-                        <ol>
-                            <li class="menu-item"><a href="#0">Home</a></li>
-                            <li class="menu-item"><a href="#0">About</a></li>
-                            <li class="menu-item">
-                                <a href="#0">Widgets</a>
-                                <ol class="sub-menu">
-                                    <li class="menu-item"><a href="#0">Grocerry</a></li>
-                                    <li class="menu-item"><a href="#0">Discount</a></li>
-                                    <li class="menu-item"><a href="#0">Huge Sale</a></li>
-                                </ol>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#0">Juice</a>
-                                <ol class="sub-menu">
-                                    <li class="menu-item"><a href="#0">Russi</a></li>
-                                    <li class="menu-item"><a href="#0">Paneer Pyaza</a></li>
-                                    <li class="menu-item"><a href="#0">Rasbhari</a></li>
-                                </ol>
-                            </li>
-                            <li class="menu-item"><a href="#0">Contact</a></li>
+            <div class="logo-box">
+                <img src="Img/logo.png" alt="No IMG" class="logo">
+            </div>
+            <div class="textbox">
+                <h1 class="heading">
+                    <span class="heading-main">EVENTSEA</span>
+                    <span class="heading-sub">SEA AND NATURALS</span>
+                </h1>
+                <a href="#" class="btn btn-animation">Go To Event</a>
+            </div>
+            <nav class="menu">
+                <header>Menu <span>×</span></header>
+                <ol>
+                    <li class="menu-item"><a href="#0">Home</a></li>
+                    <li class="menu-item"><a href="#0">About</a></li>
+                    <li class="menu-item">
+                        <a href="#0">Widgets</a>
+                        <ol class="sub-menu">
+                            <li class="menu-item"><a href="#0">Grocerry</a></li>
+                            <li class="menu-item"><a href="#0">Discount</a></li>
+                            <li class="menu-item"><a href="#0">Huge Sale</a></li>
                         </ol>
-                        <footer><button aria-label="Toggle Menu">Toggle</button></footer>
-                    </nav>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#0">Juice</a>
+                        <ol class="sub-menu">
+                            <li class="menu-item"><a href="#0">Russi</a></li>
+                            <li class="menu-item"><a href="#0">Paneer Pyaza</a></li>
+                            <li class="menu-item"><a href="#0">Rasbhari</a></li>
+                        </ol>
+                    </li>
+                    <li class="menu-item"><a href="#0">Contact</a></li>
+                </ol>
+                <footer><button aria-label="Toggle Menu">Toggle</button></footer>
+            </nav>
 
-                </header>*@
+        </header>*@
     <aside>
         <div class="content">
             <div class="buttonhead">
@@ -235,7 +287,7 @@
                 <hr>
             </div>*@
         <div class="content-book">
-          
+
             @RenderBody()
         </div>
     </aside>

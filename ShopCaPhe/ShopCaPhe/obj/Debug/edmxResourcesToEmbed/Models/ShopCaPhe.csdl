@@ -342,5 +342,16 @@
       <End Role="LOAISP" EntitySet="LOAISPs" />
       <End Role="SANPHAM" EntitySet="SANPHAMs" />
     </AssociationSet>
+    <EntitySet Name="MENUs" EntityType="CàPheModel.MENU" />
   </EntityContainer>
+  <EntityType Name="MENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="MenuName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ParentID" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
 </Schema>

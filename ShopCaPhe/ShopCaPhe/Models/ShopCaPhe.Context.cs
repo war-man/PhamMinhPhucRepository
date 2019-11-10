@@ -38,5 +38,6 @@ namespace ShopCaPhe.Models
         public virtual DbSet<PHIEUNHAP> PHIEUNHAPs { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<MENU> MENUs { get; set; }
     }
 }
