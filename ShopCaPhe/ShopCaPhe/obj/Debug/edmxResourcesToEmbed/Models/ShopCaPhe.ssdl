@@ -112,6 +112,7 @@
     <Property Name="ParentID" Type="int" />
     <Property Name="CreateDate" Type="datetime" />
     <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Link" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="NHACUNGCAP">
     <Key>
@@ -128,7 +129,6 @@
     </Key>
     <Property Name="MaPhieu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NgayNhap" Type="smalldatetime" Nullable="false" />
-    <Property Name="SoLuong" Type="int" Nullable="false" />
     <Property Name="TongTien" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="SANPHAM">
@@ -142,7 +142,6 @@
     <Property Name="MoTa" Type="ntext" Nullable="false" />
     <Property Name="HinhMinhHoa" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="MaLoai" Type="int" />
-    <Property Name="SoLuongLike" Type="int" />
     <Property Name="NgayTao" Type="smalldatetime" />
     <Property Name="NgayChinhSua" Type="smalldatetime" />
     <Property Name="TrangThai" Type="nvarchar" MaxLength="50" />

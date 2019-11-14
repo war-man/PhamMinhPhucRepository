@@ -20,7 +20,7 @@
 
 #tensach {
     overflow: hidden;
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
     font-family: arial;
     font-weight: bold;
@@ -31,18 +31,19 @@
 }
 
 #tieude {
-    color: #ff9800;
+    color: #3b8e22;
     padding-bottom: 10px;
     font-size: 13px;
     text-align: center;
 }
 
-.price{
-    text-align:center;
-    padding-bottom:10px;
+.price {
+    text-align: center;
+    padding-bottom: 10px;
+    color: #3b8e22;
 }
 #agia {
-    color:black;
+    color: black;
 }
 /*#agia:hover {
 transition:0.5s;
@@ -193,7 +194,7 @@ cursor:pointer;
     }
 
 h6 {
-    color: #ff9800;
+    color: #5cb85c;
 }
 
 .tooltip-content ul li {

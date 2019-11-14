@@ -1,0 +1,123 @@
+﻿@using ShopCaPhe.Models
+@model PagedList.IPagedList<ShopCaPhe.Models.SANPHAM>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "IndexAdmin";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h2>Quản Lý Cà Phê Admin</h2>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="~/Content/IndexAdmin.css" rel="stylesheet" />
+<h4 style=" color:black; font-family:serif">Index Admin</h4>
+<hr />
+
+
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <a class="themsach" href="@Url.Action("CreateSP","AdminCRUD")">Thêm Sản Phẩm</a>
+                <div class="row" style="padding-top:10px">
+                    <div class="col-sm-4">
+
+                        <div class="show-entries">
+                            @using (Html.BeginForm("IndexAdmin", "AdminCRUD", FormMethod.Get))
+                            {
+                                <p>
+                                    Show @Html.DropDownList("size", (List<SelectListItem>)ViewBag.size, new { @onchange = "this.form.submit();" })
+                                    @Html.Hidden("page", (object)ViewBag.page)
+                                    @Html.Hidden("sortProperty", (object)ViewBag.sortProperty)
+                                    @Html.Hidden("sortOrder", (object)ViewBag.sortOrder)
+                                    @Html.Hidden("searchString", (object)ViewBag.searchValue)
+                                </p>
+                            }
+                        </div>
+                    </div>
+
+
+                    <div class="search-box">
+                        @*<div class="input-group">
+
+                                @using (Html.BeginForm("Index", "AdminCRUD", FormMethod.Get))
+                                {
+
+                                    @Html.TextBox("searchString", (string)ViewBag.searchValue, new { @class = "form-control", @placeholder = "Search" }) <input type="submit" value="Tìm kiếm" />
+                                }
+
+                            </div>*@
+
+                        <form action="/Admin/AdminCRUD/IndexAdmin" method="get" class="formsearch">
+                            <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+                            <input class="" id="searchString" name="searchString" placeholder="Search" type="search">
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Giá</th>
+                        <th>Số Lượng</th>
+                        <th>Hình</th>
+                        <th>Trạng Thái</th>
+                        <th><i class="fa fa-sort"></i> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>@item.TenSP</td>
+                            <td>@string.Format("{0:0,0}", item.DonGia)</td>
+                            <td>@item.SoLuong</td>
+                            <td><img width="15%" src="~/Images/@item.HinhMinhHoa" /></td>
+                            <td>@item.TrangThai</td>
+                            <td>
+                                <button type="button" rel="tooltip" class="btn btn-info btn-round btn-just-icon btn-sm" data-original-title="" title="">
+                                    <a href="@Url.Action("Edit", "AdminCRUD", new { id = item.MaSP })">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+                                </button>
+                                <button type="button" rel="tooltip" class="btn btn-success btn-round btn-just-icon btn-sm" data-original-title="" title="">
+                                    <a href="@Url.Action("ChitietBookAdmin", "AdminCRUD", new { item.MaSP })">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                </button>
+
+                                <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-just-icon btn-sm" data-original-title="" title="">
+                                    <a href="@Url.Action("Delete", "AdminCRUD", new { id = item.MaSP })">
+                                        <i class="material-icons">
+                                            close
+                                        </i>
+                                    </a>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+
+
+
+                </tbody>
+            </table>
+            <div class="clearfix">
+                <div class="hint-text">Showing @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) out of @Model.PageCount entries</div>
+                <ul class="pagination">
+
+                    <li class="page-item">@Html.PagedListPager(Model, page => Url.Action("IndexAdmin", new { page, size = ViewBag.currentSize }))</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>

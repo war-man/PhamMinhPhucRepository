@@ -1,0 +1,13 @@
+﻿@using ShopCaPhe.Models
+@model List<MENU>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+<li>
+    <a href="@item.Link" class="activetop">@item.MenuName</a>
+    @Html.Action("ChildMenu", "Menu", new { Id = item.ID })
+</li>
+}

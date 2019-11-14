@@ -41,9 +41,11 @@ namespace ShopCaPhe.Controllers
                 {
                     TongSL += item.SoLuongMua;
                     TongTien += item.TongTien;
+                   
                 }
-                Session["TongSL"] = TongSL.ToString();
-                Session["TongTien"] = TongTien.ToString();
+                var tongtien = String.Format("{0:N0}", TongTien);
+               Session["TongSL"] = TongSL.ToString();
+               Session["TongTien"] = tongtien.ToString();
                 return View(listSP);
             }
            

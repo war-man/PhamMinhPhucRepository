@@ -6,9 +6,8 @@
     ViewBag.Title = "LoaiSP";
     Layout = "~/Views/Shared/_LayoutCaPhe.cshtml";
 }
-
+<link href="~/Content/Index1.css" rel="stylesheet" />
 <div class="title">
-    <link href="~/Content/Index12.css" rel="stylesheet" />
 
     <h6 style="text-transform:uppercase"><strong>Sản Phẩm @ViewBag.name</strong></h6>    <div class="search-container">
         <form action="/Home/timkiem">
@@ -32,7 +31,7 @@
                     @item.LOAISP.TenLoai
                 </div>
                 <div class="price">
-                    <span id="agia">@item.DonGia đ</span>
+                    <span id="agia">@string.Format("{0:0,0}", item.DonGia)đ</span>
 
                 </div>
                 <div class="tooltip-content">

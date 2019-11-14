@@ -19,5 +19,6 @@ namespace ShopCaPhe.Models
         public Nullable<int> ParentID { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
+        public string Link { get; set; }
     }
 }

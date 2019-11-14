@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ShopCaPhe.Models.MENU>
+@if ((int)ViewBag.count > 0)
+{
+<ol class="sub-content">
+    @foreach (var item in Model)
+    {
+        <li class="">
+        <a href="@item.Link" class="sub-menu">@item.MenuName</a>
+        </li>
+
+    }
+</ol>
+        }
+
+        @*<li class=""><a href="/ViewSP/LoaiSP?MaLoai=3" class="sub-menu">Cà Phê Bột</a></li>
+        <li class=""><a href="/ViewSP/LoaiSP?MaLoai=6" class="sub-menu">Cà Phê Hòa Tan</a></li>
+        <li class=""><a href="/ViewSP/LoaiSP?MaLoai=5" class="sub-menu">Máy Xay Cà Phê</a></li>
+        <li class=""><a href="/ViewSP/LoaiSP?MaLoai=4" class="sub-menu">Máy Pha Cà Phê</a></li>*@

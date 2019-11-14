@@ -22,7 +22,6 @@ namespace ShopCaPhe.Models
     
         public int MaPhieu { get; set; }
         public System.DateTime NgayNhap { get; set; }
-        public int SoLuong { get; set; }
         public double TongTien { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

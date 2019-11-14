@@ -56,28 +56,28 @@
     <h3 style="font-size:18px">@Model.MoTa</h3>
 </div>
 <div class="Tab-Review" id="idReview">
-    <div>
-        <div style="display:none" class="new-Cmt">
-            <div class="review-list">
-                <div class="author">
-                    <b></b>
-                    Bình Luận Ngày: <span></span>
-                </div>
-                <div class="rating-review">
-                </div>
-                <div class="text-review">
+        <div>
+            <div style="display:none" class="new-Cmt">
+                <div class="review-list">
+                    <div class="author">
+                        <b></b>
+                        Bình Luận Ngày: <span></span>
+                    </div>
+                    <div class="rating-review">
+                    </div>
+                    <div class="text-review">
 
+                    </div>
                 </div>
             </div>
-        </div>
-        @foreach (var dg in (IList<DANHGIASANPHAM>)ViewData["listDG"])
-        {
-            <div class="review-list">
-                <div class="author">
-                    <b>@dg.HoTenKH</b>
-                    Bình Luận Ngày: <span>@string.Format("{0:dd/MM/yyyy}", dg.ThoiGian)</span>
-                </div>
-                <div class="rating-review">
+            @foreach (var dg in (IList<DANHGIASANPHAM>)ViewData["listDG"])
+            {
+                <div class="review-list">
+                    <div class="author">
+                        <b>@dg.HoTenKH</b>
+                        Bình Luận Ngày: <span>@string.Format("{0:dd/MM/yyyy}", dg.ThoiGian)</span>
+                    </div>
+                    <div class="rating-review">
                     @if (dg.DiemDG == 1)
                     {
                         <i class="fa fa-star star" aria-hidden="true"></i>

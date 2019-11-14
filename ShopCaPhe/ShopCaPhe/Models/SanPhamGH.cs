@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -18,7 +19,9 @@ namespace ShopCaPhe.Models
         public int SoLuong { get; set; }
         public int SoLuongMua { get; set;}
         public int MaLoai { get; set; }
+        [DisplayFormat(DataFormatString = "{0:N0}", ApplyFormatInEditMode = true)]
         public double TongTien => SoLuongMua * DonGia;
+
         public string TenLoai { get; set; }
     }
 }

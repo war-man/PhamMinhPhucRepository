@@ -29,7 +29,6 @@ namespace ShopCaPhe.Models
         public string MoTa { get; set; }
         public string HinhMinhHoa { get; set; }
         public Nullable<int> MaLoai { get; set; }
-        public Nullable<int> SoLuongLike { get; set; }
         public Nullable<System.DateTime> NgayTao { get; set; }
         public Nullable<System.DateTime> NgayChinhSua { get; set; }
         public string TrangThai { get; set; }

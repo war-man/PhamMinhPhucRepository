@@ -6,8 +6,7 @@
 }
 
 <div class="title">
-
-    <link href="~/Content/Index.css" rel="stylesheet" />
+    <link href="~/Content/Index1.css" rel="stylesheet" />
         <h6><strong>TẤT CẢ SẢN PHẨM</strong></h6>  <div class="search-container">
         <form action="/Home/timkiem">
             <input type="text" id="searchcontent" placeholder="Search.." name="name">
@@ -30,7 +29,7 @@
                     @item.LOAISP.TenLoai
                 </div>
                 <div class="price">
-                    <span id="agia">@item.DonGia đ</span>
+                    <span id="agia">@string.Format("{0:0,0}", item.DonGia)đ</span>
 
                 </div>
                 <div class="tooltip-content">

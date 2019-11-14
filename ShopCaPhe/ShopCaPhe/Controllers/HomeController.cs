@@ -91,6 +91,10 @@ namespace ShopCaPhe.Controllers
             return Json(new { name = sp.TenSP, price = sp.DonGia, hinhminhhoa = sp.HinhMinhHoa, donvitinh = sp.Donvitinh, mota = sp.MoTa, trangthai = sp.TrangThai, soluong=sp.SoLuong, masp=sp.MaSP }, JsonRequestBehavior.AllowGet);
 
         }
+        public ActionResult GioiThieu()
+        {
+            return View();
+        }
 
 
 

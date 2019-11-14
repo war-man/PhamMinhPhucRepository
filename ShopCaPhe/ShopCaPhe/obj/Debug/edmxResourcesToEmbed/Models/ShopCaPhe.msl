@@ -110,6 +110,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="MENUs">
+      <EntityTypeMapping TypeName="CàPheModel.MENU">
+        <MappingFragment StoreEntitySet="MENU">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="NHACUNGCAPs">
       <EntityTypeMapping TypeName="CàPheModel.NHACUNGCAP">
         <MappingFragment StoreEntitySet="NHACUNGCAP">
@@ -125,7 +137,6 @@
         <MappingFragment StoreEntitySet="PHIEUNHAP">
           <ScalarProperty Name="MaPhieu" ColumnName="MaPhieu" />
           <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="TongTien" ColumnName="TongTien" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -140,7 +151,6 @@
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />
           <ScalarProperty Name="HinhMinhHoa" ColumnName="HinhMinhHoa" />
           <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
-          <ScalarProperty Name="SoLuongLike" ColumnName="SoLuongLike" />
           <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
           <ScalarProperty Name="NgayChinhSua" ColumnName="NgayChinhSua" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
@@ -156,17 +166,6 @@
           <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
           <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="definition" ColumnName="definition" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MENUs">
-      <EntityTypeMapping TypeName="CàPheModel.MENU">
-        <MappingFragment StoreEntitySet="MENU">
-          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
-          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

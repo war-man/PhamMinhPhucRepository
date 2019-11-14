@@ -10,7 +10,7 @@
     overflow: hidden;
     width: 100%;
     height: auto;
-    padding: 0 150px;
+    padding: 0 100px;
 }
 
 .searchform {
@@ -31,48 +31,69 @@
 .topnav .rightz {
     float: right;
 }
+nav ul li ol{
+    display:none;
+}
+nav ul li:hover a{
+    transition: all .2s;
+    color: white;
+    cursor: pointer;
+    background-color:gray;
+}
+/*a:not([href]):not([tabindex]) {
+    color: gray;
+    text-decoration: none;
+}*/
 
-.topnav > ul > li > a:hover {
+nav ul li:hover ol {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 280px;
+}
+/*.topnav > ul > li > a:hover {
     background-color: rgb(146, 146, 146);
     color: white;
     text-decoration: none;
+    transition: all .3s;
 }
 
-nav ul li {
-}
-
-    nav ul li ol {
-        display: none;
+ nav ul li ol {
+        display: block;
         position: absolute;
         top: 60px;
-        left: 330px;
+        left: 280px;
     }
-
+nav ul li:hover ol{
+    display:none;
+}
+*/
 nav ol li a {
     display: block;
-    color: white;
+    color: gray;
     text-align: center;
     padding: 19px 10px;
     text-decoration: none;
     font-size: 15px;
     background-color: rgb(146, 146, 146);
-
 }
 h6 {
     color: #ff9800;
 }
-nav ol li{
-    float:left;
+nav ol li {
+    float: left;
 }
-.sub-li:hover ol {
-    display: block;
-}
-
 nav ol li a:hover {
+    transition: all .3s;
     background-color: white;
-    color:gray;
-    text-decoration:none;
+    color: gray;
+    text-decoration: none;
+    cursor:pointer;
 }
+/*
+
+
+*/
 /*-----------------------------------------Menu đa cấp----------------------------------------*/
 /*.navbar {
     overflow: hidden;
@@ -195,12 +216,10 @@ header input[type=text], .topnav .search-container button {
     margin: 0;
     padding: 10px;
     height: 37px;
-    border: solid 1px black;
     display: inline-block;
 }
 
 header input[type=text] {
-    border: solid 1px #e5e5e5;
 }
 
 .logo img {
@@ -222,18 +241,19 @@ aside {
 }
 
 input[type=text] {
-    margin-right: 5px;
     padding: 5px;
     font-size: 17px;
-    border: solid 1px #edf0e9;
+    border: none;
+    border-bottom: 1px solid #dfe2d7;
 }
 
 .search-container button {
     float: right;
-    background: #ddd;
+    background: #5cb85c;
     font-size: 17px;
     border: none;
     cursor: pointer;
+    border-radius: 100%;
 }
 /*------------------------------------------------------------------*/
 .button {
