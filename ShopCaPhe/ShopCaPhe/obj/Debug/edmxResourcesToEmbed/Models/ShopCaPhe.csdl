@@ -121,7 +121,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MenuName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="ParentID" Type="Int32" />
     <Property Name="CreateDate" Type="DateTime" Precision="3" />

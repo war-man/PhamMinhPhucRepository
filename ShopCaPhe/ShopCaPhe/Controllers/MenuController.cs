@@ -14,7 +14,7 @@ namespace ShopCaPhe.Controllers
         // GET: Menu
         public ActionResult Menu()
         {
-            return View(db.MENUs.OrderBy(n =>n.ID).Where(n=>n.ParentID==null).ToList());
+            return View(db.MENUs.OrderBy(n =>n.ID).Where(n=>n.ParentID==0).ToList());
         }
         public PartialViewResult ChildMenu(int? Id)
         {

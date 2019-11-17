@@ -1,0 +1,84 @@
+﻿@model ShopCaPhe.Models.SANPHAM
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<style>
+    .btncreate {
+        background-color: red;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        color: white;
+    }
+
+    th {
+        background-color: #17aa67;
+        color: white;
+    }
+
+    table {
+        border: solid 1px white;
+    }
+
+    td {
+        background-color: white;
+    }
+
+    .table-bordered {
+        text-align: center;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="w3-container w3-brown">
+        <h2>DELETE PAGE</h2>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Tên Sản Phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Hình</th>
+                <th>Trạng Thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.TenSP)
+                </td>
+                <td>  @Html.DisplayFor(model => model.DonGia)</td>
+
+                <td>
+                    @Html.DisplayFor(model => model.SoLuong)
+                </td>
+                <td><img width="15%" src="~/Images/@Html.DisplayFor(model =>model.HinhMinhHoa)" /></td>
+                <td>
+                    @Html.DisplayFor(model => model.TrangThai)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function xoa() {
+            alert("Xóa sản phẩm thành công!");
+        }
+    </script>
+
+    <a href="@Url.Action("IndexAdmin","AdminCRUD")" class="btncreate"> Quay Lại</a>
+
+    <input type="submit" onclick="xoa()" class="btncreate" style="width:130px; background-color:black" value="Xóa" />
+
+}

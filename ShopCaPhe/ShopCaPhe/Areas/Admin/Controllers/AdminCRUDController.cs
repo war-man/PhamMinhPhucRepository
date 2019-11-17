@@ -115,18 +115,39 @@ namespace ShopCaPhe.Areas.Admin.Controllers
         }
         public ActionResult Delete(int? id)
         {
-            SANPHAM sach = db.SANPHAMs.Find(id);
-            return View(sach);
+            SANPHAM sp = db.SANPHAMs.Find(id);
+           Session["itemid"] = id;
+            return View(sp);
         }
+      
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            SANPHAM sach = db.SANPHAMs.Find(id);
-            db.SANPHAMs.Remove(sach);
+            
+            SANPHAM sp = db.SANPHAMs.Find(id);
+            db.SANPHAMs.Remove(sp);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("IndexAdmin");
         }
+
+        public ActionResult DeleteLoai(int? id)
+        {
+            LOAISP lsp = db.LOAISPs.Find(id);
+            return View(lsp);
+        }
+        [HttpPost, ActionName("DeleteLoai")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteLoaiSP(int id)
+        {
+
+            LOAISP sp = db.LOAISPs.Find(id);
+            db.LOAISPs.Remove(sp);
+            db.SaveChanges();
+            return RedirectToAction("createLoaiSP");
+        }
+
         public ActionResult CreateSP()
         {
             List<LOAISP> loai = db.LOAISPs.ToList();
@@ -177,24 +198,23 @@ namespace ShopCaPhe.Areas.Admin.Controllers
         //    
         //  
 
-        //    public ActionResult createAuthor()
-        //    {
-        //        var f = from s in db.Authors select s;
-        //        ViewBag.sklist = db.Authors.ToList();
-        //        return View();
+        public ActionResult createLoaiSP()
+        {
+            List<LOAISP> sp = db.LOAISPs.ToList();
 
-        //    }
-        //    [HttpPost]
-        //    public ActionResult createAuthor(FormCollection frmCreate, Author a)
-        //    {
+            var f = from s in db.LOAISPs select s;
+            ViewBag.sklist = db.LOAISPs.ToList();
+            return View(sp);
 
-        //        a.AuthorName = frmCreate["AuthorName"];
-        //        a.History = frmCreate["History"];
-
-        //        db.Authors.Add(a);
-        //        db.SaveChanges();
-        //        return RedirectToAction("createAuthor", "AdminCRUD");
-        //    }
+        }
+        [HttpPost]
+        public ActionResult createLoaiSP(FormCollection frmCreate, LOAISP lsp)
+        {
+            lsp.TenLoai = frmCreate["TenLoaiSP"];
+            db.LOAISPs.Add(lsp);
+            db.SaveChanges();
+            return RedirectToAction("createLoaiSP", "AdminCRUD");
+        }
         //    public ActionResult createPub()
         //    {
         //        var f = from s in db.Publishers select s;

@@ -11,6 +11,7 @@
     <link href="~/Content/Main2.css" rel="stylesheet" />
     <link href="~/Content/Main3_1.css" rel="stylesheet" />
     <!-- Font-icon css-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--them 2 casi nay-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -58,8 +59,8 @@
         <ul class="app-menu">
             <li><a class="app-menu__item" href="@Url.Action("IndexAdmin")"><i class="app-menu__icon fa fa-home"></i><span class="app-menu__label" style="color:#13d37b">Trang chính</span></a></li>
 
-            <li><a class="app-menu__item" href="@Url.Action("createCate","AdminCRUD")" data-toggle="treeview"><i class="app-menu__icon fa fa-tasks"></i><span class="app-menu__label">Mục danh sách</span></a></li>
-            <li><a class="app-menu__item" href="@Url.Action("createAuthor","AdminCRUD")" data-toggle="treeview"><i class="app-menu__icon fa fa-address-book"></i><span class="app-menu__label">Quản lý tác giả</span></a></li>
+            <li><a class="app-menu__item" href="@Url.Action("createLoaiSP","AdminCRUD")" data-toggle="treeview"><i class="app-menu__icon fa fa-tasks"></i><span class="app-menu__label">Quản lý loại sản phẩm</span></a></li>
+            <li><a class="app-menu__item" href="@Url.Action("CreateMenu","MenuAdmin")" data-toggle="treeview"><i class="app-menu__icon fa fa-product-hunt" style="color:black"></i><span class="app-menu__label">Quản lý menu</span></a></li>
             <li><a class="app-menu__item" href="@Url.Action("createPub","AdminCRUD")" data-toggle="treeview"><i class="app-menu__icon fa fa-suitcase"></i><span class="app-menu__label">Nhà xuất bản</span></a></li>
             <li><a class="app-menu__item" href="@Url.Action("Index","AdminCRUD")" data-toggle="treeview"><i class="app-menu__icon fa fa-book"></i><span class="app-menu__label">Quản lý sách</span></a></li>
             <li><a class="app-menu__item" href="@Url.Action("LoginAdmin","Login")" data-toggle="treeview"><i class="app-menu__icon fa fa-sign-out"></i><span class="app-menu__label">Thoát</span></a></li>

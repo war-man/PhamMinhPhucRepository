@@ -1,0 +1,78 @@
+﻿@model ShopCaPhe.Models.MENU
+@{
+    ViewBag.Title = "DeleteMenu";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .btncreate {
+        background-color: red;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        color: white;
+    }
+
+    th {
+        background-color: #17aa67;
+        color: white;
+    }
+
+    table {
+        border: solid 1px white;
+    }
+
+    td {
+        background-color: white;
+    }
+
+    .table-bordered {
+        text-align: center;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="w3-container w3-brown">
+        <h2>DELETE PAGE</h2>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên Menu</th>
+                <th>ID con</th>
+                <th>Ngày tạo</th>
+                <th>Ngày chỉnh sửa</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.ID)
+                </td>
+                <td>  @Html.DisplayFor(model => model.MenuName)</td>
+                <td>  @Html.DisplayFor(model => model.ParentID)</td>
+                <td>  @Html.DisplayFor(model => model.CreateDate)</td>
+                <td>  @Html.DisplayFor(model => model.UpdateDate)</td>
+                <td>  @Html.DisplayFor(model => model.Link)</td>
+
+        </tbody>
+    </table>
+    <script>
+        function xoa() {
+            alert("Xóa thành công!");
+        }
+    </script>
+
+    <a href="@Url.Action("CreateMenu","MenuAdmin")" class="btncreate"> Quay Lại</a>
+
+    <input type="submit" onclick="xoa()" class="btncreate" style="width:130px; background-color:black" value="Xóa" />
+
+}
