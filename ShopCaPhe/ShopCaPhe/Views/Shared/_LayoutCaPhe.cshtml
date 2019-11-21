@@ -128,30 +128,56 @@
     <nav>
         <div class="topnav">
             <ul>
-               @Html.Action("Menu", "Menu")
+                @Html.Action("Menu", "Menu")
                 <li>
                     <a href="#" class=" ">En <i class='fas fa-angle-down'></i></a>
+                    <ol class="sub-content sub-language" style="left:35.5rem">
+                        <li class="">
+                            <a class="sub-menu">
+                                @Html.ActionLink("English", ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new { language = "en-US" }, null)" })
+                            </a>
+
+                        </li>
+                        <li>
+                            <a class="sub-menu">
+                                @Html.ActionLink("TiengViet", ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new { language = "vi-vn" }, null)" })
+
+                            </a>
+                        </li>
+                    </ol>
                 </li>
+                <li><a href="@Url.Action("IndexAdmin","Admin/AdminCRUD")">Admin</a></li>
                 <li>
                     <a href="/GioHang/GioHang" class="rightz">
                         <i class="fa fa-shopping-cart"></i>
                         <span><p style="color:red; display:inline-block;padding:0;margin:0">@Session["TongSL"] </p> Sản phẩm - <p style="color:red;display:inline-block;padding:0;margin:0">@Session["TongTien"]</p> VNĐ</span>
                     </a>
                 </li>
-                <li>
-                  
-                    @if (Session["Email"] == null)
-                    {
-                        <a href="@Url.Action("Login","Home")" class="rightz activetop">Đăng Nhập</a>
-                    }
-                    else
-                    {
-                        @Html.ActionLink("Đăng xuất", "DangXuat", "Home", null, new { @class = "rightz activetop" }) <a href="@Url.Action("Login","Home")" class="rightz activetop">Xin chào @Session["Email"]</a>
+
+                @*@if (Session["Email"] == null)
+        {
+            <li><a href="@Url.Action("Login","Home")" class="rightz activetop">Đăng Nhập</a></li>
+        }
+        else
+        {
+            <li> @Html.ActionLink("Đăng xuất", "DangXuat", "Home", null, new { @class = "rightz activetop" }) </li>
+            <li><a href="@Url.Action("Login","Home")" class="rightz activetop">Xin chào @Session["Email"]</a></li>
 
 
-                    }
+        }*@
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li> <a href="@Url.Action("SignOut","Account")" class="rightz">Sign Out</a></li>
+                    <li><a href="#" class="rightz">Hello @User.Identity.Name</a></li>
 
-                </li>
+
+                }
+                else
+                {
+                    <li><a href="@Url.Action("LoginSSO","Account")" class="rightz activetop">Đăng Nhập</a></li>
+
+                }
+
 
                 @*<a href="@Url.Action("Index","Home")" class="activetop">Sản Phẩm  <i class='fas fa-angle-down'></i></a>*@
                 @*<ol class="sub-content">

@@ -51,6 +51,9 @@ nav ul li:hover ol {
     top: 60px;
     left: 280px;
 }
+.sub-language {
+    left: 35.5rem;
+}
 /*.topnav > ul > li > a:hover {
     background-color: rgb(146, 146, 146);
     color: white;
@@ -626,7 +629,7 @@ li {
 }
 
 .footer-right {
-    width: 30%;
+    width: 29%;
     display: inline-block;
 }
 

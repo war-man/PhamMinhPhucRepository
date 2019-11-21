@@ -19,10 +19,12 @@ namespace ShopCaPhe
             });
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "134741838966-2o42qskvceb8jmsd23lmhcb8j3cbf67i.apps.googleusercontent.com",
-                ClientSecret = "qEkMjToTeFvJFestT1aO29RF",
+                ClientId = "706074507952-a3l8at37mdhau3uaprdo4j9hu60g47tt.apps.googleusercontent.com",
+                ClientSecret = "mY4GdKSAIZiSEbZVQ02DmFnI",
                 CallbackPath = new PathString("/GoogleLoginCallback")
             });
+
+
         }
     }
 }

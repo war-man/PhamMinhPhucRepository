@@ -148,3 +148,8 @@ C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Mic
 C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\obj\Debug\ShopCaPhe.csproj.GenerateResource.cache
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\bin\vi-vn\ShopCaPhe.resources.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\obj\Debug\vi-vn\ShopCaPhe.resources.dll
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\obj\Debug\ShopCaPhe.Language.Resource.resources
+C:\Users\Phuc NE\Desktop\Thầy Tài\Shop_CaPhe_DOCN\ShopCaPhe\ShopCaPhe\obj\Debug\ShopCaPhe.Language.Resource.vi-vn.resources

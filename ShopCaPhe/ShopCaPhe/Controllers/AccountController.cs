@@ -19,7 +19,7 @@ namespace ShopCaPhe.Controllers
         {
             return View();
         }
-        public void SignIn(string ReturnUrl = "/", string type = "")
+        public void SignIn(string ReturnUrl = "/", string type = "") 
         {
             if (!Request.IsAuthenticated)
             {
@@ -54,13 +54,15 @@ namespace ShopCaPhe.Controllers
                 {
 
                     Email = loginInfo.emailaddress,
-                    HoTenKH = loginInfo.givenname,
+                    HoTenKH = loginInfo.name,
                     DiaChiKH = loginInfo.nameidentifier,
 
                 };
                 db.KHACHHANGs.Add(user);
                 db.SaveChanges();
             }
+            Session["username"] = loginInfo.name;
+            Session["makh"] = user.MaKH;
 
             var ident = new ClaimsIdentity(
                     new[] { 

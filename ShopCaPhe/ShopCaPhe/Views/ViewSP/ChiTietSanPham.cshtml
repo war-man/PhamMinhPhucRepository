@@ -128,7 +128,7 @@
     <h3>Viết Đánh Giá</h3>
     <form class="frm-Rating" id="frmRating">
         <input type="text" id="MaSach" name="MaSach" value="@Model.MaSP" style="display:none;" />
-        <input type="text" id="Ngay" name="Ngay" value="@DateTime.Now.ToString()" /><input disabled style="visibility:hidden" type="text" value="@Session["Email"]" name="Name" id="txt-frmRating" />
+        <input type="text" id="Ngay" name="Ngay" value="@DateTime.Now.ToString()" /><input disabled style="visibility:hidden" type="text" value="@Session["username"]" name="Name" id="txt-frmRating" />
         @*<span  id="txt-frmRating">@Session["Email"]</span>*@
         <br />
         <p>Bình luận Của Bạn:</p>
@@ -142,11 +142,29 @@
         <input type="radio" name="Rating" value="5" onclick="Star(5)" />
         <div class="btn-frmRating">
             <div>
-                <input type="button" value="Đăng" class="btn-Rating" id="subRating" />
+                <input type="button" onclick="BinhLuan()" value="Đăng" class="btn-Rating" id="subRating" />
             </div>
         </div>
     </form>
 </div>
 
+<script type="text/javascript">
 
+    function BinhLuan() {
+        var s = $('#txt-frmRating').val();
+        if (s == "") {
+            alert("Bạn cần đăng nhập đê bình luận về sản phẩm này !")
+            window.location.href = "/Account/LoginSSO";
+        }
+       
+        }
+
+
+
+    
+    //$('#btntimkiem').on('click', function () {
+    //    var giatrinhapvao = $('#searchcontent').val();
+    //    alert("yeu");
+    //});
+</script>
 

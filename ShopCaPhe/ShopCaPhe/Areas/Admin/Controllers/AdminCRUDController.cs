@@ -11,6 +11,8 @@ using System.Linq.Expressions;
 using System.Reflection;
 using PagedList;
 using System.Data.Entity;
+using System.Threading;
+using System.Globalization;
 
 namespace ShopCaPhe.Areas.Admin.Controllers
 {
@@ -30,9 +32,16 @@ namespace ShopCaPhe.Areas.Admin.Controllers
                 return request[methodInfo.Name] != null;
             }
         }
+        public ActionResult IndexAdmin(string language)
+        {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+            return View();
+        }
         [HttpGet]
         public ActionResult IndexAdmin(int? size, int? page, string sortProperty, string sortOrder, string searchString)
         {
+
             ViewBag.searchValue = searchString;
             ViewBag.sortProperty = sortProperty;
             ViewBag.page = page;
@@ -87,12 +96,15 @@ namespace ShopCaPhe.Areas.Admin.Controllers
         public ActionResult Reset()
         {
             ViewBag.searchValue = "";
-            IndexAdmin(null, null, "", "", "");
+            //IndexAdmin(null, null, "", "", "");
             return View();
 
         }
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, string language)
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+
             ViewBag.imgurl = db.SANPHAMs.SingleOrDefault(n => n.MaSP == id).HinhMinhHoa;
             // List<Category> lis = db.Categories.ToList();
 
@@ -113,8 +125,11 @@ namespace ShopCaPhe.Areas.Admin.Controllers
             }
             return View(sp);
         }
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id,string language)
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+
             SANPHAM sp = db.SANPHAMs.Find(id);
            Session["itemid"] = id;
             return View(sp);
@@ -132,8 +147,11 @@ namespace ShopCaPhe.Areas.Admin.Controllers
             return RedirectToAction("IndexAdmin");
         }
 
-        public ActionResult DeleteLoai(int? id)
+        public ActionResult DeleteLoai(int? id,string language)
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+
             LOAISP lsp = db.LOAISPs.Find(id);
             return View(lsp);
         }
@@ -148,8 +166,11 @@ namespace ShopCaPhe.Areas.Admin.Controllers
             return RedirectToAction("createLoaiSP");
         }
 
-        public ActionResult CreateSP()
+        public ActionResult CreateSP(string language)
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+
             List<LOAISP> loai = db.LOAISPs.ToList();
             SelectList ListLoai = new SelectList(loai, "MaLoai", "TenLoai");
             ViewBag.Loai = ListLoai;
@@ -198,8 +219,11 @@ namespace ShopCaPhe.Areas.Admin.Controllers
         //    
         //  
 
-        public ActionResult createLoaiSP()
+        public ActionResult createLoaiSP(string language)
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+
             List<LOAISP> sp = db.LOAISPs.ToList();
 
             var f = from s in db.LOAISPs select s;
@@ -208,8 +232,11 @@ namespace ShopCaPhe.Areas.Admin.Controllers
 
         }
         [HttpPost]
-        public ActionResult createLoaiSP(FormCollection frmCreate, LOAISP lsp)
+        public ActionResult createLoaiSP(FormCollection frmCreate, LOAISP lsp,string language)
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+
             lsp.TenLoai = frmCreate["TenLoaiSP"];
             db.LOAISPs.Add(lsp);
             db.SaveChanges();

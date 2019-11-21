@@ -49,63 +49,13 @@
     <div id="ThanhToan">
         <br />
         <div id="frm-thanhtoan">
-            <p>Tiến trình thanh toán</p>
-                @foreach (var dg in (IList<KHACHHANG>)ViewData["lstKH"])
-                {
-
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>Tên người nhận</td>
-                                <td><input type="text" name="tennguoinhan" id="tennguoinhan" value="@dg.HoTenKH" /></td>
-                            </tr>
-                            <tr>
-                                <td>Địa chỉ nhận hàng</td>
-                                <td><input type="text" name="diachinhanhang" id="diachinhanhang" value="@dg.DiaChiKH" /></td>
-                            </tr>
-                            <tr>
-                                <td>Điện thoại nhận hàng</td>
-                                <td><input type="text" name="dienthoainhanhang" id="dienthoainhanhang" value="@dg.DienThoaiKH" /></td>
-                            </tr>
-                            <tr>
-                                    <td>Giới tính</td>
-                                    <td><input type="text" value="@dg.GioiTinh" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Email</td>
-                                    <td><input type="text"  value="@dg.Email" /></td>
-                                </tr>
-                            <tr>
-                                <td>Ngày nhận hàng</td>
-                                <td>
-                                    <div id="ngaynhanhang">
-                                        <script type="text/javascript">
-                                            var day = new Date();
-                                            var d = day.getDate() + 5;
-                                            var m = day.getMonth() + 1;
-                                            var y = day.getFullYear();
-                                            document.getElementById('ngaynhanhang').innerHTML = + d + "/" + m + "/" + y;
-                                        </script>
-                                    </div>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>Tổng tiền cần thanh toán: @Session["TongTien"] VNĐ</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                }
-            
-
-            <input onclick="DatHang();" type="submit" value="Đặt hàng" />
+            @Html.Action("Thanhtoan","GioHang")
         </div>
     </div>
 </form>
 <br />
 <div id="TongTien">
-    <h4>Tổng Cộng:<span id="tongtien">@Session["TongTien"]</span>VND</h4>    <input style="visibility:hidden" value="@Session["Email"]" id="checkemail" /><p style="float:right;"><input id="ThanhToan" onclick="ThanhToan()" type="button" value="Thanh Toán" style="color:white; background-color:#3b8e22 ;border-radius:3px;border-color:#3b8e22 ;padding:10px 10px 10px 10px; font-size:15px;" /></p>
+    <h4>Tổng Cộng:<span id="tongtien">@Session["TongTien"]</span>VND</h4>    <input style="visibility:hidden" value="@Session["username"]" id="checkemail" /><p style="float:right;"><input id="ThanhToan" onclick="ThanhToan()" type="button" value="Thanh Toán" style="color:white; background-color:#3b8e22 ;border-radius:3px;border-color:#3b8e22 ;padding:10px 10px 10px 10px; font-size:15px;" /></p>
 </div>
 
 
@@ -140,7 +90,7 @@
     function ThanhToan() {
         var s = $('#checkemail').val();
         if (s == "") {
-            window.location.href = "/Home/Login";
+            window.location.href = "/Account/LoginSSO";
         }
         else if ($('#MaSach').val() != null) {
             $('#frm-thanhtoan').css('display', 'block');

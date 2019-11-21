@@ -10,13 +10,11 @@ namespace ShopCaPhe.Models
     {
         CàPheEntities db = new CàPheEntities();
         public string emailaddress { get; set; }
-        //public string name { get; set; }
-        //public string givenname { get; set; }
-        //public string surname { get; set; }
-        //public string nameidentifier { get; set; }
         public string givenname { get; set; }
-        public string surname { get; set; }
+        public string name { get; set; }
         public string nameidentifier { get; set; }
+
+
 
 
         internal static SSO GetLoginInfo(ClaimsIdentity identity)
@@ -29,9 +27,8 @@ namespace ShopCaPhe.Models
             return new SSO
             {
                 emailaddress = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Email).Value,
-                //name = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Email).Value,
                 givenname = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.GivenName).Value,
-                //surname = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Surname).Value,
+                name = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Surname).Value,
                 nameidentifier = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value,
             };
         }

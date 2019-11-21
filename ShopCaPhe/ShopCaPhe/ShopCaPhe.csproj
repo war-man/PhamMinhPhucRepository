@@ -171,13 +171,25 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminCRUDController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ThongKeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\ViewSPController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Language\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Language\Resource.vi-vn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.vi-vn.resx</DependentUpon>
     </Compile>
     <Compile Include="Models\ADMIN.cs">
       <DependentUpon>ShopCaPhe.tt</DependentUpon>
@@ -327,6 +339,7 @@
     <Content Include="Images\picture-3-aside.jpg" />
     <Content Include="Images\pinterest-icon.png" />
     <Content Include="Images\price-tag.png" />
+    <Content Include="Images\shopping.png" />
     <Content Include="Images\telephone-icon.png" />
     <Content Include="Images\twitter-icon.png" />
     <Content Include="Images\up-arrow.png" />
@@ -354,6 +367,7 @@
     <Content Include="Areas\Admin\Views\AdminCRUD\DeleteLoai.cshtml" />
     <Content Include="Areas\Admin\Views\MenuAdmin\CreateMenu.cshtml" />
     <Content Include="Areas\Admin\Views\MenuAdmin\DeleteMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuAdmin\EditMenu.cshtml" />
     <EntityDeploy Include="Models\ShopCaPhe.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ShopCaPhe.Designer.cs</LastGenOutput>
@@ -361,7 +375,8 @@
     <Content Include="Models\ShopCaPhe.edmx.diagram">
       <DependentUpon>ShopCaPhe.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\MenuAdmin\EditMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\ThongKe\ThongKe.cshtml" />
+    <Content Include="Areas\Admin\Views\ThongKe\DSThongKePartial.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Chitiet.js" />
     <Content Include="Scripts\GioHang.js" />
@@ -378,6 +393,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Search.js" />
+    <Content Include="Scripts\ThongKe.js" />
     <Content Include="Video\History of Coffee in 5 Minutes or Less..mp4" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -406,6 +422,8 @@
     <Content Include="Views\Menu\ChildMenu.cshtml" />
     <Content Include="Views\Home\GioiThieu.cshtml" />
     <Content Include="Views\Account\LoginSSO.cshtml" />
+    <Content Include="Views\GioHang\Thanhtoan.cshtml" />
+    <Content Include="Views\Language\Language.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -426,6 +444,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Language\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\Resource.vi-vn.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.vi-vn.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

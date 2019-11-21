@@ -22,12 +22,12 @@ namespace ShopCaPhe.Controllers
         }
         public ActionResult ChiTietSanPham(int? MaSP)
         {
-            if (Session["Email"] == null)
-            {
-                return RedirectToAction("Login", "Home");
-            }
-            else
-            {
+            //if (Session["username"] == null)
+            //{
+            //    return RedirectToAction("LoginSSO", "Account");
+            //}
+            //else
+            //{
                 if (MaSP == null)
                 {
                     MaSP = int.Parse(TempData["MaSP"].ToString());
@@ -52,7 +52,7 @@ namespace ShopCaPhe.Controllers
                     Session["CountDG"] = countdg;
                     return View(db.SANPHAMs.SingleOrDefault(n => n.MaSP == MaSP));
                 }
-            }
+            //}
 
         }
 

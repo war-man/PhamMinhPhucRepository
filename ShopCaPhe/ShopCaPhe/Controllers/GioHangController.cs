@@ -24,16 +24,13 @@ namespace ShopCaPhe.Controllers
        
         public ActionResult GioHang()
         {
-            if(Session["Email"] == null)
+            if (Session["username"] == null)
             {
-                return RedirectToAction("Login", "Home");
+                return RedirectToAction("LoginSSO", "Account");
             }
             else
             {
-                int x = int.Parse(Session["MaKH"].ToString());
-                List<KHACHHANG> KH = db.KHACHHANGs.Where(n => n.MaKH == x).ToList();
-                ViewData["lstKH"] = KH;
-                // List<KHACHHANG> lstKH
+                //List<KHACHHANG> lstKH
                 List<SanPhamGH> listSP = LayGioHang();
                 int TongSL = 0;
                 double TongTien = 0;
@@ -48,7 +45,7 @@ namespace ShopCaPhe.Controllers
                Session["TongTien"] = tongtien.ToString();
                 return View(listSP);
             }
-           
+
         }
         [HttpPost]
         public ActionResult ThemGioHang(int iMaSP, int? SL)
@@ -102,44 +99,93 @@ namespace ShopCaPhe.Controllers
         [HttpPost]
         public ActionResult GioHang(FormCollection frm, DONDATHANG donhang)
         {
-            if (Session["Email"] == null)
+            if (Session["username"] == null)
             {
-                return RedirectToAction("Login", "Home");
+                return RedirectToAction("LoginSSO", "Account");
             }
             else
             {
-              
 
-                bool a = false;
-                donhang.MaKH = int.Parse(Session["MaKH"].ToString());
-                donhang.NgayDH = DateTime.Parse(DateTime.Now.ToString());
-                //donhang.NgayGiaoHang = DateTime.Parse(frm["ngaynhanhang"].ToString());
-                donhang.TriGia = int.Parse(Session["TongTien"].ToString());
-                donhang.TrangThai = a;
-                donhang.TenNguoiNhan = frm["tennguoinhan"];
-                donhang.DienThoaiNhan = frm["dienthoainhanhang"];
-                donhang.DiaChiNhan = frm["diachinhanhang"];
-                db.DONDATHANGs.Add(donhang);
-                db.SaveChanges();
-                List<SanPhamGH> listSP = LayGioHang();
-                foreach (var item in listSP)
+                int x = int.Parse(Session["makh"].ToString());
+                var user = db.KHACHHANGs.FirstOrDefault(n => n.MaKH == x);
+                if (user.DiaChiKH == null || user.DienThoaiKH == null)
                 {
-                    CTDONHANG ctdh = new CTDONHANG();
-                    ctdh.SoDH = donhang.SoDH;
-                    ctdh.MaSP = item.MaSP;
-                    ctdh.SoLuong = item.SoLuongMua;
-                    ctdh.DonGia =(decimal) item.DonGia;
-                    db.CTDONHANGs.Add(ctdh);
+                    user = db.KHACHHANGs.Find(x);
+                    {
+                        user.DienThoaiKH = frm["dienthoainhanhang"];
+                        user.DiaChiKH = frm["diachinhanhang"];
+
+                    };
+                    db.Entry(user);
+                    bool am = false;
+                    donhang.MaKH = int.Parse(Session["makh"].ToString());
+                    donhang.NgayDH = DateTime.Parse(DateTime.Now.ToString());
+                    //donhang.NgayGiaoHang = DateTime.Parse(frm["ngaynhanhang"].ToString());
+                    donhang.TriGia =decimal.Parse(Session["TongTien"].ToString());
+                    donhang.TrangThai = am;
+                    donhang.TenNguoiNhan = frm["tennguoinhan"];
+                    donhang.DienThoaiNhan = frm["dienthoainhanhang"];
+                    donhang.DiaChiNhan = frm["diachinhanhang"];
+                    db.DONDATHANGs.Add(donhang);
                     db.SaveChanges();
-                    
+                    List<SanPhamGH> listSP = LayGioHang();
+                    foreach (var item in listSP)
+                    {
+                        CTDONHANG ctdh = new CTDONHANG();
+                        ctdh.SoDH = donhang.SoDH;
+                        ctdh.MaSP = item.MaSP;
+                        ctdh.SoLuong = item.SoLuongMua;
+                        ctdh.DonGia = (decimal)item.DonGia;
+                        db.CTDONHANGs.Add(ctdh);
+                        db.SaveChanges();
+
+                    }
+                    Session["GioHang"] = null;
+                    return RedirectToAction("ThanhToanThanhCong", "GioHang");
                 }
-                Session["GioHang"] = null;
-                return RedirectToAction("ThanhToanThanhCong", "GioHang");
+                else
+                {
+                    bool a = false;
+                    donhang.MaKH = int.Parse(Session["makh"].ToString());
+                    donhang.NgayDH = DateTime.Parse(DateTime.Now.ToString());
+                    //donhang.NgayGiaoHang = DateTime.Parse(frm["ngaynhanhang"].ToString());
+                    donhang.TriGia = decimal.Parse(Session["TongTien"].ToString());
+                    donhang.TrangThai = a;
+                    donhang.TenNguoiNhan = frm["tennguoinhan"];
+                    donhang.DienThoaiNhan = frm["dienthoainhanhang"];
+                    donhang.DiaChiNhan = frm["diachinhanhang"];
+                    db.DONDATHANGs.Add(donhang);
+                    db.SaveChanges();
+                    List<SanPhamGH> listSP = LayGioHang();
+                    foreach (var item in listSP)
+                    {
+                        CTDONHANG ctdh = new CTDONHANG();
+                        ctdh.SoDH = donhang.SoDH;
+                        ctdh.MaSP = item.MaSP;
+                        ctdh.SoLuong = item.SoLuongMua;
+                        ctdh.DonGia = (decimal)item.DonGia;
+                        db.CTDONHANGs.Add(ctdh);
+                        db.SaveChanges();
+
+                    }
+                    Session["Madh"] = donhang.SoDH;
+                    return RedirectToAction("ThanhToanThanhCong", "GioHang");
+                }
             }
         }
         public ActionResult ThanhToanThanhCong()
         {
-            return View();
+            int x = int.Parse(Session["Madh"].ToString());
+            List<SanPhamGH> listSP = LayGioHang();
+            List<DONDATHANG> dh = db.DONDATHANGs.Where(n => n.SoDH == x).ToList();
+            ViewData["dondathang"] = dh;
+            return View(listSP);
+        }
+        public ActionResult Thanhtoan()
+        {
+                int x = int.Parse(Session["makh"].ToString());
+                List<KHACHHANG> KH = db.KHACHHANGs.Where(n => n.MaKH == x).ToList();
+                return View(KH);
         }
     }
 }

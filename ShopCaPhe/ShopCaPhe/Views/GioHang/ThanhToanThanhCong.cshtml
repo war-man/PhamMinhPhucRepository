@@ -1,39 +1,106 @@
-﻿
+﻿@using ShopCaPhe.Models
+@model IEnumerable<SanPhamGH>
 @{
     ViewBag.Title = "ThanhToanThanhCong";
     Layout = "~/Views/Shared/_LayoutCaPhe.cshtml";
 }
-@using ShopCaPhe.Models;
 <link href="~/Content/Thanhtoan.css" rel="stylesheet" />
+<link href="~/Content/GioHang.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div class="ThanhToanThanhCong">
-    <table>
-        <tr>
-            <td>
-                <img alt="dathang" src="~/Images/dathang.png" />
-            </td>
-            <td>
-                <h1>Thanh toán thành công</h1>
-                <h2>Đơn hàng của bạn đã được thanh toán thành công.</h2>
-                <h2>Shop CaPhe sẽ liên hệ với quý khách hàng sớm để bàn giao sản phẩm đã đặt hàng.</h2>
-                <h2>
-                    Thời gian giao hàng: Từ <span id="ngaynhanhang"></span> đến <span id="ngaynhanhang1"></span>
-                    <script type="text/javascript">
-                        var day = new Date();
-                        var d = day.getDate();
-                        var d1 = day.getDate() + 5;
-                        var m = day.getMonth() + 1;
-                        var y = day.getFullYear();
-                        document.getElementById('ngaynhanhang').innerHTML = + d + "/" + m + "/" + y;
-                        document.getElementById('ngaynhanhang1').innerHTML = + d1 + "/" + m + "/" + y;
-                    </script>
-                </h2>
-                <h3><span style="color:red;">Lưu ý:</span> Nếu quý khách hàng đặt hàng vào ngày nghỉ cuối tuần(thứ 7, chủ nhật) hoặc ngày nghỉ lễ chúng tối sẽ liên hệ lại với quý khách vào thời gian làm việc tiếp theo.</h3>
-                <br /><br />
-                <a href="@Url.Action("Index","Home")" style="background-color:#795548; color:white" class="btn btn-animation btn2">Trang Chủ</a>
+    <div class="topthanhtoan">
+        <table>
+            <tr>
+                <td>
+                    <h2>Thanh toán thành công</h2>
+                    <h4>Đơn hàng của bạn đã được thanh toán thành công.</h4>
+                    <h4>Shop CaPhe sẽ liên hệ với quý khách hàng sớm để bàn giao sản phẩm đã đặt hàng.</h4>
+                    <h4>
+                        Thời gian giao hàng: Từ <span id="ngaynhanhang"></span> đến <span id="ngaynhanhang1"></span>
+                        <script type="text/javascript">
+                            var day = new Date();
+                            var d = day.getDate();
+                            var d1 = day.getDate() + 5;
+                            var m = day.getMonth() + 1;
+                            var y = day.getFullYear();
+                            document.getElementById('ngaynhanhang').innerHTML = + d + "/" + m + "/" + y;
+                            document.getElementById('ngaynhanhang1').innerHTML = + d1 + "/" + m + "/" + y;
+                        </script>
+                    </h4>
+                    <h4><span style="color:red;">Lưu ý:</span> Nếu quý khách hàng đặt hàng vào ngày nghỉ cuối tuần(thứ 7, chủ nhật) hoặc ngày nghỉ lễ chúng tối sẽ liên hệ lại với quý khách vào thời gian làm việc tiếp theo.</h4>
+                    <br /><br />
 
-            </td>
-        </tr>
+                </td>
+            </tr>
 
-    </table>
+        </table>
+    </div>
+    <h2>Thông Tin Đơn Hàng</h2>
+    <div class="donhang">
+        <div class="Cart-info">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Mã Sản Phẩm</td>
+                        <td>Hình Sản Phẩm</td>
+                        <td>Tên Sản Phẩm</td>
+                        <td>Số Lượng Sản Phẩm</td>
+                        <td>Đơn Giá</td>
+                        <td>Tổng Tiền</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{double TongTien = 0; }
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><input disabled type="text" value="@item.MaSP" id="MaSach" name="MaSach"></td>
+                            <td><a href="~/ViewSP/ChiTietSanPham?MaSp=@item.MaSP"><img src="~/Images/@item.HinhMinhHoa" /></a></td>
+                            <td>@item.TenSP</td>
+                            <td><input type="text" disabled id="@item.MaSP" class="txtSLGH" value="@item.SoLuongMua" /></td>
+                            <td><span id="DonGia"> @string.Format("{0:0,0}", item.DonGia)</span></td>
+                            <td>@string.Format("{0:0,0}", item.TongTien)</td>
+                        </tr>
+                        TongTien += @item.DonGia * @item.SoLuongMua;
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="thongtin">
+        <h2>Thông Tin Khách Hàng</h2>
+        <form class="w3-container">
+            @foreach (var dg in (IList<DONDATHANG>)ViewData["dondathang"])
+            {
+                <p>
+                    <label>Tên người nhận</label>
+                    <input disabled class="w3-input" type="text" value="@dg.TenNguoiNhan">
+                </p>
+                <p>
+                    <label>Địa chỉ</label>
+                    <input disabled class="w3-input" type="text" value="@dg.DiaChiNhan">
+                </p>
+                <p>
+                    <label>Số điện thoại</label>
+                    <input disabled class="w3-input" type="text" value="@dg.DienThoaiNhan">
+                </p>
+
+                <p>
+                    <label>Ngày nhận hàng</label>
+                    <input disabled class="w3-input" type="text" value="@dg.NgayDH">
+                </p>
+                <p>
+                    <label>Tổng tiền cần thanh toán</label>
+                    <input disabled class="w3-input" type="text" value="@string.Format("{0:0,0}", dg.TriGia)vnđ">
+
+
+                </p>
+            }
+        </form>
+
+        <a href="@Url.Action("Index","Home")" style="background-color:#795548; color:white" class="btn btn-animation btn2">Trang Chủ</a>
+
+    </div>
 </div>
 

@@ -22,8 +22,8 @@
     <Property Name="SoDH" Type="Int32" Nullable="false" />
     <Property Name="MaSP" Type="Int32" Nullable="false" />
     <Property Name="SoLuong" Type="Int32" />
-    <Property Name="DonGia" Type="Decimal" Precision="9" Scale="2" />
-    <Property Name="ThanhTien" Type="Decimal" Precision="20" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="DonGia" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ThanhTien" Type="Decimal" Precision="29" Scale="0" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="DONDATHANG" Relationship="Self.FK_CTDONHANG_DONDATHANG" FromRole="CTDONHANG" ToRole="DONDATHANG" />
     <NavigationProperty Name="SANPHAM" Relationship="Self.FK_CTDONHANG_SANPHAM" FromRole="CTDONHANG" ToRole="SANPHAM" />
   </EntityType>
@@ -66,7 +66,7 @@
     <Property Name="SoDH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MaKH" Type="Int32" Nullable="false" />
     <Property Name="NgayDH" Type="DateTime" Precision="0" />
-    <Property Name="TriGia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TriGia" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="TrangThai" Type="Boolean" />
     <Property Name="NgayGiaoHang" Type="DateTime" Precision="0" />
     <Property Name="TenNguoiNhan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -99,11 +99,11 @@
       <PropertyRef Name="MaKH" />
     </Key>
     <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="HoTenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="DiaChiKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="DienThoaiKH" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TenDN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="MatKhau" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HoTenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChiKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DienThoaiKH" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="TenDN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="NgaySinh" Type="DateTime" Precision="0" />
     <Property Name="GioiTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />

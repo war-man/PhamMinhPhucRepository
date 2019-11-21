@@ -1,0 +1,57 @@
+﻿@using ShopCaPhe.Models
+@model List<KHACHHANG>
+@{
+    Layout = null;
+}
+<p>Tiến trình thanh toán</p>
+
+@foreach (var dg in Model)
+{
+
+    <table>
+        <tbody>
+            <tr>
+                <td>Tên người nhận</td>
+                <td><input type="text" name="tennguoinhan" id="tennguoinhan" value="@dg.HoTenKH" /></td>
+            </tr>
+            <tr>
+                <td>Địa chỉ nhận hàng</td>
+                <td><input type="text" name="diachinhanhang" id="diachinhanhang" value="@dg.DiaChiKH" /></td>
+            </tr>
+            <tr>
+                <td>Điện thoại nhận hàng</td>
+                <td><input type="text" name="dienthoainhanhang" id="dienthoainhanhang" value="@dg.DienThoaiKH" /></td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td><input type="text" value="@dg.GioiTinh" /></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" value="@dg.Email" /></td>
+            </tr>
+            <tr>
+                <td>Ngày nhận hàng</td>
+                <td>
+                    <div id="ngaynhanhang">
+                        <script type="text/javascript">
+                                        var day = new Date();
+                                        var d = day.getDate() + 5;
+                                        var m = day.getMonth() + 1;
+                                        var y = day.getFullYear();
+                                        document.getElementById('ngaynhanhang').innerHTML = + d + "/" + m + "/" + y;
+                        </script>
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Tổng tiền cần thanh toán: @Session["TongTien"] VNĐ</td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+
+<input onclick="DatHang();" type="submit" value="Đặt hàng" />

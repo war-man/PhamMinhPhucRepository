@@ -1,0 +1,9 @@
+﻿
+@{
+    Layout = null;
+}
+
+@Html.ActionLink("English", ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new { language = "en-US" }, null)" })
+@Html.ActionLink("TiengViet", ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new { language = "vi-vn" }, null)" })
+
+@Html.ActionLink(ShopCaPhe.Language.Resource.iHome, "Index", "Home")
