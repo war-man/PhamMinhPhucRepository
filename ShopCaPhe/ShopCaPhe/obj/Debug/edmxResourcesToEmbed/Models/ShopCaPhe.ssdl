@@ -13,6 +13,7 @@
     <Property Name="NgaySinhAdmin" Type="smalldatetime" />
     <Property Name="GioiTinhAdmin" Type="bit" />
     <Property Name="EmailAdmin" Type="varchar" MaxLength="50" />
+    <Property Name="HinhAnh" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="CTDONHANG">
     <Key>
@@ -59,9 +60,9 @@
     <Property Name="SoDH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaKH" Type="int" Nullable="false" />
     <Property Name="NgayDH" Type="date" />
+    <Property Name="Ngaygiaohang" Type="nvarchar" MaxLength="50" />
     <Property Name="TriGia" Type="decimal" Precision="18" Scale="0" />
-    <Property Name="TrangThai" Type="bit" />
-    <Property Name="NgayGiaoHang" Type="date" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="50" />
     <Property Name="TenNguoiNhan" Type="nvarchar" MaxLength="50" />
     <Property Name="DiaChiNhan" Type="nvarchar" MaxLength="50" />
     <Property Name="DienThoaiNhan" Type="varchar" MaxLength="15" />

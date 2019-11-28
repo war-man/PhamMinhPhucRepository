@@ -117,10 +117,118 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="iback" xml:space="preserve">
+    <value>Go back</value>
+  </data>
+  <data name="icategorydetail" xml:space="preserve">
+    <value>Detail Category</value>
+  </data>
+  <data name="icategoryname" xml:space="preserve">
+    <value>Category name</value>
+  </data>
+  <data name="ichildmenu" xml:space="preserve">
+    <value>ID Child Menu</value>
+  </data>
+  <data name="ichooseimg" xml:space="preserve">
+    <value>Choose Img</value>
+  </data>
+  <data name="icreate" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="icreateday" xml:space="preserve">
+    <value>Create Day</value>
+  </data>
+  <data name="icreateloai" xml:space="preserve">
+    <value>Category Manage</value>
+  </data>
+  <data name="icreateproduct" xml:space="preserve">
+    <value>Create Product</value>
+  </data>
+  <data name="idelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ideletecategory" xml:space="preserve">
+    <value>Delete Category</value>
+  </data>
+  <data name="ideletemenu" xml:space="preserve">
+    <value>Delete Menu</value>
+  </data>
+  <data name="ideleteproduct" xml:space="preserve">
+    <value>Delete Product</value>
+  </data>
+  <data name="idetailproduct" xml:space="preserve">
+    <value>Detail Product</value>
+  </data>
+  <data name="iedit" xml:space="preserve">
+    <value>Edit Product</value>
+  </data>
+  <data name="ieditmenu" xml:space="preserve">
+    <value>Edit Menu</value>
+  </data>
   <data name="iHome" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="iID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="iidmenu" xml:space="preserve">
+    <value>ID Child Menu(if have)</value>
+  </data>
+  <data name="iimg" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="ilinkmenu" xml:space="preserve">
+    <value>Link Menu</value>
+  </data>
+  <data name="iloaisp" xml:space="preserve">
+    <value>Product type</value>
+  </data>
+  <data name="imenu" xml:space="preserve">
+    <value>Menu Manage</value>
+  </data>
+  <data name="imenudetail" xml:space="preserve">
+    <value>Menu detail</value>
+  </data>
+  <data name="imenuname" xml:space="preserve">
+    <value>Menu name</value>
+  </data>
+  <data name="imota" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="iout" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="iprice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="iproduct" xml:space="preserve">
+    <value>Product Manage</value>
+  </data>
+  <data name="iproductname" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
   <data name="irevenue" xml:space="preserve">
-    <value>Revenue</value>
+    <value>Revenue Manage</value>
+  </data>
+  <data name="isave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="istatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="isumary" xml:space="preserve">
+    <value>Sumary</value>
+  </data>
+  <data name="ititle" xml:space="preserve">
+    <value>Shop Coffee Manage</value>
+  </data>
+  <data name="iunit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="iupdatedate" xml:space="preserve">
+    <value>Update Date</value>
+  </data>
+  <data name="ibillmanage" xml:space="preserve">
+    <value>Bill Manage</value>
   </data>
 </root>

@@ -1,15 +1,19 @@
 ﻿@using ShopCaPhe.Models
 @model List<DONDATHANG>
 @{
-    ViewBag.Title = "ThongKe";
+    ViewBag.Title = "Hoadonnam";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
+
+
+
 <style>
-  .dropdown{
-      width:15%;
-  }
-    .btnthongke{
-        margin-top:20px;
+    .dropdown {
+        width: 15%;
+    }
+
+    .btnthongke {
+        margin-top: 20px;
     }
     .button {
         background-color: #4CAF50; /* Green */
@@ -35,8 +39,16 @@
 </style>
 
 <div class="table-responsive">
-    <select style="display:inline-block" id="month" class="dropdown" name="thang">
-        <option value="Ký">Chọn Tháng</option>
+    <select style="display:inline-block" id="ngay" class="dropdown" name="ngay">
+        <option value="#">Chọn Ngày</option>
+        @foreach (var item in ViewBag.ItemDay.Items)
+        {
+            <option value="@item">@item</option>
+
+        }
+    </select>
+    <select style="display:inline-block" id="thang" class="dropdown" name="thang">
+        <option value="#">Chọn Tháng</option>
 
         @foreach (var item in ViewBag.ItemMonth.Items)
         {
@@ -45,7 +57,7 @@
         }
     </select>
 
-    <select style="display:inline-block" id="year" class="dropdown" name="nam">
+    <select style="display:inline-block" id="nam" class="dropdown" name="nam">
         <option value="#">Chọn Năm</option>
         @foreach (var item in ViewBag.ItemYear.Items)
         {
@@ -53,16 +65,16 @@
 
         }
     </select>
+
     <br />
-    <input  type="submit" class="btnthongke" onclick="Thongke()" style="width:165px; background-color:#17aa67" value="Xem Thống Kê" />
+    <input type="submit" class="btnthongke" onclick="HoaDon()" style="width:165px; background-color:#17aa67" value="Xem Thống Kê" />
     <br>
-    <h4>Tổng Tiền Tháng  @Session["month"] Năm @Session["year"] Là: <span style="color:red">@string.Format("{0:0,0}", Session["TongDG"])</span>vnđ </h4>
+    <h4>Hóa Đơn Ngày @Session["day"] Tháng  @Session["month"] Năm @Session["year"]</h4>
     <hr />
     <table class="table thongkehoadon">
         <thead>
             <tr>
                 <th>Mã hóa đơn</th>
-                <th>Mã khách hàng</th>
                 <th>Tên khách hàng</th>
                 <th>Điện thoại</th>
                 <th>Địa chỉ</th>
@@ -70,7 +82,7 @@
                 <th>Ngày đặt</th>
                 <th>Ngày giao</th>
                 <th>Trạng thái</th>
-                <th>Thông tin</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -80,7 +92,6 @@
 
             <tr>
                 <td>@item.SoDH</td>
-                <td>@item.MaKH</td>
                 <td>@item.TenNguoiNhan</td>
                 <td>@item.DienThoaiNhan</td>
                 <td>@item.DiaChiNhan</td>
@@ -96,10 +107,9 @@
                 {
                     <td><button class="button button3">@item.TrangThai</button></td>
                 }
-
                 <td>
                     <button type="button" rel="tooltip" class="btn btn-info btn-round btn-just-icon btn-sm" data-original-title="" title="">
-                        <a href="@Url.Action("EditHoaDon","ThongKe", new { sohd = item.SoDH })">
+                        <a href="@Url.Action("Edit","ThongKe", new { id = item.SoDH })">
                             <i class="material-icons">edit</i>
                         </a>
                     </button>

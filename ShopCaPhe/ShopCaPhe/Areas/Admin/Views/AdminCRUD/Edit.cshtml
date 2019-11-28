@@ -48,7 +48,7 @@
 
     @Html.AntiForgeryToken()
     <div class="form-horizontal">
-        <h4 style="font-family:serif">Chỉnh Sửa Sách</h4>
+        <h4 style="font-family:serif">@ShopCaPhe.Language.Resource.iedit</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.MaSP)
@@ -78,7 +78,7 @@
 
             <div class="two" style="margin-top:0px">
                 <div class="infoBook">
-                    <label style="margin-top:6px; margin-left:10px">Info Book</label>
+                    <label style="margin-top:6px; margin-left:10px">@ShopCaPhe.Language.Resource.idetailproduct</label>
                 </div>
 
                 <!–---------------------------ROW 2------------------------------–>
@@ -86,7 +86,7 @@
 
                     <div class="col-md-3 col-lg-2">
                         <div class="form-group">
-                            <label class="control-label">MaSP</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.iID</label>
                         </div>
                     </div>
                     <div class="col-md-3 col-lg-2">
@@ -99,7 +99,7 @@
 
                     <div class="col-md-3 col-lg-2">
                         <div class="form-group">
-                            <label class="control-label">Tên Sản Phẩm</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.iproductname</label>
                         </div>
                     </div>
                     <div class="col-md-3 col-lg-2">
@@ -117,7 +117,7 @@
                 <div class="row3">
                     <div class="col-md-1 col-lg-2">
                         <div class="form-group">
-                            <label class="control-label">Số Lượng</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.isumary</label>
                         </div>
                     </div>
                     <div class="col-md-1 col-lg-2">
@@ -129,7 +129,7 @@
 
                     <div class="col-md-1 col-lg-2">
                         <div class="form-group">
-                            <label class="control-label">Giá</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.iprice</label>
                         </div>
                     </div>
                     <div class="col-md-1 col-lg-2">
@@ -149,7 +149,7 @@
 
                     <div class="col-md-1 col-lg-2">
                         <div class="form-group">
-                            <label class="control-label">Ngày Tạo</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.icreateday</label>
                         </div>
                     </div>
 
@@ -164,7 +164,7 @@
 
                     <div class="col-md-1 col-lg-2">
                         <div class="form-group">
-                            <label class="control-label">Trạng Thái</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.istatus</label>
                         </div>
                     </div>
                     <div class="col-md-1 col-lg-2">
@@ -187,7 +187,7 @@
                 <div class="row5">
                     <div class="col-md-1 col-lg-2">
                         <div class="form-group">
-                            <label class="control-label">Ngày Chỉnh Sửa</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.iupdatedate</label>
 
                         </div>
                     </div>
@@ -204,7 +204,7 @@
                     </div>
                     <div class="col-md-1 col-lg-2">
                         <div class="form-group">
-                            <label class="control-label">Đơn Vị Tính</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.iunit</label>
 
                         </div>
                     </div>
@@ -242,7 +242,7 @@
                 <div class="SMR">
                     <div class="col-md-1 col-lg-12">
                         <div class="form-group">
-                            <label class="control-label">Mô Tả</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.imota</label>
                             <div class="area">
                                 @Html.TextAreaFor(model => model.MoTa, 10, 80, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
@@ -256,7 +256,7 @@
                     <div class="row6">
                         <div class="col-md-1 col-lg-5">
                             <div class="form-group">
-                                <label class="control-label">Hình Ảnh</label>
+                                <label class="control-label">@ShopCaPhe.Language.Resource.iimg</label>
                                 @*<div class="choose">
                                         @*Html.EditorFor(model => model.ImgUrl, new { htmlAttributes = new { @class = "form-control1", @id = "ima", @type = "file" } })
                                     </div>*@
@@ -320,7 +320,7 @@
 
                                         <input type="text" name="picture" id="picture" style="display:none;" />
                                         <input type="file" id="fileUpload" name="fileUpload" style="display:none;" />
-                                        <input type="button" id="btnUpload" value="Chọn hình" class="btn_Choose" />
+                                        <input type="button" id="btnUpload" value="@ShopCaPhe.Language.Resource.ichooseimg" class="btn_Choose" />
                                     </div>
                                 <div class="imgEdit">
                                     <img src="~/Images/@ViewBag.imgurl" width="250px" name="ImgUrl" id="pictureUpload" />
@@ -342,9 +342,9 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <a href="@Url.Action("IndexAdmin","AdminCRUD")" class="btncreate"> Quay Lại</a>
+                    <a href="@Url.Action("IndexAdmin","AdminCRUD")" class="btncreate">@ShopCaPhe.Language.Resource.iback</a>
 
-                    <input type="submit" class="btncreate" style="width:130px; background-color:#17aa67" value="Lưu" />
+                    <input type="submit" class="btncreate" style="width:130px; background-color:#17aa67" value="@ShopCaPhe.Language.Resource.isave" />
 
                 </div>
             </div>

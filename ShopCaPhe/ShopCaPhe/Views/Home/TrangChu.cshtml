@@ -117,8 +117,8 @@
 <body>
     <nav>
         <div class="topnav">
-            <a class="active" href="#home">Trang Chủ</a>
-            <a href="@Url.Action("TrangChu","Home")" class="activetop">Giới Thiệu</a>
+            <a class="active" href="@Url.Action("TrangChu","Home")">Trang Chủ</a>
+            <a href="@Url.Action("GioiThieu","Home")" class="activetop">Giới Thiệu</a>
             <a href="@Url.Action("Index","Home")" class="activetop">Sản Phẩm</a>
             <a href="#contact" class="activetop">Tin Tức - Bài Viết</a>
             <a href="#contact" class="activetop">Liên Hệ</a>
@@ -126,7 +126,7 @@
             <a href="#" class="rightz">
                 <i class='fas fa-shopping-cart'> </i> CART: 0 ITEM($) $0.00 <i class='fas fa-angle-down'></i>
             </a>
-            <a href="#contact" class="rightz activetop">Đăng Nhập</a>
+            <a href="@Url.Action("LoginSSO","Account")" class="rightz activetop">Đăng Nhập</a>
             @*<form action="#" class="searchform">
                     <input type="text" placeholder="" name="search" />
                     <button type="submit"><i class="fa fa-search"></i></button>
@@ -141,9 +141,9 @@
         <div class="textbox">
             <h1 class="heading">
                 <span class="heading-main">PMPCOFFEE</span>
-                <span class="heading-sub">COFFEE AND HEALTH</span>
+                <span class="heading-sub">CÀ PHÊ VÀ SỨC KHỎE</span>
             </h1>
-            <a href="#" class="btn btn-animation">Go To Product</a>
+            <a href="@Url.Action("Index","Home")" class="btn btn-animation">Đến Trang Sản Phẩm</a>
         </div>
     </header>
     <aside>
@@ -157,12 +157,12 @@
             </div>
             <div class="contentright">
                 <div class="pincontent">
-                    <h2 class="title-h2">LEGEND REVIVED</h2>
+                    <h2 class="title-h2">Hành Trình Huyền Thoại</h2>
                     <b>Về Chúng Tôi</b>
                     <p>
-                        Sự hồi sinh của Cà phê Chồn, một sứ mệnh đơn giản nhưng nhiều mồ hôi và nước mắt. Tự chủ trong khâu nguyên liệu và quá trình sản xuất thành phẩm, Legend Revived cam kết cung cấp Cà phê và Cà phê Chồn chính gốc, mang đến cho người tiêu dùng những tách Cà phê “thật” với những trải nghiệm khác biệt.
+                        Sự hồi sinh của Cà phê Chồn, một sứ mệnh đơn giản nhưng nhiều mồ hôi và nước mắt. Tự chủ trong khâu nguyên liệu và quá trình sản xuất thành phẩm, PMPCOFFEE cam kết cung cấp Cà phê và Cà phê Chồn chính gốc, mang đến cho người tiêu dùng những tách Cà phê “thật” với những trải nghiệm khác biệt.
                     </p>
-                    <a href="#" style="background-color:#795548; color:white" class="btn btn-animation btn2">VIEW MORE PRODUCT!</a>
+                    <a href="/ViewSP/LoaiSP?MaLoai=1" style="background-color:#795548; color:white" class="btn btn-animation btn2">Xem Nhiều Sản Phẩm Hơn!</a>
                 </div>
             </div>
         </div>
@@ -170,24 +170,24 @@
     <section>
         <div class="baotrum">
             <div class="section-right">
-                <h2 class="title-h2">OVERVIEW MY PRODUCT</h2>
+                <h2 class="title-h2">Tổng Quan Sản Phẩm</h2>
                 <p>Cà phê 100% tự nhiên không sử dụng bất kì một loại thuốc kích thích hay tăng trưởng nào. Tự hào là nhà sản xuất và phân phối Cà phê Chồn thứ thiệt hàng đầu Việt Nam. Mang đến những sản phẩm Cà phê an toàn và bảo đảm sức khỏe người dùng.</p>                <ul>
                     <li>
-                        <a href="#">
+                        <a href="/ViewSP/LoaiSP?MaLoai=3">
                             <img src="~/Images/coffee-bean.png" class="img-icon" alt="">
                             <span>Cà phê hạt</span>
                         </a>
 
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/ViewSP/LoaiSP?MaLoai=1">
                             <img src="~/Images/ferret1.png" class="img-icon" alt="">
                             <span>Cà phê chồn</span>
                         </a>
 
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/ViewSP/LoaiSP?MaLoai=5">
                             <img src="~/Images/espresso.png" class="img-icon" alt="">
                             <span>Máy xay cà phê</span>
                         </a>
@@ -201,7 +201,7 @@
 
                     </li>
                 </ul>
-                <a href="#" class="btn btn-animation">VIEW MORE PRODUCT!</a>
+                <a href="@Url.Action("Index","Home")" class="btn btn-animation">Xem Nhiều Sản Phẩm Hơn!</a>
 
             </div>
             <div class="section-left">
@@ -216,7 +216,7 @@
     </section>
     <article>
         <div class="popular">
-            <h2 class="title-h2">MOST POPULAR PRODUCT</h2>
+            <h2 class="title-h2">Các Sản Phẩm Phổ Biến</h2>
             <div class="three-card">
                 <div class="cardd">
                     @*--------------CARD-SIDE-1-------------*@
@@ -225,25 +225,24 @@
 
                         </div>
                         <h4 class="card-heading">
-                            <span class="card-heading-span card-heading-span1">The Beans Coffee</span>
+                            <span class="card-heading-span card-heading-span1">Cà Phê Hạt Nguyên Chất</span>
                         </h4>
                         <div class="card-detail">
                             <ul>
-                                <li>5$ for 1kg</li>
-                                <li>Use more than 100 mugs</li>
-                                <li>Excellent coffee quality</li>
-                                <li>Easy to use and process</li>
-                                <li>Enjoy now be populars</li>
+                                <li>100.000~500.000vnđ cho 1kg</li>
+                                <li>Sử dụng được hơn 100 côc</li>
+                                <li>Loại cà phê thượng hạng</li>
+                                <li>Dễ dàng sử dụng và bảo quản</li>
+                                <li>Hãy đến ngay để lựa chọn thỏa thích</li>
                             </ul>
                         </div>
                     </div>
                     <div class="card1-side card-side-back card-side-back1">
                         <div class="card-content-back">
                             <div class="card-price">
-                                <p class="card-price-only">Only</p>
-                                <p class="card-price-value">$5.00/Kg</p>
+                                <p class="card-price-value">Chỉ có tại PMPCOFFEE</p>
                             </div>
-                            <a href="#" class="btn btn-animation">Buy now!</a>
+                            <a href="/ViewSP/LoaiSP?MaLoai=3" class="btn btn-animation">Mua Ngay!</a>
                         </div>
                     </div>
                     @*---------------------------------------------*@
@@ -255,15 +254,15 @@
 
                         </div>
                         <h4 class="card-heading">
-                            <span class="card-heading-span card-heading-span2">The Ferret Coffee</span>
+                            <span class="card-heading-span card-heading-span2">Cà Phê Chồn Thượng hạng</span>
                         </h4>
                         <div class="card-detail">
                             <ul>
-                                <li>8$ for 1kg</li>
-                                <li>Use more than 100 mugs</li>
-                                <li>Excellent coffee quality</li>
-                                <li>Easy to use and process</li>
-                                <li>Enjoy now be populars</li>
+                                <li>100.000~500.000vnđ cho 1kg</li>
+                                <li>Sử dụng được hơn 100 côc</li>
+                                <li>Loại cà phê thượng hạng</li>
+                                <li>Dễ dàng sử dụng và bảo quản</li>
+                                <li>Hãy đến ngay để lựa chọn thỏa thích</li>
                             </ul>
                         </div>
 
@@ -271,10 +270,9 @@
                     <div class="card2-side card-side-back card-side-back2">
                         <div class="card-content-back">
                             <div class="card-price">
-                                <p class="card-price-only">Only</p>
-                                <p class="card-price-value">$8.00/Kg</p>
+                                <p class="card-price-value">Chỉ có tại PMPCOFFEE</p>
                             </div>
-                            <a href="#" class="btn btn-animation">Buy now!</a>
+                            <a href="/ViewSP/LoaiSP?MaLoai=1" class="btn btn-animation">Mua Ngay!</a>
                         </div>
                     </div>
 
@@ -286,15 +284,15 @@
 
                         </div>
                         <h4 class="card-heading">
-                            <span class="card-heading-span card-heading-span3">The Machine Coffee</span>
+                            <span class="card-heading-span card-heading-span3">Máy Pha Cà Phê Cao Cấp</span>
                         </h4>
                         <div class="card-detail">
                             <ul>
-                                <li>20$</li>
-                                <li>For perfect coffee</li>
-                                <li>Excellent coffee quality</li>
-                                <li>Easy to use and process</li>
-                                <li>Enjoy now be populars</li>
+                                <li>1.000.000~5.000.000vnđ/1máy</li>
+                                <li>Sử dụng nhanh lẹ, thân thiện</li>
+                                <li>Máy pha cao cấp</li>
+                                <li>Dễ dàng sử dụng và bảo quản</li>
+                                <li>Hãy đến ngay để lựa chọn thỏa thích</li>
                             </ul>
                         </div>
 
@@ -302,15 +300,14 @@
                     <div class="card3-side card-side-back card-side-back3">
                         <div class="card-content-back">
                             <div class="card-price">
-                                <p class="card-price-only">Only</p>
-                                <p class="card-price-value">$20.00</p>
+                                <p class="card-price-value">Chỉ có tại PMPCOFFEE</p>
                             </div>
-                            <a href="#" class="btn btn-animation">Buy now!</a>
+                            <a href="/ViewSP/LoaiSP?MaLoai=4" class="btn btn-animation">Mua Ngay!</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn btn-animation btn2 btn-popular">VIEW MORE PRODUCT!</a>
+            <a href="@Url.Action("Index","Home")" class="btn btn-animation btn2 btn-popular">Xem Nhiều Sản Phẩm Hơn!</a>
 
 
         </div>

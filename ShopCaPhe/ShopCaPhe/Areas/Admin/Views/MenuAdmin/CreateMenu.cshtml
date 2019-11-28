@@ -52,29 +52,29 @@
         }
 
     </script>
-    <h4 style="font-family:serif">Quản Lý Menu</h4>
+    <h4 style="font-family:serif">@ShopCaPhe.Language.Resource.imenu</h4>
     <hr />
     <form action="/Admin/MenuAdmin/CreateMenu" method="post" name="myForm">
         <form class="frmauthor">
             <div class="context">
                 <div class="text_left_author">
-                    <p style="font-weight:bold;font-size:20px; font-family:serif">Thông tin Menu</p>
+                    <p style="font-weight:bold;font-size:20px; font-family:serif">@ShopCaPhe.Language.Resource.imenudetail</p>
                     <table class="table_Menu">
                         <tr>
 
                             <td>
 
-                                <input type="text" name="MenuName" placeholder="Tên Menu">
+                                <input type="text" name="MenuName" placeholder="@ShopCaPhe.Language.Resource.imenuname">
 
                             </td>
                             <td>
 
-                                <input type="text" name="ParentID" placeholder="ID Menu con (nếu có)">
+                                <input type="text" name="ParentID" placeholder="@ShopCaPhe.Language.Resource.iidmenu">
 
                             </td>
                             <td>
 
-                                <input type="text" name="Link" placeholder="Link Menu">
+                                <input type="text" name="Link" placeholder="@ShopCaPhe.Language.Resource.ilinkmenu">
 
                             </td>
 
@@ -87,9 +87,9 @@
 
 
                     <div>
-                        <a href="@Url.Action("CreateMenu","MenuAdmin")" class="btncreate"> Quay Lại</a>
+                        <a href="@Url.Action("CreateMenu","MenuAdmin")" class="btncreate">@ShopCaPhe.Language.Resource.iback</a>
 
-                        <input type="submit" class="btncreate" onclick="return validateCreate()" style="width:130px; background-color:#17aa67" value="Tạo" />
+                        <input type="submit" class="btncreate" onclick="return validateCreate()" style="width:130px; background-color:#17aa67" value="@ShopCaPhe.Language.Resource.icreate" />
 
 
 
@@ -100,11 +100,11 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Tên Menu</th>
-                            <th>ID con</th>
-                            <th>Ngày tạo</th>
-                            <th>Ngày chỉnh sửa</th>
-                            <th>Link</th>
+                            <th>@ShopCaPhe.Language.Resource.imenuname</th>
+                            <th>@ShopCaPhe.Language.Resource.ichildmenu</th>
+                            <th>@ShopCaPhe.Language.Resource.icreateday</th>
+                            <th>@ShopCaPhe.Language.Resource.iupdatedate</th>
+                            <th>@ShopCaPhe.Language.Resource.ilinkmenu</th>
                             <th></th>
                         </tr>
                     </thead>

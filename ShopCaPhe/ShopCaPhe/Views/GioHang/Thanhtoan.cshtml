@@ -33,15 +33,7 @@
             <tr>
                 <td>Ngày nhận hàng</td>
                 <td>
-                    <div id="ngaynhanhang">
-                        <script type="text/javascript">
-                                        var day = new Date();
-                                        var d = day.getDate() + 5;
-                                        var m = day.getMonth() + 1;
-                                        var y = day.getFullYear();
-                                        document.getElementById('ngaynhanhang').innerHTML = + d + "/" + m + "/" + y;
-                        </script>
-                    </div>
+                    <span id="ngaynhanhang"></span>
 
                 </td>
             </tr>
@@ -55,3 +47,10 @@
 
 
 <input onclick="DatHang();" type="submit" value="Đặt hàng" />
+<script type="text/javascript">
+    var day = new Date();
+    var d = day.getDate() + 2;
+    var m = day.getMonth() + 1;
+    var y = day.getFullYear();
+    document.getElementById('ngaynhanhang').innerHTML = d + "/" + m + "/" + y;
+</script>

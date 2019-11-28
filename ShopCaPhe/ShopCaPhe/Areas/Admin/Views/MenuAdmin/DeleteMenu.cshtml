@@ -39,17 +39,17 @@
 {
     @Html.AntiForgeryToken()
     <div class="w3-container w3-brown">
-        <h2>DELETE PAGE</h2>
+        <h2>@ShopCaPhe.Language.Resource.ideletemenu</h2>
     </div>
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Tên Menu</th>
-                <th>ID con</th>
-                <th>Ngày tạo</th>
-                <th>Ngày chỉnh sửa</th>
-                <th>Link</th>
+                <th>@ShopCaPhe.Language.Resource.iID</th>
+                <th>@ShopCaPhe.Language.Resource.imenuname</th>
+                <th>@ShopCaPhe.Language.Resource.ichildmenu</th>
+                <th>@ShopCaPhe.Language.Resource.icreateday</th>
+                <th>@ShopCaPhe.Language.Resource.iupdatedate</th>
+                <th>@ShopCaPhe.Language.Resource.ilinkmenu</th>
             </tr>
         </thead>
         <tbody>
@@ -71,8 +71,8 @@
         }
     </script>
 
-    <a href="@Url.Action("CreateMenu","MenuAdmin")" class="btncreate"> Quay Lại</a>
+    <a href="@Url.Action("CreateMenu","MenuAdmin")" class="btncreate">@ShopCaPhe.Language.Resource.iback</a>
 
-    <input type="submit" onclick="xoa()" class="btncreate" style="width:130px; background-color:black" value="Xóa" />
+    <input type="submit" onclick="xoa()" class="btncreate" style="width:130px; background-color:black" value="@ShopCaPhe.Language.Resource.idelete" />
 
 }

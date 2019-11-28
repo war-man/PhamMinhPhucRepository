@@ -58,7 +58,7 @@ namespace ShopCaPhe.Controllers
                     DiaChiKH = loginInfo.nameidentifier,
 
                 };
-                db.KHACHHANGs.Add(user);
+                db.KHACHHANGs.Add(  user);
                 db.SaveChanges();
             }
             Session["username"] = loginInfo.name;

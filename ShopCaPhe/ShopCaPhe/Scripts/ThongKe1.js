@@ -55,3 +55,24 @@
     //});
     //return false;
 });
+
+HoaDon = (function () {
+    var year = document.getElementById("nam");
+    var month = document.getElementById("thang");
+    var day = document.getElementById("ngay");
+    var yearitem = year.options[year.selectedIndex].text;
+    var monthitem = month.options[month.selectedIndex].text;
+    var dayitem = day.options[day.selectedIndex].text;
+    if (dayitem == "Chọn Ngày") {
+        window.location.href = "/Admin/ThongKe/Hoadonthang?year=" + yearitem + "&month=" + monthitem
+    }
+    else if (monthitem == "Chọn Tháng" || dayitem == "Chọn Ngày")
+    {
+            window.location.href = "/Admin/ThongKe/Hoadonnam?year=" + yearitem
+
+    }
+    else {
+        window.location.href = "/Admin/ThongKe/Hoadonngay?day=" + dayitem + "&year=" + yearitem + "&month=" + monthitem
+
+    }
+});

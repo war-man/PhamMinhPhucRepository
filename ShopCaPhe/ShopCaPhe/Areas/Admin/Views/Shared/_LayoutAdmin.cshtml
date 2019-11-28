@@ -29,14 +29,20 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="~/Scripts/ThongKe.js"></script>
+    <script src="~/Scripts/ThongKe1.js"></script>
 </head>
+<style>
+    .en{
+        background-image:url(../../../../Images/vietnam.png);
+    }
+</style>
 <body class="app sidebar-mini rtl" style="font-size:0.820rem;font-family:Arial">
+    
     <!-- Navbar-->
     <aside>
 
         <nav class="navbar fixed-top">
-            <a class="navbar-brand" href="#" style="color:#fff">Book Management System</a>
+            <a class="navbar-brand" href="#" style="color:#fff">@ShopCaPhe.Language.Resource.ititle</a>
             <!--Notification Menu-->
         </nav>
     </aside>
@@ -45,49 +51,43 @@
     <aside class="app-sidebar">
         <div class="app-sidebar__user">
 
-            <img class="app-sidebar__user-avatar" style="width:20%" src="~/Images/@Session["Avatar"]" alt="User Image">
+            <img class="app-sidebar__user-avatar" style="width:20%" src="~/Images/@Session["Avartar"]" alt="User Image">
             <div>
 
                 @{
                     var x = Session["Online"];
+                  
 
                 }
 
                 <div>
-                    <p style="display:inline-block" class="app-sidebar__user-name">@Session["Username"]</p>
-                    @if (Session["Online"] == "Cancle")
-                    {
-
-                        <div style="border-radius:50%; background-color:red;height:9px; width:9px; display:inline-block;margin-bottom:7px; margin-left:5px"></div>
-
-                    }
-                    else
-                    {
+                    <p style="display:inline-block" class="app-sidebar__user-name">@Session["TenDNAdmin"]</p>
+           
                         <div style="border-radius:50%; background-color:#17aa67;height:9px; width:9px; display:inline-block;margin-bottom:7px; margin-left:5px"></div>
-                    }
+
                 </div>
                 <p style="display:inline-block" class="app-sidebar__user-designation">@Session["Email"]</p>
 
 
             </div>
         </div>
+        <hr />
+        <div class="language"> <img width="15%" src="~/Images/united-kingdom.png" /> @Html.ActionLink("English", ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new { language = "en-US" }, null)             <img width="15%" src="~/Images/vietnam.png" /> @Html.ActionLink("Vietnamese", ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new { language = "vi-vn" }, null)</div>
+        <hr />
         <ul class="app-menu">
-            <li>
+            @*<li>
                 @Html.ActionLink("English", ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new { language = "en-US" }, null)
             </li>
             <li>
                 @Html.ActionLink("TiengViet", ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new { language = "vi-vn" }, null)
-            </li>
-            <li>@Html.ActionLink(ShopCaPhe.Language.Resource.iHome,"Index", "Home")</li>
-
-            <li><a class="app-menu__item" href="@Html.ActionLink(ShopCaPhe.Language.Resource.iHome,"IndexAdmin","AdminCRUD")"><i class="app-menu__icon fa fa-home"></i><span class="app-menu__label" style="color:#13d37b">Trang chính</span></a></li>
-            <li><a class="app-menu__item" href="@Url.Action("createLoaiSP","AdminCRUD")" data-toggle="treeview"><i class="app-menu__icon fa fa-tasks"></i><span class="app-menu__label">Quản lý loại sản phẩm</span></a></li>
-            <li><a class="app-menu__item" href="@Url.Action("CreateMenu","MenuAdmin")" data-toggle="treeview"><i class="app-menu__icon fa fa-product-hunt" style="color:black"></i><span class="app-menu__label">Quản lý menu</span></a></li>
-            <li><a class="app-menu__item" href="@Url.Action("createPub","AdminCRUD")" data-toggle="treeview"><i class="app-menu__icon fa fa-suitcase"></i><span class="app-menu__label">Nhà xuất bản</span></a></li>
-           <li>@Html.ActionLink(ShopCaPhe.Language.Resource.irevenue,"ThongKe","ThongKe")</li>
-            <li><a class="app-menu__item" href="@Url.Action("LoginAdmin","Login")" data-toggle="treeview"><i class="app-menu__icon fa fa-sign-out"></i><span class="app-menu__label">Thoát</span></a></li>
-
-
+            </li>*@
+            <li><a class="app-menu__item" href="@Url.Action("IndexAdmin","AdminCRUD")"><i class="app-menu__icon fa fa-home"></i><span class="app-menu__label" style="color:#13d37b">@ShopCaPhe.Language.Resource.iHome</span></a></li>
+            <li><a class="app-menu__item" href="@Url.Action("IndexAdmin","AdminCRUD")" data-toggle="treeview"><i class="app-menu__icon fa fa-suitcase"></i><span class="app-menu__label">@ShopCaPhe.Language.Resource.iproduct</span></a></li>
+            <li><a class="app-menu__item" href="@Url.Action("createLoaiSP","AdminCRUD")" data-toggle="treeview"><i class="app-menu__icon fa fa-tasks"></i><span class="app-menu__label">@ShopCaPhe.Language.Resource.icreateloai</span></a></li>
+            <li><a class="app-menu__item" href="@Url.Action("CreateMenu","MenuAdmin")" data-toggle="treeview"><i class="app-menu__icon fa fa-product-hunt" style="color:black"></i><span class="app-menu__label">@ShopCaPhe.Language.Resource.imenu</span></a></li>
+            <li><a class="app-menu__item" href="@Url.Action("ThongKe","ThongKe")" data-toggle="treeview"><i class="app-menu__icon fa fa-suitcase"></i><span class="app-menu__label">@ShopCaPhe.Language.Resource.irevenue</span></a></li>
+            <li><a class="app-menu__item" href="@Url.Action("HoaDon","ThongKe")" data-toggle="treeview"><i class="app-menu__icon fa fa-suitcase"></i><span class="app-menu__label">@ShopCaPhe.Language.Resource.ibillmanage</span></a></li>
+            <li><a class="app-menu__item" href="@Url.Action("LoginAdmin","LoginAdmin")" data-toggle="treeview"><i class="app-menu__icon fa fa-sign-out"></i><span class="app-menu__label">@ShopCaPhe.Language.Resource.iout</span></a></li>
         </ul>
     </aside>
     <main class="app-content">

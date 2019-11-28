@@ -170,6 +170,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminCRUDController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ThongKeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -277,6 +278,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\2728105.jpg" />
+    <Content Include="Images\Admin.jpg" />
     <Content Include="Images\background1.jpg" />
     <Content Include="Images\background2.jpg" />
     <Content Include="Images\bg-01.jpg" />
@@ -342,8 +344,10 @@
     <Content Include="Images\shopping.png" />
     <Content Include="Images\telephone-icon.png" />
     <Content Include="Images\twitter-icon.png" />
+    <Content Include="Images\united-kingdom.png" />
     <Content Include="Images\up-arrow.png" />
     <Content Include="Images\up.png" />
+    <Content Include="Images\vietnam.png" />
     <Content Include="Images\wof.jpg" />
     <Content Include="Models\ShopCaPhe.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -368,6 +372,15 @@
     <Content Include="Areas\Admin\Views\MenuAdmin\CreateMenu.cshtml" />
     <Content Include="Areas\Admin\Views\MenuAdmin\DeleteMenu.cshtml" />
     <Content Include="Areas\Admin\Views\MenuAdmin\EditMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\ThongKe\ThongKe.cshtml" />
+    <Content Include="Areas\Admin\Views\ThongKe\DSThongKePartial.cshtml" />
+    <Content Include="Areas\Admin\Views\ThongKe\HoaDon.cshtml" />
+    <Content Include="Areas\Admin\Views\ThongKe\Hoadonngay.cshtml" />
+    <Content Include="Areas\Admin\Views\ThongKe\Hoadonthang.cshtml" />
+    <Content Include="Areas\Admin\Views\ThongKe\Hoadonnam.cshtml" />
+    <Content Include="Areas\Admin\Views\ThongKe\EditHoaDon.cshtml" />
+    <Content Include="Areas\Admin\Views\ThongKe\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\LoginAdmin\LoginAdmin.cshtml" />
     <EntityDeploy Include="Models\ShopCaPhe.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ShopCaPhe.Designer.cs</LastGenOutput>
@@ -375,11 +388,9 @@
     <Content Include="Models\ShopCaPhe.edmx.diagram">
       <DependentUpon>ShopCaPhe.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\ThongKe\ThongKe.cshtml" />
-    <Content Include="Areas\Admin\Views\ThongKe\DSThongKePartial.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Chitiet.js" />
-    <Content Include="Scripts\GioHang.js" />
+    <Content Include="Scripts\GioHang1.js" />
     <Content Include="Scripts\jquery-1.8.0.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -393,7 +404,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Search.js" />
-    <Content Include="Scripts\ThongKe.js" />
+    <Content Include="Scripts\ThongKe1.js" />
     <Content Include="Video\History of Coffee in 5 Minutes or Less..mp4" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

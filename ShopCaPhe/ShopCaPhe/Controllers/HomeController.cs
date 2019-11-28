@@ -14,17 +14,13 @@ namespace ShopCaPhe.Controllers
     {
         // GET: Home
         CàPheEntities db = new CàPheEntities();
-        public ActionResult TrangChu(string language)
+        public ActionResult TrangChu()
         {
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
             return View();
         }
-        public ActionResult Index(string language)
+        public ActionResult Index()
         {
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
             Session["GioHang"] = null;
             return View(db.SANPHAMs.Take(20).Where(x => x.MaLoai==1 || x.MaLoai== 2 || x.MaLoai == 3 || x.MaLoai == 6).ToList());

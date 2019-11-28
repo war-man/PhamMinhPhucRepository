@@ -42,16 +42,16 @@
 {
     @Html.AntiForgeryToken()
     <div class="w3-container w3-brown">
-        <h2>DELETE PAGE</h2>
+        <h2>@ShopCaPhe.Language.Resource.ideleteproduct</h2>
     </div>
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Tên Sản Phẩm</th>
-                <th>Giá</th>
-                <th>Số lượng</th>
-                <th>Hình</th>
-                <th>Trạng Thái</th>
+                <th>@ShopCaPhe.Language.Resource.iproductname</th>
+                <th>@ShopCaPhe.Language.Resource.iprice</th>
+                <th>@ShopCaPhe.Language.Resource.isumary</th>
+                <th>@ShopCaPhe.Language.Resource.iimg</th>
+                <th>@ShopCaPhe.Language.Resource.istatus</th>
             </tr>
         </thead>
         <tbody>
@@ -77,8 +77,8 @@
         }
     </script>
 
-    <a href="@Url.Action("IndexAdmin","AdminCRUD")" class="btncreate"> Quay Lại</a>
+    <a href="@Url.Action("IndexAdmin","AdminCRUD")" class="btncreate">@ShopCaPhe.Language.Resource.iback</a>
 
-    <input type="submit" onclick="xoa()" class="btncreate" style="width:130px; background-color:black" value="Xóa" />
+    <input type="submit" onclick="xoa()" class="btncreate" style="width:130px; background-color:black" value="@ShopCaPhe.Language.Resource.idelete" />
 
 }

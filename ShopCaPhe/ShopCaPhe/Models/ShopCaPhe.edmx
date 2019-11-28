@@ -18,6 +18,7 @@
           <Property Name="NgaySinhAdmin" Type="smalldatetime" />
           <Property Name="GioiTinhAdmin" Type="bit" />
           <Property Name="EmailAdmin" Type="varchar" MaxLength="50" />
+          <Property Name="HinhAnh" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="CTDONHANG">
           <Key>
@@ -64,9 +65,9 @@
           <Property Name="SoDH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MaKH" Type="int" Nullable="false" />
           <Property Name="NgayDH" Type="date" />
+          <Property Name="Ngaygiaohang" Type="nvarchar" MaxLength="50" />
           <Property Name="TriGia" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="TrangThai" Type="bit" />
-          <Property Name="NgayGiaoHang" Type="date" />
+          <Property Name="TrangThai" Type="nvarchar" MaxLength="50" />
           <Property Name="TenNguoiNhan" Type="nvarchar" MaxLength="50" />
           <Property Name="DiaChiNhan" Type="nvarchar" MaxLength="50" />
           <Property Name="DienThoaiNhan" Type="varchar" MaxLength="15" />
@@ -356,6 +357,7 @@
           <Property Name="NgaySinhAdmin" Type="DateTime" Precision="0" />
           <Property Name="GioiTinhAdmin" Type="Boolean" />
           <Property Name="EmailAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HinhAnh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CTDONHANG">
           <Key>
@@ -409,9 +411,9 @@
           <Property Name="SoDH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MaKH" Type="Int32" Nullable="false" />
           <Property Name="NgayDH" Type="DateTime" Precision="0" />
+          <Property Name="Ngaygiaohang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TriGia" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TrangThai" Type="Boolean" />
-          <Property Name="NgayGiaoHang" Type="DateTime" Precision="0" />
+          <Property Name="TrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TenNguoiNhan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DiaChiNhan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DienThoaiNhan" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
@@ -714,6 +716,7 @@
                 <ScalarProperty Name="NgaySinhAdmin" ColumnName="NgaySinhAdmin" />
                 <ScalarProperty Name="GioiTinhAdmin" ColumnName="GioiTinhAdmin" />
                 <ScalarProperty Name="EmailAdmin" ColumnName="EmailAdmin" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -761,9 +764,9 @@
                 <ScalarProperty Name="SoDH" ColumnName="SoDH" />
                 <ScalarProperty Name="MaKH" ColumnName="MaKH" />
                 <ScalarProperty Name="NgayDH" ColumnName="NgayDH" />
+                <ScalarProperty Name="Ngaygiaohang" ColumnName="Ngaygiaohang" />
                 <ScalarProperty Name="TriGia" ColumnName="TriGia" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
-                <ScalarProperty Name="NgayGiaoHang" ColumnName="NgayGiaoHang" />
                 <ScalarProperty Name="TenNguoiNhan" ColumnName="TenNguoiNhan" />
                 <ScalarProperty Name="DiaChiNhan" ColumnName="DiaChiNhan" />
                 <ScalarProperty Name="DienThoaiNhan" ColumnName="DienThoaiNhan" />

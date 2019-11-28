@@ -42,13 +42,13 @@
     }
 
 </script>
-<h2>Thêm Sản Phẩm Mới</h2>
+<h2>@ShopCaPhe.Language.Resource.icreateproduct</h2>
 <hr />
 
 <form action="/Admin/AdminCRUD/Tao" method="post" name="myForm">
     <div class="context">
         <div class="text_left">
-            <p style="font-weight:bold;font-size:20px;">Thông tin sản phẩm</p>
+            <p style="font-weight:bold;font-size:20px;">@ShopCaPhe.Language.Resource.idetailproduct</p>
             <br />
 
 
@@ -56,17 +56,17 @@
                 <tr>
                     <td>
 
-                        <input type="text" name="name" placeholder="Tên Sản Phẩm">
+                        <input type="text" name="name" placeholder="@ShopCaPhe.Language.Resource.iproductname">
 
                     </td>
 
                 </tr>
                 <tr>
-                    <td><input type="text" name="mota" placeholder="Mô tả" /></td>
+                    <td><input type="text" name="mota" placeholder="@ShopCaPhe.Language.Resource.imota" /></td>
                 </tr>
                 <tr>
                     <td>
-                        @Html.DropDownList("Loai", (IEnumerable<SelectListItem>)ViewBag.Loai, "Chọn Loại Sản Phẩm", new { @class = "dropdown" })
+                        @Html.DropDownList("Loai", (IEnumerable<SelectListItem>)ViewBag.Loai, ShopCaPhe.Language.Resource.iloaisp, new { @class = "dropdown" })
                     </td>
                 </tr>
                 @*<tr>
@@ -77,12 +77,12 @@
                         <td>@Html.DropDownList("pub", (IEnumerable<SelectListItem>)ViewBag.PubList, "Chọn nhà xuất bản", new { @class = "dropdown" })</td>
                     </tr>*@
                 <tr>
-                    <td><input type="text" name="gia" placeholder="Giá" /></td>
+                    <td><input type="text" name="gia" placeholder="@ShopCaPhe.Language.Resource.iprice" /></td>
                 </tr>
                 <tr>
                     <td>
                         <select class="dropdown" name="dvtinh">
-                            <option value="Ký">Chọn Đơn Vị Tính</option>
+                            <option value="Ký">@ShopCaPhe.Language.Resource.iunit</option>
                             <option value="Ký">Ký</option>
                             <option value="Hộp">Hộp</option>
                             <option value="Máy">Máy</option>
@@ -91,12 +91,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="SL" placeholder="Số lượng" /></td>
+                    <td><input type="text" name="SL" placeholder="@ShopCaPhe.Language.Resource.isumary" /></td>
                 </tr>
                 <tr>
                     <td>
                         <select class="dropdown" name="trangthai">
-                            <option value="Đang Bán">Chọn Trạng Thái</option>
+                            <option value="Đang Bán">@ShopCaPhe.Language.Resource.istatus</option>
                             <option value="Đang Bán">Đang Bán</option>
                             <option value="Ngưng Bán">Ngưng Bán</option>
                             <option value="Trưng Bày">Trưng Bày</option>
@@ -109,9 +109,9 @@
             <br />
 
             <div>
-                <a href="@Url.Action("IndexAdmin","AdminCRUD")" class="btncreate"> Quay Lại</a>
+                <a href="@Url.Action("IndexAdmin","AdminCRUD")" class="btncreate">@ShopCaPhe.Language.Resource.iback</a>
 
-                <input type="submit" class="btncreate" onclick="return validateCreate()" style="width:165px; background-color:#17aa67" value="Tạo Sản Phẩm" />
+                <input type="submit" class="btncreate" onclick="return validateCreate()" style="width:165px; background-color:#17aa67" value="@ShopCaPhe.Language.Resource.icreateproduct" />
 
 
 
@@ -168,7 +168,7 @@
             <div class="from-inline">
                 <input type="text" name="picture" id="picture" style="display:none;" />
                 <input type="file" id="fileUpload" name="fileUpload" style="display:none;" />
-                <input type="button" id="btnUpload" value="Chọn hình" class="btn_Choose" />
+                <input type="button" id="btnUpload" value="@ShopCaPhe.Language.Resource.ichooseimg" class="btn_Choose" />
             </div>
         </div>
 

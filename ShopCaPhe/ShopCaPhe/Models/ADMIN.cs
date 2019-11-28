@@ -23,5 +23,6 @@ namespace ShopCaPhe.Models
         public Nullable<System.DateTime> NgaySinhAdmin { get; set; }
         public Nullable<bool> GioiTinhAdmin { get; set; }
         public string EmailAdmin { get; set; }
+        public string HinhAnh { get; set; }
     }
 }

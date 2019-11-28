@@ -19,7 +19,7 @@
                 //$('#cart > a  > span').html(TongSL + " Sản Phẩm - " + TongTien + "VND")
                 $('.rightz > span').html("<p style='color:red; display:inline-block;padding:0;margin:0;'>" + TongSL + "</p> Sản phẩm - <p style='color:red;display:inline-block;padding:0;margin:0;'>" + TongTien + "</p> VNĐ")
 
-                alert("Đặt Hàng Thành Công!")
+              alert('Đặt Hàng Thành Công!')
 
 
             }
@@ -108,7 +108,7 @@
                 var TongTien = 0;
                 var TongSL2 = 0;
                 $('.Cart-info tbody').empty();
-                $.each(result, function (i, item) {
+                $.each(result, function (i, item){
                     var R = "<tr>"
                         + "<td><input disabled  type='text' value=" + item.MaSP + " id='MaSach' name='MaSach'></td>"
                         + "<td><a href='/ViewSach/ChiTietSach?MaSach=@item.MaSP'><img src='/Images/" + item.HinhMinhHoa + "' /></a></td>"

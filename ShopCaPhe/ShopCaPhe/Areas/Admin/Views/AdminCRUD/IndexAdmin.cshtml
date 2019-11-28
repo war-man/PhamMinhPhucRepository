@@ -5,7 +5,7 @@
     ViewBag.Title = "IndexAdmin";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
-<h2>Quản Lý Cà Phê Admin</h2>
+<h2>@ShopCaPhe.Language.Resource.iproduct</h2>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -13,7 +13,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="~/Content/IndexAdmin.css" rel="stylesheet" />
-<h4 style=" color:black; font-family:serif">Index Admin</h4>
 <hr />
 
 
@@ -21,7 +20,7 @@
     <div class="container">
         <div class="table-wrapper">
             <div class="table-title">
-                <a class="themsach" href="@Url.Action("CreateSP","AdminCRUD")">Thêm Sản Phẩm</a>
+                <a class="themsach" href="@Url.Action("CreateSP","AdminCRUD")">@ShopCaPhe.Language.Resource.icreateproduct</a>
                 <div class="row" style="padding-top:10px">
                     <div class="col-sm-4">
 
@@ -63,11 +62,11 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Tên Sản Phẩm</th>
-                        <th>Giá</th>
-                        <th>Số Lượng</th>
-                        <th>Hình</th>
-                        <th>Trạng Thái</th>
+                        <th>@ShopCaPhe.Language.Resource.iproductname</th>
+                        <th>@ShopCaPhe.Language.Resource.iprice</th>
+                        <th>@ShopCaPhe.Language.Resource.isumary</th>
+                        <th>@ShopCaPhe.Language.Resource.iimg</th>
+                        <th>@ShopCaPhe.Language.Resource.istatus</th>
                         <th><i class="fa fa-sort"></i> </th>
                     </tr>
                 </thead>

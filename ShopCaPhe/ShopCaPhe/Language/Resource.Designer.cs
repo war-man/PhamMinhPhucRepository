@@ -61,6 +61,159 @@ namespace ShopCaPhe.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Go back.
+        /// </summary>
+        public static string iback {
+            get {
+                return ResourceManager.GetString("iback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bill Manage.
+        /// </summary>
+        public static string ibillmanage {
+            get {
+                return ResourceManager.GetString("ibillmanage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detail Category.
+        /// </summary>
+        public static string icategorydetail {
+            get {
+                return ResourceManager.GetString("icategorydetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category name.
+        /// </summary>
+        public static string icategoryname {
+            get {
+                return ResourceManager.GetString("icategoryname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ID Child Menu.
+        /// </summary>
+        public static string ichildmenu {
+            get {
+                return ResourceManager.GetString("ichildmenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Img.
+        /// </summary>
+        public static string ichooseimg {
+            get {
+                return ResourceManager.GetString("ichooseimg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create.
+        /// </summary>
+        public static string icreate {
+            get {
+                return ResourceManager.GetString("icreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Day.
+        /// </summary>
+        public static string icreateday {
+            get {
+                return ResourceManager.GetString("icreateday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category Manage.
+        /// </summary>
+        public static string icreateloai {
+            get {
+                return ResourceManager.GetString("icreateloai", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Product.
+        /// </summary>
+        public static string icreateproduct {
+            get {
+                return ResourceManager.GetString("icreateproduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string idelete {
+            get {
+                return ResourceManager.GetString("idelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Category.
+        /// </summary>
+        public static string ideletecategory {
+            get {
+                return ResourceManager.GetString("ideletecategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Menu.
+        /// </summary>
+        public static string ideletemenu {
+            get {
+                return ResourceManager.GetString("ideletemenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Product.
+        /// </summary>
+        public static string ideleteproduct {
+            get {
+                return ResourceManager.GetString("ideleteproduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detail Product.
+        /// </summary>
+        public static string idetailproduct {
+            get {
+                return ResourceManager.GetString("idetailproduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Product.
+        /// </summary>
+        public static string iedit {
+            get {
+                return ResourceManager.GetString("iedit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Menu.
+        /// </summary>
+        public static string ieditmenu {
+            get {
+                return ResourceManager.GetString("ieditmenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string iHome {
@@ -70,11 +223,182 @@ namespace ShopCaPhe.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Revenue.
+        ///   Looks up a localized string similar to ID.
+        /// </summary>
+        public static string iID {
+            get {
+                return ResourceManager.GetString("iID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ID Child Menu(if have).
+        /// </summary>
+        public static string iidmenu {
+            get {
+                return ResourceManager.GetString("iidmenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        public static string iimg {
+            get {
+                return ResourceManager.GetString("iimg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link Menu.
+        /// </summary>
+        public static string ilinkmenu {
+            get {
+                return ResourceManager.GetString("ilinkmenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product type.
+        /// </summary>
+        public static string iloaisp {
+            get {
+                return ResourceManager.GetString("iloaisp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menu Manage.
+        /// </summary>
+        public static string imenu {
+            get {
+                return ResourceManager.GetString("imenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menu detail.
+        /// </summary>
+        public static string imenudetail {
+            get {
+                return ResourceManager.GetString("imenudetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menu name.
+        /// </summary>
+        public static string imenuname {
+            get {
+                return ResourceManager.GetString("imenuname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string imota {
+            get {
+                return ResourceManager.GetString("imota", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        public static string iout {
+            get {
+                return ResourceManager.GetString("iout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string iprice {
+            get {
+                return ResourceManager.GetString("iprice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Manage.
+        /// </summary>
+        public static string iproduct {
+            get {
+                return ResourceManager.GetString("iproduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Name.
+        /// </summary>
+        public static string iproductname {
+            get {
+                return ResourceManager.GetString("iproductname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revenue Manage.
         /// </summary>
         public static string irevenue {
             get {
                 return ResourceManager.GetString("irevenue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string isave {
+            get {
+                return ResourceManager.GetString("isave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string istatus {
+            get {
+                return ResourceManager.GetString("istatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sumary.
+        /// </summary>
+        public static string isumary {
+            get {
+                return ResourceManager.GetString("isumary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shop Coffee Manage.
+        /// </summary>
+        public static string ititle {
+            get {
+                return ResourceManager.GetString("ititle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit.
+        /// </summary>
+        public static string iunit {
+            get {
+                return ResourceManager.GetString("iunit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update Date.
+        /// </summary>
+        public static string iupdatedate {
+            get {
+                return ResourceManager.GetString("iupdatedate", resourceCulture);
             }
         }
     }

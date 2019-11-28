@@ -32,15 +32,21 @@ namespace ShopCaPhe.Areas.Admin.Controllers
                 return request[methodInfo.Name] != null;
             }
         }
-        public ActionResult IndexAdmin(string language)
+        public ActionResult IndexAdmin()
         {
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+            if (Session["MaAdmin"] == null)
+            {
+                RedirectToAction("LoginAdmin", "LoginAdmin");
+            }
             return View();
         }
         [HttpGet]
         public ActionResult IndexAdmin(int? size, int? page, string sortProperty, string sortOrder, string searchString)
         {
+            if (Session["MaAdmin"] == null)
+            {
+               return RedirectToAction("LoginAdmin", "LoginAdmin");
+            }
 
             ViewBag.searchValue = searchString;
             ViewBag.sortProperty = sortProperty;
@@ -100,10 +106,10 @@ namespace ShopCaPhe.Areas.Admin.Controllers
             return View();
 
         }
-        public ActionResult Edit(int? id, string language)
+        public ActionResult Edit(int? id)
         {
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+            //Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
             ViewBag.imgurl = db.SANPHAMs.SingleOrDefault(n => n.MaSP == id).HinhMinhHoa;
             // List<Category> lis = db.Categories.ToList();
@@ -115,7 +121,7 @@ namespace ShopCaPhe.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MaSP,TenSP,MaLoai,Donvitinh,DonGia,MoTa,HinhMinhHoa,NgayTao,NgayChinhSua,TrangThai,SoLuong")] SANPHAM sp)
-        {
+        {   
             if (ModelState.IsValid)
             {
                 sp.NgayChinhSua = DateTime.Now;
@@ -125,10 +131,8 @@ namespace ShopCaPhe.Areas.Admin.Controllers
             }
             return View(sp);
         }
-        public ActionResult Delete(int? id,string language)
+        public ActionResult Delete(int? id )
         {
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
             SANPHAM sp = db.SANPHAMs.Find(id);
            Session["itemid"] = id;
@@ -147,10 +151,8 @@ namespace ShopCaPhe.Areas.Admin.Controllers
             return RedirectToAction("IndexAdmin");
         }
 
-        public ActionResult DeleteLoai(int? id,string language)
+        public ActionResult DeleteLoai(int? id)
         {
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
             LOAISP lsp = db.LOAISPs.Find(id);
             return View(lsp);
@@ -166,10 +168,10 @@ namespace ShopCaPhe.Areas.Admin.Controllers
             return RedirectToAction("createLoaiSP");
         }
 
-        public ActionResult CreateSP(string language)
+        public ActionResult CreateSP(/*string language*/)
         {
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+            //Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
             List<LOAISP> loai = db.LOAISPs.ToList();
             SelectList ListLoai = new SelectList(loai, "MaLoai", "TenLoai");
@@ -219,10 +221,8 @@ namespace ShopCaPhe.Areas.Admin.Controllers
         //    
         //  
 
-        public ActionResult createLoaiSP(string language)
+        public ActionResult createLoaiSP()
         {
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
             List<LOAISP> sp = db.LOAISPs.ToList();
 
@@ -232,10 +232,8 @@ namespace ShopCaPhe.Areas.Admin.Controllers
 
         }
         [HttpPost]
-        public ActionResult createLoaiSP(FormCollection frmCreate, LOAISP lsp,string language)
+        public ActionResult createLoaiSP(FormCollection frmCreate, LOAISP lsp)
         {
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
             lsp.TenLoai = frmCreate["TenLoaiSP"];
             db.LOAISPs.Add(lsp);

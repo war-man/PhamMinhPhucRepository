@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using ShopCaPhe.Models;
@@ -24,6 +26,7 @@ namespace ShopCaPhe.Controllers
        
         public ActionResult GioHang()
         {
+
             if (Session["username"] == null)
             {
                 return RedirectToAction("LoginSSO", "Account");
@@ -50,6 +53,7 @@ namespace ShopCaPhe.Controllers
         [HttpPost]
         public ActionResult ThemGioHang(int iMaSP, int? SL)
         {
+
             List<SanPhamGH> lstSP = LayGioHang();
             SanPhamGH SP = lstSP.Find(n => n.MaSP == iMaSP);
             if (SP == null)
@@ -99,13 +103,15 @@ namespace ShopCaPhe.Controllers
         [HttpPost]
         public ActionResult GioHang(FormCollection frm, DONDATHANG donhang)
         {
+            string danggiao = "Đang giao";
+            string ngaygiao = "2019/12/1";
             if (Session["username"] == null)
             {
                 return RedirectToAction("LoginSSO", "Account");
             }
             else
             {
-
+               
                 int x = int.Parse(Session["makh"].ToString());
                 var user = db.KHACHHANGs.FirstOrDefault(n => n.MaKH == x);
                 if (user.DiaChiKH == null || user.DienThoaiKH == null)
@@ -117,12 +123,11 @@ namespace ShopCaPhe.Controllers
 
                     };
                     db.Entry(user);
-                    bool am = false;
                     donhang.MaKH = int.Parse(Session["makh"].ToString());
                     donhang.NgayDH = DateTime.Parse(DateTime.Now.ToString());
-                    //donhang.NgayGiaoHang = DateTime.Parse(frm["ngaynhanhang"].ToString());
+                    donhang.Ngaygiaohang = ngaygiao;
                     donhang.TriGia =decimal.Parse(Session["TongTien"].ToString());
-                    donhang.TrangThai = am;
+                    donhang.TrangThai = danggiao;
                     donhang.TenNguoiNhan = frm["tennguoinhan"];
                     donhang.DienThoaiNhan = frm["dienthoainhanhang"];
                     donhang.DiaChiNhan = frm["diachinhanhang"];
@@ -142,15 +147,14 @@ namespace ShopCaPhe.Controllers
                     }
                     Session["GioHang"] = null;
                     return RedirectToAction("ThanhToanThanhCong", "GioHang");
-                }
+                }   
                 else
                 {
-                    bool a = false;
                     donhang.MaKH = int.Parse(Session["makh"].ToString());
                     donhang.NgayDH = DateTime.Parse(DateTime.Now.ToString());
-                    //donhang.NgayGiaoHang = DateTime.Parse(frm["ngaynhanhang"].ToString());
+                    donhang.Ngaygiaohang = ngaygiao;
                     donhang.TriGia = decimal.Parse(Session["TongTien"].ToString());
-                    donhang.TrangThai = a;
+                    donhang.TrangThai = danggiao;
                     donhang.TenNguoiNhan = frm["tennguoinhan"];
                     donhang.DienThoaiNhan = frm["dienthoainhanhang"];
                     donhang.DiaChiNhan = frm["diachinhanhang"];

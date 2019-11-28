@@ -13,6 +13,7 @@
     <Property Name="NgaySinhAdmin" Type="DateTime" Precision="0" />
     <Property Name="GioiTinhAdmin" Type="Boolean" />
     <Property Name="EmailAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HinhAnh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="CTDONHANG">
     <Key>
@@ -66,9 +67,9 @@
     <Property Name="SoDH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MaKH" Type="Int32" Nullable="false" />
     <Property Name="NgayDH" Type="DateTime" Precision="0" />
+    <Property Name="Ngaygiaohang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="TriGia" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="TrangThai" Type="Boolean" />
-    <Property Name="NgayGiaoHang" Type="DateTime" Precision="0" />
+    <Property Name="TrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="TenNguoiNhan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DiaChiNhan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DienThoaiNhan" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />

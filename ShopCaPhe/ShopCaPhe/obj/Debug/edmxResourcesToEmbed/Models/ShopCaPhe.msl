@@ -13,6 +13,7 @@
           <ScalarProperty Name="NgaySinhAdmin" ColumnName="NgaySinhAdmin" />
           <ScalarProperty Name="GioiTinhAdmin" ColumnName="GioiTinhAdmin" />
           <ScalarProperty Name="EmailAdmin" ColumnName="EmailAdmin" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -60,9 +61,9 @@
           <ScalarProperty Name="SoDH" ColumnName="SoDH" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="NgayDH" ColumnName="NgayDH" />
+          <ScalarProperty Name="Ngaygiaohang" ColumnName="Ngaygiaohang" />
           <ScalarProperty Name="TriGia" ColumnName="TriGia" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
-          <ScalarProperty Name="NgayGiaoHang" ColumnName="NgayGiaoHang" />
           <ScalarProperty Name="TenNguoiNhan" ColumnName="TenNguoiNhan" />
           <ScalarProperty Name="DiaChiNhan" ColumnName="DiaChiNhan" />
           <ScalarProperty Name="DienThoaiNhan" ColumnName="DienThoaiNhan" />

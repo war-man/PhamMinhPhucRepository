@@ -40,13 +40,13 @@
 {
     @Html.AntiForgeryToken()
     <div class="w3-container w3-brown">
-        <h2>DELETE PAGE</h2>
+        <h2>@ShopCaPhe.Language.Resource.ideletecategory</h2>
     </div>
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Mã Loại</th>
-                <th>Tên Loại</th>
+                <th>@ShopCaPhe.Language.Resource.iID</th>
+                <th>@ShopCaPhe.Language.Resource.icategoryname</th>
 
             </tr>
         </thead>
@@ -65,8 +65,8 @@
         }
     </script>
 
-    <a href="@Url.Action("createLoaiSP","AdminCRUD")" class="btncreate"> Quay Lại</a>
+    <a href="@Url.Action("createLoaiSP","AdminCRUD")" class="btncreate">@ShopCaPhe.Language.Resource.iback</a>
 
-    <input type="submit" onclick="xoa()" class="btncreate" style="width:130px; background-color:black" value="Xóa" />
+    <input type="submit" onclick="xoa()" class="btncreate" style="width:130px; background-color:black" value="@ShopCaPhe.Language.Resource.idelete" />
 
 }

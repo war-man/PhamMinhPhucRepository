@@ -51,7 +51,7 @@
 
     @Html.AntiForgeryToken()
     <div class="form-horizontal">
-        <h4 style="font-family:serif">Chỉnh Sửa Menu</h4>
+        <h4 style="font-family:serif">@ShopCaPhe.Language.Resource.ieditmenu</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
@@ -80,7 +80,7 @@
 
 
             <div class="two" style="margin-top:0px">
-                <div class="infoBook">
+                <div class="@ShopCaPhe.Language.Resource.imenudetail">
                     <label style="margin-top:6px; margin-left:10px">Info Menu</label>
                 </div>
 
@@ -89,7 +89,7 @@
 
                     <div class="col-md-3 col-lg-2">
                         <div class="form-group">
-                            <label class="control-label">MaLoai</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.iID</label>
                         </div>
                     </div>
                     <div class="col-md-3 col-lg-2">
@@ -102,7 +102,7 @@
 
                     <div class="col-md-3 col-lg-2">
                         <div class="form-group">
-                            <label class="control-label">Tên Menu</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.imenuname</label>
                         </div>
                     </div>
                     <div class="col-md-3 col-lg-2">
@@ -120,7 +120,7 @@
                 <div class="row3">
                     <div class="col-md-1 col-lg-2">
                         <div class="form-group">
-                            <label class="control-label">ID con</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.ichildmenu</label>
                         </div>
                     </div>
                     <div class="col-md-1 col-lg-2">
@@ -132,7 +132,7 @@
 
                     <div class="col-md-1 col-lg-2">
                         <div class="form-group">
-                            <label class="control-label">Ngày tạo</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.icreateday</label>
                         </div>
                     </div>
                     <div class="col-md-1 col-lg-2">
@@ -147,7 +147,7 @@
                 <div class="row4">
                     <div class="col-md-1 col-lg-2">
                         <div class="form-group">
-                            <label class="control-label">Ngày chỉnh sửa</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.iupdatedate</label>
                         </div>
                     </div>
                     <div class="col-md-1 col-lg-2">
@@ -159,7 +159,7 @@
 
                     <div class="col-md-1 col-lg-2">
                         <div class="form-group">
-                            <label class="control-label">Link</label>
+                            <label class="control-label">@ShopCaPhe.Language.Resource.ilinkmenu</label>
                         </div>
                     </div>
                     <div class="col-md-1 col-lg-2">
@@ -173,9 +173,9 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <a href="@Url.Action("IndexAdmin","AdminCRUD")" class="btncreate"> Quay Lại</a>
+                        <a href="@Url.Action("IndexAdmin","AdminCRUD")" class="btncreate">@ShopCaPhe.Language.Resource.iback</a>
 
-                        <input type="submit" class="btncreate" style="width:130px; background-color:#17aa67" value="Lưu" />
+                        <input type="submit" class="btncreate" style="width:130px; background-color:#17aa67" value="@ShopCaPhe.Language.Resource.isave" />
 
                     </div>
                 </div>

@@ -117,10 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="iback" xml:space="preserve">
+    <value>Quay lại</value>
+  </data>
+  <data name="icategorydetail" xml:space="preserve">
+    <value>Thông tin loại sản phẩm</value>
+  </data>
+  <data name="icategoryname" xml:space="preserve">
+    <value>Tên loại</value>
+  </data>
+  <data name="ichildmenu" xml:space="preserve">
+    <value>ID Menu con</value>
+  </data>
+  <data name="ichooseimg" xml:space="preserve">
+    <value>Chọn ảnh</value>
+  </data>
+  <data name="icreate" xml:space="preserve">
+    <value>Tạo</value>
+  </data>
+  <data name="icreateday" xml:space="preserve">
+    <value>Ngày tạo</value>
+  </data>
+  <data name="icreateloai" xml:space="preserve">
+    <value>Quản lý loại sản phẩm</value>
+  </data>
+  <data name="icreateproduct" xml:space="preserve">
+    <value>Thêm sản phẩm</value>
+  </data>
+  <data name="idelete" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="ideletecategory" xml:space="preserve">
+    <value>Xóa loại sản phẩm</value>
+  </data>
+  <data name="ideletemenu" xml:space="preserve">
+    <value>Xóa Menu</value>
+  </data>
+  <data name="ideleteproduct" xml:space="preserve">
+    <value>Xóa sản phẩm</value>
+  </data>
+  <data name="idetailproduct" xml:space="preserve">
+    <value>Thông tin sản phẩm</value>
+  </data>
+  <data name="ieditmenu" xml:space="preserve">
+    <value>Chỉnh sửa Menu</value>
+  </data>
   <data name="iHome" xml:space="preserve">
-    <value>Trang Chu</value>
+    <value>Trang Chủ</value>
+  </data>
+  <data name="iID" xml:space="preserve">
+    <value>Mã sản phẩm</value>
+  </data>
+  <data name="iidmenu" xml:space="preserve">
+    <value>ID Menu con(nếu có)</value>
+  </data>
+  <data name="iimg" xml:space="preserve">
+    <value>Hình ảnh</value>
+  </data>
+  <data name="ilinkmenu" xml:space="preserve">
+    <value>Đường dẫn Menu</value>
+  </data>
+  <data name="iloaisp" xml:space="preserve">
+    <value>Chọn loại sản phẩm</value>
+  </data>
+  <data name="imenu" xml:space="preserve">
+    <value>Quản lý Menu</value>
+  </data>
+  <data name="imenudetail" xml:space="preserve">
+    <value>Thông tin Menu</value>
+  </data>
+  <data name="imenuname" xml:space="preserve">
+    <value>Tên Menu</value>
+  </data>
+  <data name="imota" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="iout" xml:space="preserve">
+    <value>Thoát</value>
+  </data>
+  <data name="iprice" xml:space="preserve">
+    <value>Giá</value>
+  </data>
+  <data name="iproduct" xml:space="preserve">
+    <value>Quản lý sản phẩm</value>
+  </data>
+  <data name="iproductname" xml:space="preserve">
+    <value>Tên sản phẩm</value>
   </data>
   <data name="irevenue" xml:space="preserve">
     <value>Thống kê doanh thu</value>
+  </data>
+  <data name="isave" xml:space="preserve">
+    <value>Lưu</value>
+  </data>
+  <data name="istatus" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="isumary" xml:space="preserve">
+    <value>Số lượng</value>
+  </data>
+  <data name="ititle" xml:space="preserve">
+    <value>Quản lý shop Cà phê</value>
+  </data>
+  <data name="iunit" xml:space="preserve">
+    <value>Chọn đơn vị tính</value>
+  </data>
+  <data name="iupdatedate" xml:space="preserve">
+    <value>Ngày cập nhập</value>
+  </data>
+  <data name="ibillmanage" xml:space="preserve">
+    <value>Quản lý hóa đơn</value>
   </data>
 </root>
