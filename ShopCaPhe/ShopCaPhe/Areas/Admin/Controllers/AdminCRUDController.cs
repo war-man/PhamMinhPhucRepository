@@ -118,6 +118,7 @@ namespace ShopCaPhe.Areas.Admin.Controllers
             return View(sp);
 
         }
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MaSP,TenSP,MaLoai,Donvitinh,DonGia,MoTa,HinhMinhHoa,NgayTao,NgayChinhSua,TrangThai,SoLuong")] SANPHAM sp)
@@ -134,7 +135,7 @@ namespace ShopCaPhe.Areas.Admin.Controllers
         public ActionResult Delete(int? id )
         {
 
-            SANPHAM sp = db.SANPHAMs.Find(id);
+           SANPHAM sp = db.SANPHAMs.Find(id);
            Session["itemid"] = id;
             return View(sp);
         }
@@ -181,8 +182,15 @@ namespace ShopCaPhe.Areas.Admin.Controllers
         public string ProcessUpload(HttpPostedFileBase file)
         {
             //xử lí upload
+
+            // upload chorme
             file.SaveAs(Server.MapPath("~/Images/" + file.FileName));
             return "/Images/" + file.FileName;
+
+            //upload file ie
+            //return  file.FileName;
+
+
         }
         public string UploadEdit(HttpPostedFileBase file)
         {

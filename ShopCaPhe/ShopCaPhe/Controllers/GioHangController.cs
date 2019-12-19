@@ -107,7 +107,7 @@ namespace ShopCaPhe.Controllers
             string ngaygiao = "2019/12/1";
             if (Session["username"] == null)
             {
-                return RedirectToAction("LoginSSO", "Account");
+                return RedirectToAction("Login", "Home");
             }
             else
             {

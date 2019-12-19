@@ -130,7 +130,7 @@
                 @Html.Action("Menu", "Menu")
                 <li>
                     <a href="#" class=" ">En <i class='fas fa-angle-down'></i></a>
-                    </li>
+                </li>
                 <li><a href="@Url.Action("IndexAdmin","vi-vn/Admin/AdminCRUD")">Admin</a></li>
                 <li>
                     <a href="/GioHang/GioHang" class="rightz">
@@ -139,20 +139,9 @@
                     </a>
                 </li>
 
-                @*@if (Session["Email"] == null)
-        {
-            <li><a href="@Url.Action("Login","Home")" class="rightz activetop">Đăng Nhập</a></li>
-        }
-        else
-        {
-            <li> @Html.ActionLink("Đăng xuất", "DangXuat", "Home", null, new { @class = "rightz activetop" }) </li>
-            <li><a href="@Url.Action("Login","Home")" class="rightz activetop">Xin chào @Session["Email"]</a></li>
-
-
-        }*@
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <li> <a href="@Url.Action("SignOut","Account")" class="rightz">Sign Out</a></li>
+                    <li> <a href="@Url.Action("LoginSSO","Account")" class="rightz">Sign Out</a></li>
                     <li><a href="#" class="rightz">Hello @User.Identity.Name</a></li>
 
 
@@ -162,95 +151,8 @@
                     <li><a href="@Url.Action("LoginSSO","Account")" class="rightz activetop">Đăng Nhập</a></li>
 
                 }
-
-
-                @*<a href="@Url.Action("Index","Home")" class="activetop">Sản Phẩm  <i class='fas fa-angle-down'></i></a>*@
-                @*<ol class="sub-content">
-            <li class=""><a href="/ViewSP/LoaiSP?MaLoai=1" class="sub-menu">Cà Phê Chồn</a></li>
-            <li class=""><a href="/ViewSP/LoaiSP?MaLoai=3" class="sub-menu">Cà Phê Bột</a></li>
-            <li class=""><a href="/ViewSP/LoaiSP?MaLoai=6" class="sub-menu">Cà Phê Hòa Tan</a></li>
-            <li class=""><a href="/ViewSP/LoaiSP?MaLoai=5" class="sub-menu">Máy Xay Cà Phê</a></li>
-            <li class=""><a href="/ViewSP/LoaiSP?MaLoai=4" class="sub-menu">Máy Pha Cà Phê</a></li>
-        </ol>*@
-                @*<li><a class="active" href="@Url.Action("TrangChu","Home")">Trang Chủ</a></li>
-        <li>
-            <a href="@Url.Action("Home","Home")" class="activetop">Giới Thiệu</a>
-        </li>
-        <li class="sub-li">
-            <a href="@Url.Action("Index","Home")" class="activetop">Sản Phẩm  <i class='fas fa-angle-down'></i></a>
-            <ol class="sub-content">
-                <li class=""><a href="/ViewSP/LoaiSP?MaLoai=1" class="sub-menu">Cà Phê Chồn</a></li>
-                <li class=""><a href="/ViewSP/LoaiSP?MaLoai=3" class="sub-menu">Cà Phê Bột</a></li>
-                <li class=""><a href="/ViewSP/LoaiSP?MaLoai=6" class="sub-menu">Cà Phê Hòa Tan</a></li>
-                <li class=""><a href="/ViewSP/LoaiSP?MaLoai=5" class="sub-menu">Máy Xay Cà Phê</a></li>
-                <li class=""><a href="/ViewSP/LoaiSP?MaLoai=4" class="sub-menu">Máy Pha Cà Phê</a></li>
-            </ol>
-        </li>
-        <li>
-            <a href="#contact" class="activetop">Tin Tức - Bài Viết</a>
-        </li>
-        <li>
-            <a href="#contact" class="activetop">Liên Hệ</a>
-        </li>
-
-                *@
             </ul>
-
-            @*<div class="navbar">
-                <a href="#home">Home</a>
-                <div class="subnav">
-                    <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
-                    <div class="subnav-content">
-                        <a href="#company">Company</a>
-                        <a href="#team">Team</a>
-                        <a href="#careers">Careers</a>
-                    </div>
-                </div>
-                <div class="subnav">
-                    <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
-                    <div class="subnav-content">
-                        <a href="#bring">Bring</a>
-                        <a href="#deliver">Deliver</a>
-                        <a href="#package">Package</a>
-                        <a href="#express">Express</a>
-                    </div>
-                </div>
-                <div class="subnav">
-                    <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
-                    <div class="subnav-content">
-                        <a href="#link1">Link 1</a>
-                        <a href="#link2">Link 2</a>
-                        <a href="#link3">Link 3</a>
-                        <a href="#link4">Link 4</a>
-                    </div>
-                </div>*@
-
-
-
-            @*@if (ViewBag.error != null)
-                {
-                    <p style="color:red">@ViewBag.error</p>
-
-                }
-                else
-                {
-                    <p style="color:white">Hi there! Please Sign in</p>
-
-
-                }*@
-
-            @*<form action="#" class="searchform">
-                    <input type="text" placeholder="" name="search" />
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>*@
-
-
         </div>
-        </div>
-
-
-
-
     </nav>
     <header class="header">
         <div class="textbox">
@@ -261,89 +163,16 @@
             <a href="#" class="btn btn-animation">Go To Product</a>
         </div>
     </header>
-    @*<header class="header">
-            <div class="logo-box">
-                <img src="Img/logo.png" alt="No IMG" class="logo">
-            </div>
-            <div class="textbox">
-                <h1 class="heading">
-                    <span class="heading-main">EVENTSEA</span>
-                    <span class="heading-sub">SEA AND NATURALS</span>
-                </h1>
-                <a href="#" class="btn btn-animation">Go To Event</a>
-            </div>
-            <nav class="menu">
-                <header>Menu <span>×</span></header>
-                <ol>
-                    <li class="menu-item"><a href="#0">Home</a></li>
-                    <li class="menu-item"><a href="#0">About</a></li>
-                    <li class="menu-item">
-                        <a href="#0">Widgets</a>
-                        <ol class="sub-menu">
-                            <li class="menu-item"><a href="#0">Grocerry</a></li>
-                            <li class="menu-item"><a href="#0">Discount</a></li>
-                            <li class="menu-item"><a href="#0">Huge Sale</a></li>
-                        </ol>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#0">Juice</a>
-                        <ol class="sub-menu">
-                            <li class="menu-item"><a href="#0">Russi</a></li>
-                            <li class="menu-item"><a href="#0">Paneer Pyaza</a></li>
-                            <li class="menu-item"><a href="#0">Rasbhari</a></li>
-                        </ol>
-                    </li>
-                    <li class="menu-item"><a href="#0">Contact</a></li>
-                </ol>
-                <footer><button aria-label="Toggle Menu">Toggle</button></footer>
-            </nav>
-
-        </header>*@
     <aside>
         <div class="content">
             <div class="buttonhead">
             </div>
         </div>
-        @*<div class="title">
-
-                <h6>Featured Products</h6>
-                <hr>
-            </div>*@
         <div class="content-book">
 
             @RenderBody()
         </div>
     </aside>
-    @*<footer>
-            <div class="footercontext aa">
-                <!-- <li class="tentfirsr">INFORMATION</li> -->
-                <li>ABOUT</li>
-                <li>DELIVERY</li>
-                <li>PRIVACY POLICY</li>
-                <li>TEAMS & CONDITIONS</li>
-            </div>
-            <div class="footercontext bb">
-                <!-- <li class="tentfirsr">COSTOMER SERVICE</li> -->
-                <li>CONTACT US</li>
-                <li>RETURNS</li>
-                <li>SITE MAP</li>
-                <li>SITE MAP</li>
-            </div>
-            <div class="footercontext cc">
-                <!-- <li class="tentfirsr">EXTRAS</li> -->
-                <li>BRANDS</li>
-                <li>GIFT VOUCHERS</li>
-                <li>AFFILIATES</li>
-                <li>SPECIALS</li>
-            </div>
-            <div class="footercontext dd">
-                <!-- <li class="tentfirsr">MY ACCOUNT</li> -->
-                <li>MY ACCOUNT</li>
-                <li>ORDER HISTORY</li>
-                <li>WISH LIST</li>
-                <li>NEWSLETTER</li>
-            </div>
-        </footer>*@
     <footer>
         <div class="footer-left">
             <img src="~/Images/bocongthuong.png" width="60%" class="bct" />
@@ -396,7 +225,7 @@
                         <a><img src="~/Images/facebook-icon.png" /></a>
                         <a><img src="~/Images/instagram-icon.png" /></a>
                         <a><img src="~/Images/twitter-icon.png" /></a>
-                        <a><img src="~/Images/pinterest-icon.png" /></a>
+                       <a><img src="~/Images/pinterest-icon.png" /></a>
                     </div>
 
                 </div>

@@ -32,7 +32,9 @@ namespace ShopCaPhe.Controllers
         public ActionResult SignOut()
         {
             HttpContext.GetOwinContext().Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
-            return Redirect("~/");
+            Session["username"] = null;
+            Session["makh"] = null;
+                    return RedirectToAction("Index", "Home");
         }
 
         [AllowAnonymous]
@@ -79,7 +81,7 @@ namespace ShopCaPhe.Controllers
 
             HttpContext.GetOwinContext().Authentication.SignIn(
                         new AuthenticationProperties { IsPersistent = false }, ident);
-            return Redirect("~/");
+            return RedirectToAction("Index","Home");
         }
     }
 }

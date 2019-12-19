@@ -4,6 +4,14 @@
         if (isNaN(SL) == true) {
             SL = 1;
         }
+        var id = $('#username').html();
+        if (id == "") {
+            alert("Bạn cần đăng nhập để thực hiện chức năng này !");
+            location.href = "/Account/LoginSSO";
+        }
+        else {
+
+
         $.ajax({
             url: "/GioHang/ThemGiohang",
             data: { iMaSP: MaSP, SL: SL },
@@ -19,11 +27,12 @@
                 //$('#cart > a  > span').html(TongSL + " Sản Phẩm - " + TongTien + "VND")
                 $('.rightz > span').html("<p style='color:red; display:inline-block;padding:0;margin:0;'>" + TongSL + "</p> Sản phẩm - <p style='color:red;display:inline-block;padding:0;margin:0;'>" + TongTien + "</p> VNĐ")
 
-              alert('Đặt Hàng Thành Công!')
+              alert('Đặt Hàng Thành Công!!')
 
 
             }
-        }); 
+            }); 
+        }
         return false;
     };
 

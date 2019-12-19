@@ -70,12 +70,12 @@
                     </td>
                 </tr>
                 @*<tr>
-                        <td> @Html.DropDownList("author", (IEnumerable<SelectListItem>)ViewBag.AuthorList, "Chọn tác giả", new { @class = "dropdown" })</td>
-                    </tr>
-                    <tr>
-                    <tr>
-                        <td>@Html.DropDownList("pub", (IEnumerable<SelectListItem>)ViewBag.PubList, "Chọn nhà xuất bản", new { @class = "dropdown" })</td>
-                    </tr>*@
+                    <td> @Html.DropDownList("author", (IEnumerable<SelectListItem>)ViewBag.AuthorList, "Chọn tác giả", new { @class = "dropdown" })</td>
+                </tr>
+                <tr>
+                <tr>
+                    <td>@Html.DropDownList("pub", (IEnumerable<SelectListItem>)ViewBag.PubList, "Chọn nhà xuất bản", new { @class = "dropdown" })</td>
+                </tr>*@
                 <tr>
                     <td><input type="text" name="gia" placeholder="@ShopCaPhe.Language.Resource.iprice" /></td>
                 </tr>
@@ -113,10 +113,8 @@
 
                 <input type="submit" class="btncreate" onclick="return validateCreate()" style="width:165px; background-color:#17aa67" value="@ShopCaPhe.Language.Resource.icreateproduct" />
 
-
-
             </div>
-        </div>
+        </div>>
         <div class="text_right">
 
             <img id="pictureUpload" width=60% height="250px" />
@@ -127,6 +125,7 @@
                         //đăng ký sự kiện click nút btnUpload
                         $('#btnUpload').click(function () {
                             $('#fileUpload').trigger('click');
+
 
                         });
                         // Bắt sự kiện change data của file Upload
@@ -140,6 +139,9 @@
                                 var formData = new FormData();
                                 //đưa dữ liệu vào form
                                 formData.append('file', files[0]);
+                                //var inputVal = $('#fileUpload').val();
+                                //alert(inputVal);
+
                                 $.ajax(
                                     {
                                         type: 'POST',
@@ -150,7 +152,7 @@
                                         success: function (urlImage) {
                                             $('#pictureUpload').attr('src', urlImage);
                                             $('#picture').val(urlImage);
-
+                                            $('#picture').text(urlImage);
                                         },
                                         error: function (err) {
                                             alert('co loi khi upload:' + err.statusText);
@@ -161,14 +163,14 @@
                         });
                     });
                 </script>
-
             }
             <br />
             <br />
             <div class="from-inline">
-                <input type="text" name="picture" id="picture" style="display:none;" />
-                <input type="file" id="fileUpload" name="fileUpload" style="display:none;" />
                 <input type="button" id="btnUpload" value="@ShopCaPhe.Language.Resource.ichooseimg" class="btn_Choose" />
+
+                <input style="visibility:hidden" type="text" name="picture" id="picture" />
+                <input style="visibility:hidden" type="file" id="fileUpload" name="fileUpload" />
             </div>
         </div>
 

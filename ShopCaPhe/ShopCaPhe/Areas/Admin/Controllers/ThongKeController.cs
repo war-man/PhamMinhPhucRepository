@@ -240,6 +240,25 @@ namespace ShopCaPhe.Areas.Admin.Controllers
             }
             return View(dh);
         }
+
+        public ActionResult xulytrangthai(int? id)
+        {
+            var trangthaithuc = "";
+            DONDATHANG dh = db.DONDATHANGs.Find(id);
+            if (dh.TrangThai == "Đã giao")
+            {
+                trangthaithuc = "Đang giao";
+            }
+            else
+            {
+                trangthaithuc = "Đã giao";
+            }
+            dh.TrangThai = trangthaithuc;
+            db.Entry(dh).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("HoaDon");
+        }
+
     }
 }
 

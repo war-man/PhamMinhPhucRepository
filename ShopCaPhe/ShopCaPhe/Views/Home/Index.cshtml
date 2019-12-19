@@ -30,14 +30,14 @@
                 </div>
                 <div class="price">
                     <span id="agia">@string.Format("{0:0,0}", item.DonGia)đ</span>
-
                 </div>
                 <div class="tooltip-content">
                     <ul>
                         <li class="tooltip-li li1"><a id="txtmua" onclick="DatHang(@item.MaSP)"><i class="fa fa-shopping-basket"></i></a></li>
                         <li class="tooltip-li li2"><a id="myBtn" onclick="Poppup(@item.MaSP)"><i class="fa fa-exchange"></i></a></li>
-                        <li class="tooltip-li li3"><a href="~/ViewSP/ChiTietSanPham?MaSP=@item.MaSP"><i class="fa fa-eye" style="color:black"></i></a></li>
+                        <li class="tooltip-li li3"><a href="/ViewSP/ChiTietSanPham?MaSP=@item.MaSP" class="sub-menu"><i class="fa fa-eye" style="color:black"></i></a></li>
                     </ul>
+                    <span style="visibility:hidden" id="username">@Session["username"]</span>
 
                 </div>
             </div>

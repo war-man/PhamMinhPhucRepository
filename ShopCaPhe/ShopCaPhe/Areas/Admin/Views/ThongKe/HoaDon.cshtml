@@ -99,12 +99,13 @@
                 <td>@item.Ngaygiaohang</td>
                 @if (item.TrangThai == "Đã giao")
                 {
-                    <td><button class="button">@item.TrangThai</button></td>
+                    <td><a href="@Url.Action("xulytrangthai", "ThongKe", new { id = item.SoDH })" class="badge badge-success">@item.TrangThai</a></td>
+
 
                 }
                 else
                 {
-                    <td><button class="button button3">@item.TrangThai</button></td>
+                    <td><a href="@Url.Action("xulytrangthai", "ThongKe", new { id = item.SoDH })" class="badge badge-danger">@item.TrangThai</a></td>
                 }
                 <td>
                     <button type="button" rel="tooltip" class="btn btn-info btn-round btn-just-icon btn-sm" data-original-title="" title="">
