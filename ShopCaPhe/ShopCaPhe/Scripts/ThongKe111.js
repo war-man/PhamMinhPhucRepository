@@ -3,7 +3,7 @@
     var month = document.getElementById("month");
     var yearitem = year.options[year.selectedIndex].text;
     var monthitem = month.options[month.selectedIndex].text;
-    window.location.href = "/Admin/ThongKe/ThongKe?imonth=" + monthitem + "&iyear=" + yearitem
+    window.location.href = "/vi-vn/Admin/ThongKe/ThongKe?imonth=" + monthitem + "&iyear=" + yearitem
         /// vi - vn /
 
     //$.ajax({
@@ -64,15 +64,15 @@ HoaDon = (function () {
     var monthitem = month.options[month.selectedIndex].text;
     var dayitem = day.options[day.selectedIndex].text;
     if (dayitem == "Chọn Ngày") {
-        window.location.href = "/Admin/ThongKe/Hoadonthang?year=" + yearitem + "&month=" + monthitem
+        window.location.href = "/vi-vn/Admin/ThongKe/Hoadonthang?year=" + yearitem + "&month=" + monthitem
     }
     else if (monthitem == "Chọn Tháng" || dayitem == "Chọn Ngày")
     {
-            window.location.href = "/Admin/ThongKe/Hoadonnam?year=" + yearitem
+        window.location.href = "/vi-vn/Admin/ThongKe/Hoadonnam?year=" + yearitem
 
     }
     else {
-        window.location.href = "/Admin/ThongKe/Hoadonngay?day=" + dayitem + "&year=" + yearitem + "&month=" + monthitem
+        window.location.href = "/vi-vn/Admin/ThongKe/Hoadonngay?day=" + dayitem + "&year=" + yearitem + "&month=" + monthitem
 
     }
 });

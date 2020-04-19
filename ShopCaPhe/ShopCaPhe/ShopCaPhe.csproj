@@ -178,6 +178,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\TestjqeryController.cs" />
     <Compile Include="Controllers\ViewSPController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -266,15 +267,16 @@
     <Content Include="Content\Home.css" />
     <Content Include="Content\Index1.css" />
     <Content Include="Content\IndexAdmin.css" />
-    <Content Include="Content\Layout.css" />
+    <Content Include="Content\Layout1.css" />
     <Content Include="Content\LoginAdmin.css" />
+    <Content Include="Content\Loginnew1.css" />
     <Content Include="Content\Main.css" />
     <Content Include="Content\Main1.css" />
     <Content Include="Content\Main2.css" />
     <Content Include="Content\Main3_1.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\util.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\2728105.jpg" />
@@ -322,6 +324,7 @@
     <Content Include="Images\facebook-icon.png" />
     <Content Include="Images\Fail.jpg" />
     <Content Include="Images\ferret1.png" />
+    <Content Include="Images\google-plus.png" />
     <Content Include="Images\instagram-icon.png" />
     <Content Include="Images\map-icon.png" />
     <Content Include="Images\mayphacaphe1.jpg" />
@@ -388,23 +391,28 @@
     <Content Include="Models\ShopCaPhe.edmx.diagram">
       <DependentUpon>ShopCaPhe.edmx</DependentUpon>
     </Content>
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Chitiet.js" />
-    <Content Include="Scripts\GioHang1.js" />
+    <Content Include="Scripts\closefbchat.js" />
+    <Content Include="Scripts\GioHang55.js" />
     <Content Include="Scripts\jquery-1.8.0.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery-3.5.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.0.js" />
+    <Content Include="Scripts\jquery-3.5.0.min.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.0.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\numeral.js" />
     <Content Include="Scripts\Search.js" />
-    <Content Include="Scripts\ThongKe1.js" />
+    <Content Include="Scripts\ThongKe111.js" />
     <Content Include="Video\History of Coffee in 5 Minutes or Less..mp4" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -435,23 +443,20 @@
     <Content Include="Views\Account\LoginSSO.cshtml" />
     <Content Include="Views\GioHang\Thanhtoan.cshtml" />
     <Content Include="Views\Language\Language.cshtml" />
+    <Content Include="Views\Home\dangky.cshtml" />
+    <Content Include="Views\Testjqery\Index.cshtml" />
+    <Content Include="Views\Testjqery\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

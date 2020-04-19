@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").toggleClass("main");
+            });
+        });
+    </script>
+    <style>
+        .main {
+            font-size: 120%;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <button>Toggle class "main" for p elements</button>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <p><b>Note:</b> Click the button more than once to see the toggle effect.</p>
+</body>
+</html>

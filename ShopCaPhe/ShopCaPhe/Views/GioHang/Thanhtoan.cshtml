@@ -24,11 +24,11 @@
             </tr>
             <tr>
                 <td>Giới tính</td>
-                <td><input type="text" value="@dg.GioiTinh" /></td>
+                <td><input type="text" id="gioitinh" name="gioitinh" value="@dg.GioiTinh" /></td>
             </tr>
             <tr>
                 <td>Email</td>
-                <td><input type="text" value="@dg.Email" /></td>
+                <td><input type="text" id="email" name="email" value="@dg.Email" /></td>
             </tr>
             <tr>
                 <td>Ngày nhận hàng</td>
@@ -46,11 +46,28 @@
 }
 
 
-<input onclick="DatHang();" type="submit" value="Đặt hàng" />
+<input onclick="return check1()" type="submit" value="Đặt hàng" />
+
 <script type="text/javascript">
     var day = new Date();
     var d = day.getDate() + 2;
     var m = day.getMonth() + 1;
     var y = day.getFullYear();
     document.getElementById('ngaynhanhang').innerHTML = d + "/" + m + "/" + y;
+</script>
+<script>
+    function check1() {
+        var x = document.forms["myForm"]["tennguoinhan"].value;
+        var y = document.forms["myForm"]["diachinhanhang"].value;
+        var z = document.forms["myForm"]["dienthoainhanhang"].value;
+        var k = document.forms["myForm"]["gioitinh"].value;
+        var g = document.forms["myForm"]["email"].value;
+
+        if (x == "" || y == "" || z == "" || g == "" || k == "") {
+            alert("Vui lòng điền đầy đủ thông tin trước khi tiến hành thanh toán");
+            return false;
+        }
+    }
+
+
 </script>

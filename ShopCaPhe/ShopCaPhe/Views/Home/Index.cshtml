@@ -5,9 +5,10 @@
     Layout = "~/Views/Shared/_LayoutCaPhe.cshtml";
 }
 
+
 <div class="title">
     <link href="~/Content/Index1.css" rel="stylesheet" />
-        <h6><strong>TẤT CẢ SẢN PHẨM</strong></h6>  <div class="search-container">
+    <h6><strong>TẤT CẢ SẢN PHẨM</strong></h6>  <div class="search-container">
         <form action="/Home/timkiem">
             <input type="text" id="searchcontent" placeholder="Search.." name="name">
             <button id="btntimkiem" type="submit"><i class="fa fa-search"></i></button>
@@ -38,6 +39,7 @@
                         <li class="tooltip-li li3"><a href="/ViewSP/ChiTietSanPham?MaSP=@item.MaSP" class="sub-menu"><i class="fa fa-eye" style="color:black"></i></a></li>
                     </ul>
                     <span style="visibility:hidden" id="username">@Session["username"]</span>
+                    <span style="visibility:hidden" id="username1">@Session["Email"]</span>
 
                 </div>
             </div>
@@ -50,9 +52,9 @@
 
                     </div>
                     <div class="modal-body">
-                       
-                      
-                        
+
+
+
                     </div>
                     <div class="modal-footer">
 
@@ -94,5 +96,3 @@
         }
     }
 </script>
-
-

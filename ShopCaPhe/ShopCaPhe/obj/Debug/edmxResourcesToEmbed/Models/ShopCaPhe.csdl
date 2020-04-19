@@ -159,8 +159,8 @@
     <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="HinhMinhHoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="MaLoai" Type="Int32" />
-    <Property Name="NgayTao" Type="DateTime" Precision="0" />
-    <Property Name="NgayChinhSua" Type="DateTime" Precision="0" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayChinhSua" Type="DateTime" Precision="3" />
     <Property Name="TrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SoLuong" Type="Int32" />
     <NavigationProperty Name="CTDONHANGs" Relationship="Self.FK_CTDONHANG_SANPHAM" FromRole="SANPHAM" ToRole="CTDONHANG" />

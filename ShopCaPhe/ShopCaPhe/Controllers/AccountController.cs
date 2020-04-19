@@ -9,12 +9,14 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Owin;
 
-
 namespace ShopCaPhe.Controllers
 {
     public class AccountController : Controller
     {
         // GET: Account
+        CàPheEntities db = new CàPheEntities();
+
+    
         public ActionResult LoginSSO()
         {
             return View();
@@ -29,12 +31,43 @@ namespace ShopCaPhe.Controllers
                 }
             }
         }
+        [HttpPost]
+        public ActionResult Login(KHACHHANG model)
+        {
+            using (db)
+            {
+
+                //Lấy username và password ở bản ghi đầu tiên
+                var user = db.KHACHHANGs.Where(x => x.TenDN == model.TenDN && x.MatKhau == model.MatKhau).FirstOrDefault();
+                if (user == null)
+                {
+
+                    ViewBag.error = "Email or Password is fail";
+                    return View("LoginSSO", model);
+                }
+                else
+                {
+                    //ViewBag.avatar = user.Avatar;
+                    //ViewBag.Online = user.IsActive;
+                    //Session["Online"] = user.IsActive;
+                    //Session["Avatar"] = user.Avatar;
+                    Session["MaKH"] = user.MaKH;
+                    Session["Email"] = user.TenDN;
+                    Session["Password"] = user.MatKhau;
+                    //return View(user)
+
+                    return RedirectToAction("Index", "Home");
+                }
+
+            }
+        }
         public ActionResult SignOut()
         {
             HttpContext.GetOwinContext().Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
             Session["username"] = null;
             Session["makh"] = null;
-                    return RedirectToAction("Index", "Home");
+            Session["GioHang"] = null;
+            return RedirectToAction("Index", "Home");
         }
 
         [AllowAnonymous]

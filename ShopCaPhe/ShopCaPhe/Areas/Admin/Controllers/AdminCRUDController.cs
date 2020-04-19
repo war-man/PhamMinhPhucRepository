@@ -41,8 +41,11 @@ namespace ShopCaPhe.Areas.Admin.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult IndexAdmin(int? size, int? page, string sortProperty, string sortOrder, string searchString)
+        public ActionResult IndexAdmin(int? size, string language, int? page, string sortProperty, string sortOrder, string searchString)
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+
             if (Session["MaAdmin"] == null)
             {
                return RedirectToAction("LoginAdmin", "LoginAdmin");
@@ -106,10 +109,10 @@ namespace ShopCaPhe.Areas.Admin.Controllers
             return View();
 
         }
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, string language)
         {
-            //Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
-            //Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
             ViewBag.imgurl = db.SANPHAMs.SingleOrDefault(n => n.MaSP == id).HinhMinhHoa;
             // List<Category> lis = db.Categories.ToList();
@@ -132,10 +135,12 @@ namespace ShopCaPhe.Areas.Admin.Controllers
             }
             return View(sp);
         }
-        public ActionResult Delete(int? id )
+        public ActionResult Delete(int? id, string language)
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
-           SANPHAM sp = db.SANPHAMs.Find(id);
+            SANPHAM sp = db.SANPHAMs.Find(id);
            Session["itemid"] = id;
             return View(sp);
         }
@@ -145,15 +150,28 @@ namespace ShopCaPhe.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            
-            SANPHAM sp = db.SANPHAMs.Find(id);
-            db.SANPHAMs.Remove(sp);
-            db.SaveChanges();
-            return RedirectToAction("IndexAdmin");
+            var user = db.SANPHAMs.Where(x => x.MaSP == id).FirstOrDefault();
+
+            if (user.TrangThai=="Đang Bán")
+            {
+                Response.Write("<script>alert('Sản phẩm không xóa được vì vẫn đang được bán');</script>");
+                return View();
+            }
+            else
+            {
+                SANPHAM sp = db.SANPHAMs.Find(id);
+                db.SANPHAMs.Remove(sp);
+                db.SaveChanges();
+                return RedirectToAction("IndexAdmin");
+            }
+
+          
         }
 
-        public ActionResult DeleteLoai(int? id)
+        public ActionResult DeleteLoai(int? id, string language)
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
             LOAISP lsp = db.LOAISPs.Find(id);
             return View(lsp);
@@ -162,17 +180,26 @@ namespace ShopCaPhe.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteLoaiSP(int id)
         {
+            List<SANPHAM> check = db.SANPHAMs.Where(x => x.MaLoai == id).ToList();
+            if (check.Count > 1)
+            {
+                Response.Write("<script>alert('Loại sản phẩm không xóa được vì chứa nhiều sản phẩm đang được bán');</script>");
+                return View();
+            }
+            else
+            {
+                LOAISP sp = db.LOAISPs.Find(id);
+                db.LOAISPs.Remove(sp);
+                db.SaveChanges();
+                return RedirectToAction("createLoaiSP");
 
-            LOAISP sp = db.LOAISPs.Find(id);
-            db.LOAISPs.Remove(sp);
-            db.SaveChanges();
-            return RedirectToAction("createLoaiSP");
+            }
         }
 
-        public ActionResult CreateSP(/*string language*/)
+        public ActionResult CreateSP(string language)
         {
-            //Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
-            //Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
             List<LOAISP> loai = db.LOAISPs.ToList();
             SelectList ListLoai = new SelectList(loai, "MaLoai", "TenLoai");
@@ -201,7 +228,6 @@ namespace ShopCaPhe.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Tao(FormCollection frmTao, SANPHAM sp)
         {
-
             sp.TenSP = frmTao["name"];
             sp.MoTa = frmTao["mota"];
             sp.MaLoai = Convert.ToInt32(frmTao["Loai"]);
@@ -229,8 +255,10 @@ namespace ShopCaPhe.Areas.Admin.Controllers
         //    
         //  
 
-        public ActionResult createLoaiSP()
+        public ActionResult createLoaiSP(string language)
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
             List<LOAISP> sp = db.LOAISPs.ToList();
 
@@ -242,7 +270,6 @@ namespace ShopCaPhe.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult createLoaiSP(FormCollection frmCreate, LOAISP lsp)
         {
-
             lsp.TenLoai = frmCreate["TenLoaiSP"];
             db.LOAISPs.Add(lsp);
             db.SaveChanges();

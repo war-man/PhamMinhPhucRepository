@@ -5,35 +5,34 @@
             SL = 1;
         }
         var id = $('#username').html();
-        if (id == "") {
-            alert("Bạn cần đăng nhập để thực hiện chức năng này !");
+        var id1 = $('#username1').html();
+        if (id == "" && id1=="") {
+            alert("Bạn cần đăng nhập để thực hiện chức năng này !!!!");
             location.href = "/Account/LoginSSO";
         }
         else {
+            $.ajax({
+                url: "/GioHang/ThemGiohang",
+                data: { iMaSP: MaSP, SL: SL },
+                type: "POST",
+                success: function (result) {
+                    var TongSL = 0;
+                    var TongTien = 0;
+
+                    $.each(result, function (i, item) {
+                        TongSL += item.SoLuongMua;
+                        TongTien += item.TongTien
+                    });
+                    //$('#cart > a  > span').html(TongSL + " Sản Phẩm - " + TongTien + "VND")
+                    $('.rightz > span').html("<p style='color:red; display:inline-block;padding:0;margin:0;'>" + TongSL + "</p> Sản phẩm - <p style='color:red;display:inline-block;padding:0;margin:0;'>" + TongTien + "</p> VNĐ")
+
+                    alert('Đặt Hàng Thành Công!!')
 
 
-        $.ajax({
-            url: "/GioHang/ThemGiohang",
-            data: { iMaSP: MaSP, SL: SL },
-            type: "POST",
-            success: function (result) {
-                var TongSL = 0;
-                var TongTien = 0;
-
-                $.each(result, function (i, item) {
-                    TongSL += item.SoLuongMua;
-                    TongTien += item.TongTien
-                });
-                //$('#cart > a  > span').html(TongSL + " Sản Phẩm - " + TongTien + "VND")
-                $('.rightz > span').html("<p style='color:red; display:inline-block;padding:0;margin:0;'>" + TongSL + "</p> Sản phẩm - <p style='color:red;display:inline-block;padding:0;margin:0;'>" + TongTien + "</p> VNĐ")
-
-              alert('Đặt Hàng Thành Công!!')
-
-
-            }
-            }); 
+                }
+            });
+            return false;
         }
-        return false;
     };
 
     Poppup = (function (MaSP) {
@@ -73,7 +72,7 @@
 
     CapNhat = (function (MaSP) {
         SL = $("#" + MaSP).val();
-        if (isNaN(SL) == true) {
+        if (isNaN(SL) == true || SL < 0 || SL == "") {
             SL = 1;
         }
         var TongTien1 = 0;
@@ -83,29 +82,40 @@
             data: { iMaSP: MaSP, SL: SL },
             type: "POST",
             success: function (result) {
-                var item = "";
-                $('.Cart-info tbody').empty();
-                $.each(result, function (i, item) {
-                    var R = "<tr>"
-                        + "<td><input disabled  type='text' value=" + item.MaSP + " id='MaSach' name='MaSach'></td>"
-                        + "<td><a href='/ViewSach/ChiTietSach?MaSach=@item.MaSP'><img src='/Images/" + item.HinhMinhHoa + "' /></a></td>"
-                        + "<td>" + item.TenSP + "</td>"
-                        + "<td><input type='text' id='" + item.MaSP + "' class='txtSLGH' value=" + item.SoLuongMua + " /><a class='fa fa-upload btn-Update' onclick='CapNhat(" + item.MaSP + ")' aria-hidden='true'></a><a  class='fa fa-trash-o btn-Delete' aria-hidden='true' onclick=' XoaSP(" + item.MaSP + ")'></a></td>"
-                        + "<td>" + item.DonGia + "</td>"
-                        + "<td>" + item.TongTien + "</td>"
-                        + "</tr>"
-                    TongTien1 += item.TongTien;
-                    TongSL1 += item.SoLuongMua;
-                    $('.Cart-info tbody').append(R);
-                });
-                $('.TongTien > h2 > span').html(TongTien1)
-                //$('#cart > a  > span').html(TongSL1 + " Sản Phẩm - " + TongTien1 + "VND")
-                $('.rightz > span').html("<p style='color:red; display:inline-block;padding:0;margin:0;'>" + TongSL1 + "</p> Sản phẩm - <p style='color:red;display:inline-block;padding:0;margin:0;'>" + TongTien1 + "</p> VNĐ")
+                if (result == 1) {
+                    alert("Sản phẩm đặt mua vượt quá sản phẩm trong kho hàng, vui lòng nhập lại số lượng hoặc liên hệ với quản trị viên");
+                }
+                else {
 
-                $('#tongtien').html(TongTien1)
-            },
+                    var item = "";
+                    $('.Cart-info tbody').empty();
+                    $.each(result, function (i, item) {
+                        var R = "<tr>"
+                            + "<td><input disabled  type='text' value=" + item.MaSP + " id='MaSach' name='MaSach'></td>"
+                            + "<td><a href='/ViewSach/ChiTietSach?MaSach=@item.MaSP'><img src='/Images/" + item.HinhMinhHoa + "' /></a></td>"
+                            + "<td>" + item.TenSP + "</td>"
+                            + "<td><input type='number' min='0' max='" + item.SoLuong + "' id='" + item.MaSP + "' class='txtSLGH' value=" + item.SoLuongMua + " /><a class='fa fa-upload btn-Update' onclick='CapNhat(" + item.MaSP + ")' aria-hidden='true'></a><a  class='fa fa-trash-o btn-Delete' aria-hidden='true' onclick=' XoaSP(" + item.MaSP + ")'></a></td>"
+                            + "<td>" + item.DonGia + "</td>"
+                            + "<td>" + item.TongTien + "</td>"
+                            + "</tr>"
+                        TongTien1 += item.TongTien;
+                        TongSL1 += item.SoLuongMua;
+                        $('.Cart-info tbody').append(R);
+                    });
+                    var tong = numeral(TongTien1).format('0,0');
+                    $('.TongTien > h2 > span').html(tong)
+                    //$('#cart > a  > span').html(TongSL1 + " Sản Phẩm - " + TongTien1 + "VND")
+                    $('.rightz > span').html("<p style='color:red; display:inline-block;padding:0;margin:0;'>" + TongSL1 + "</p> Sản phẩm - <p style='color:red;display:inline-block;padding:0;margin:0;'>" + tong + "</p> VNĐ")
+
+                    $('#tongtien').html(tong)
+
+                }
+            }
         });
+
+
         return false;
+
     });
     XoaSP = (function (MaSP) {
         $.ajax({

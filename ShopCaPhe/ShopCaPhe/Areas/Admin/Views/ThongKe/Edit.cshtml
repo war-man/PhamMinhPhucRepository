@@ -1,4 +1,5 @@
-﻿@model ShopCaPhe.Models.DONDATHANG
+﻿@using ShopCaPhe.Models
+@model ShopCaPhe.Models.DONDATHANG
 @{
     /**/
 
@@ -6,7 +7,9 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 @*<link href="~/Content/EditAdmins.css" rel="stylesheet" />*@
+<link href="~/Content/GioHang.css" rel="stylesheet" />
 <style>
+
 
     .btncreate {
         background-color: red;
@@ -38,25 +41,36 @@
         width:40%;
             
     }
+    .baotrum{
+        width:100%;
+        display:block;
+    }
+    .content-edit{
+        width:100%;
+        display:block;
+        height:400px;
+    }
 </style>
-
 @using (Html.BeginForm())
 {
 <div class="content-edit">
+
     @Html.AntiForgeryToken()
     <h4 style="font-family:serif">@ShopCaPhe.Language.Resource.iedit</h4>
+    <hr />
+    <h5>Thông tin người nhận</h5>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.SoDH)
 
 
-    @Html.EditorFor(model => model.SoDH, new { htmlAttributes = new { @class = "form-control",  @style = "display: none" } })        @Html.ValidationMessageFor(model => model.SoDH, "", new { @class = "text-danger" })
+    @Html.EditorFor(model => model.SoDH, new { htmlAttributes = new { @class = "form-control", @style = "display: none" } })        @Html.ValidationMessageFor(model => model.SoDH, "", new { @class = "text-danger" })
 
-    @Html.EditorFor(model => model.MaKH, new { htmlAttributes = new { @class = "form-control",  @style = "display: none" } })
+    @Html.EditorFor(model => model.MaKH, new { htmlAttributes = new { @class = "form-control", @style = "display: none" } })
     @Html.ValidationMessageFor(model => model.MaKH, "", new { @class = "text-danger" })
 
     <div class="right">
-        <label class="control-label">Tên người nhận</label>   @Html.EditorFor(model => model.TenNguoiNhan, new { htmlAttributes = new { @class = "form-control"} })
+        <label class="control-label">Tên người nhận</label>   @Html.EditorFor(model => model.TenNguoiNhan, new { htmlAttributes = new { @class = "form-control" } })
 
         @Html.ValidationMessageFor(model => model.TenNguoiNhan, "", new { @class = "text-danger" })
         <label class="control-label">Ngày đặt hàng</label>
@@ -66,7 +80,7 @@
         @Html.EditorFor(model => model.Ngaygiaohang, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.Ngaygiaohang, "", new { @class = "text-danger" })
         <label class="control-label">Địa chỉ</label>
-        @Html.EditorFor(model => model.DiaChiNhan, new { htmlAttributes = new { @class = "form-control"} })
+        @Html.EditorFor(model => model.DiaChiNhan, new { htmlAttributes = new { @class = "form-control" } })
     </div>
     <div class="left">
         <label class="control-label">Trạng Thái</label>
@@ -76,16 +90,48 @@
             <option value="Đang giao">Đang giao</option>
         </select>
         <label class="control-label">Điện thoại</label>
-        @Html.EditorFor(model => model.DienThoaiNhan, new { htmlAttributes = new { @class = "form-control"} })
+        @Html.EditorFor(model => model.DienThoaiNhan, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.DienThoaiNhan, "", new { @class = "text-danger" })
         <label class="control-label">Trị Giá</label>
-        @Html.EditorFor(model => model.TriGia, new { htmlAttributes = new { @class = "form-control"} })
+        @Html.EditorFor(model => model.TriGia, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.TriGia, "", new { @class = "text-danger" })
-        <a href="@Url.Action("IndexAdmin","AdminCRUD")" class="btncreate">@ShopCaPhe.Language.Resource.iback</a>
-
-        <input type="submit" class="btncreate" style="width:130px; background-color:#17aa67" value="@ShopCaPhe.Language.Resource.isave" />
     </div>
-
-
 </div>
-}
+
+    <br />
+    <div class="Cart-info">
+        <h5>Thông tin hóa đơn</h5>
+        <hr />
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Tên Sản Phẩm</td>
+                    <td>Hình Ảnh</td>
+                    <td>Số Lượng</td>
+                    <td>Thành Tiền</td>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var dg in (IList<CTDONHANG>)ViewData["listdh"])
+                {
+                    <tr>
+                        <td>@dg.SANPHAM.TenSP</td>
+                        <td><a href="~/ViewSP/ChiTietSanPham?MaSp=@dg.MaSP"><img src="~/Images/@dg.SANPHAM.HinhMinhHoa" /></a></td>
+                        <td><p>@dg.SoLuong</p></td>
+                        <td><span id="DonGia"> @string.Format("{0:0,0}", dg.ThanhTien)</span></td>
+                    </tr>
+
+
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+    <a href="@Url.Action("IndexAdmin","AdminCRUD")" class="btncreate">@ShopCaPhe.Language.Resource.iback</a>
+
+    <input type="submit" class="btncreate" style="width:130px; background-color:#17aa67" value="@ShopCaPhe.Language.Resource.isave" />
+
+    }

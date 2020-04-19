@@ -128,7 +128,18 @@
     <h3>Viết Đánh Giá</h3>
     <form class="frm-Rating" id="frmRating">
         <input type="text" id="MaSach" name="MaSach" value="@Model.MaSP" style="display:none;" />
-        <input type="text" id="Ngay" name="Ngay" value="@DateTime.Now.ToString()" /><input disabled style="visibility:hidden" type="text" value="@Session["username"]" name="Name" id="txt-frmRating" />
+        <input type="text" id="Ngay" name="Ngay" value="@DateTime.Now.ToString()" />
+        @if (Session["username"] != null)
+        {
+            <input disabled style="visibility:hidden" type="text" value="@Session["username"]" name="Name" id="txt-frmRating" />
+
+        }
+        else
+        {
+            <input disabled style="visibility:hidden" type="text" value="@Session["Email"]" name="Name" id="txt-frmRating" />
+
+        }
+
         @*<span  id="txt-frmRating">@Session["Email"]</span>*@
         <br />
         <p>Bình luận Của Bạn:</p>

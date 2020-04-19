@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "dangky";
+    Layout = "~/Views/Shared/_LayoutCaPhe.cshtml";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+@if (ViewBag.loidangky != null)
+{
+    <script>
+        window.onload = alert("Tên đăng nhập hoặc Email đã tồn tại xin vui lòng thay đổi tên đăng nhập hoặc Email");
+    </script>
+}
+else
+{
+
+
+}
+<script>
+        function check() {
+            var x = document.forms["myForm"]["HoTenKH"].value;
+            var y = document.forms["myForm"]["Email"].value;
+            var z = document.forms["myForm"]["DienThoaiKH"].value;
+            var k = document.forms["myForm"]["DiaChiKH"].value;
+            var g = document.forms["myForm"]["TenDN"].value;
+            var h = document.forms["myForm"]["MatKhau"].value;
+
+            if (x == "" || y == "" || z == "" || g == "" || h == "") {
+                alert("Vui lòng điền đầy đủ thông tin trước khi tạo !");
+                return false;
+            }
+        }
+
+
+</script>
+<div class="container">
+
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+
+            <h4 class="card-title mt-3 text-center">Đăng Ký Tài Khoản</h4>
+
+            <p class="text-center">Tiến hành đăng ký tài khoản miển phí</p>
+            <form action="/Home/Dangky" method="post" name="myForm">
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input name="HoTenKH" class="form-control" placeholder="Họ & Tên " type="text">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    <input name="Email" class="form-control" placeholder="Email" type="email">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                    </div>
+                    <select class="custom-select" style="max-width: 120px;">
+                        <option selected="">+083</option>
+                        <option value="1">+972</option>
+                        <option value="2">+198</option>
+                        <option value="3">+84</option>
+                    </select>
+                    <input name="DienThoaiKH" class="form-control" placeholder="Số điện thoại" type="text">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                    </div>
+                    <input name="DiaChiKH" class="form-control" placeholder="Địa chỉ" type="text">
+                </div> <!-- form-group end.// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input name="TenDN" class="form-control" placeholder="Tên đăng nhập" type="text">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input name="MatKhau" class="form-control" placeholder="Mật khẩu" type="password">
+                </div> <!-- form-group// -->
+
+                <div class="form-group">
+                    <button type="submit" onclick="return check()" class="btn btn-primary btn-block"> Đăng ký  </button>
+                </div> <!-- form-group// -->
+                <p class="text-center">Bạn đã có tài khoản ? <a href="">Đăng Nhập</a> </p>
+            </form>
+        </article>
+    </div> <!-- card.// -->
+</div>
+
+<!--container end.//-->

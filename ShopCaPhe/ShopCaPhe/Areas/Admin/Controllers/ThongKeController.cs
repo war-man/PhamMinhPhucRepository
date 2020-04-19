@@ -223,7 +223,8 @@ namespace ShopCaPhe.Areas.Admin.Controllers
             //Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
             // List<Category> lis = db.Categories.ToList();
-
+            List<CTDONHANG> donhang = db.CTDONHANGs.Where(n => n.SoDH == id).ToList();
+            ViewData["listdh"] = donhang;
             DONDATHANG dh = db.DONDATHANGs.Find(id);
             return View(dh);
 

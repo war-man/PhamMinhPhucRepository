@@ -1,79 +1,132 @@
-﻿
+﻿@model ShopCaPhe.Models.KHACHHANG
 @{
     Layout = null;
 }
-<style>
-    * {
-        box-sizing: border-box;
-    }
 
-    body {
-        background-image: linear-gradient(to bottom right,rgb(53, 59, 72,0.6), rgb(53, 59, 72,0.6) ), url(../Images/background1.jpg);
-        background-size: cover;
-        background-position: center;
-    }
+@*<div class="form">
 
-    img {
-        display: block;
-        width: 80px;
-        margin: 30px auto;
-        box-shadow: 0 5px 10px -7px #333333;
-        border-radius: 50%;
-    }
+        <img src="http://www.androidpolice.com/wp-content/themes/ap2/ap_resize/ap_resize.php?src=http%3A%2F%2Fwww.androidpolice.com%2Fwp-content%2Fuploads%2F2015%2F10%2Fnexus2cee_Search-Thumb-150x150.png&w=150&h=150&zc=3">
+        <a id="btnsign" class="btn btn-default btn-block" href="@Url.Action("SignIn", new { type = "Google" })">Sign in</a>
+        <a href="https://accounts.google.com/signup/v2/webcreateaccount?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3DOGB%26tab%3Dwk%26utm_medium%3Dact%26pli%3D1%26nlr%3D1&dsh=S1695244983%3A1574951629060826&gmb=exp&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp">Create account</a>
 
-    .form {
-        background-color: #ffffff;
-        width: 500px;
-        margin: 80px auto 10px auto;
-        padding: 30px;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 2px 10px -3px #333;
-        text-align: center;
-    }
+    </div>*@
 
-    input {
-        border-radius: 100px;
-        padding: 10px 15px;
-        width: 50%;
-        border: 1px solid #D9D9D9;
-        outline: none;
-        display: block;
-        margin: 20px auto 20px auto;
-    }
+<head>
+    <title>Login V4</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link href="~/Content/util.css" rel="stylesheet" />
+    <link href="~/Content/Loginnew1.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+</head>
+<script>
+    function validateLogin() {
+        var x = document.forms["myForm"]["TenDN"].value;
+        var y = document.forms["myForm"]["MatKhau"].value;
 
-    .btn-default {
-        border-radius: 100px;
-        border: none;
-        background: #719BE6;
-        width: 50%;
-        padding: 10px;
-        color: #FFFFFF;
-        margin-top: 25px;
-        box-shadow: 0 2px 10px -3px #719BE6;
-        display: block;
-        margin: 55px auto 10px auto;
-    }
-
-    a {
-        text-align: center;
-        margin-top: 30px;
-        color: #719BE6;
-        text-decoration: none;
-        padding: 5px;
-        display: inline-block;
-    }
-
-        a:hover {
-            text-decoration: underline;
+        if (x == "" || y == "") {
+            alert("You need enter Email and Password");
+            return false;
         }
+    }
+    function disablelogin() {
+        document.getElementById("TenDN").disabled = true;
+        document.getElementById("MatKhau").disabled = true;
+    }
 
-</style>
+</script>
 
-<div class="form">
+<body>
+    <form action="/Account/Login" method="post" name="myForm">
+        <div class="limiter">
+            <div class="container-login100" style="background-image: url('../../Images/bg-01.jpg');">
+                <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                    <span class="login100-form-title p-b-49">
+                        Đăng Nhập
+                    </span>
 
-    <img src="http://www.androidpolice.com/wp-content/themes/ap2/ap_resize/ap_resize.php?src=http%3A%2F%2Fwww.androidpolice.com%2Fwp-content%2Fuploads%2F2015%2F10%2Fnexus2cee_Search-Thumb-150x150.png&w=150&h=150&zc=3">
- <a id="btnsign" class="btn btn-default btn-block" href="@Url.Action("SignIn", new { type = "Google" })">Sign in</a>
-    <a href="https://accounts.google.com/signup/v2/webcreateaccount?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3DOGB%26tab%3Dwk%26utm_medium%3Dact%26pli%3D1%26nlr%3D1&dsh=S1695244983%3A1574951629060826&gmb=exp&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp">Create account</a>
+                    <div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
+                        <span class="label-input100">Tên đăng nhập</span>
+                        <input class="input100" id="TenDN" type="text" name="TenDN" placeholder="Tên đăng nhập">
+                        <span class="focus-input100" data-symbol="&#xf206;"></span>
+                    </div>
 
-</div>
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <span class="label-input100">Mật khẩu</span>
+                        <input class="input100" id="MatKhau" type="password" name="MatKhau" placeholder="Mật khẩu">
+                        <span class="focus-input100" data-symbol="&#xf190;"></span>
+                    </div>
+
+                    <div class="text-right p-t-8 p-b-31">
+
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button onclick="return validateLogin()" class="login100-form-btn">
+                                Đăng nhập
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="txt1 text-center p-t-54 p-b-20">
+                        <span>
+                            Hoặc đăng nhập sử dụng
+                        </span>
+                    </div>
+
+                    <div class="flex-c-m">
+                        <a class="login100-social-item bg1"><img src="~/Images/facebook-icon.png" /></a>
+
+
+                        <a href="#" class="login100-social-item bg2">
+                            <img src="~/Images/twitter-icon.png" />
+
+                        </a>
+
+                        <a href="@Url.Action("SignIn", new { type = "Google" })" class="login100-social-item bg3">
+                            <img src="~/Images/google-plus.png" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/daterangepicker/moment.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Scripts/main.js"></script>
+</body>

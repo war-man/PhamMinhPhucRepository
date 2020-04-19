@@ -14,7 +14,7 @@
 <input id="MaSach1" type="text" style="visibility:hidden" />
 <h1 style="border-bottom:solid 1px; padding:5px 5px 5px 5px;">Giỏ hàng của bạn:</h1>
 <br />
-<form action="/Giohang/GioHang" method="post">
+<form action="/Giohang/GioHang" name="myForm" method="post">
     <div class="Cart-info">
         <table>
             <thead>
@@ -55,7 +55,7 @@
 </form>
 <br />
 <div id="TongTien">
-    <h4>Tổng Cộng:<span id="tongtien">@Session["TongTien"]</span>VND</h4>    <input style="visibility:hidden" value="@Session["username"]" id="checkemail" /><p style="float:right;"><input id="ThanhToan" onclick="ThanhToan()" type="button" value="Thanh Toán" style="color:white; background-color:#3b8e22 ;border-radius:3px;border-color:#3b8e22 ;padding:10px 10px 10px 10px; font-size:15px;" /></p>
+    <h4>Tổng Cộng:<span id="tongtien">@Session["TongTien"]</span>VND</h4>     <input style="visibility:hidden" value="@Session["Email"]" id="checkemail1" /><input style="visibility:hidden" value="@Session["username"]" id="checkemail" /><p style="float:right;"><input id="ThanhToan" onclick="ThanhToan()" type="button" value="Thanh Toán" style="color:white; background-color:#3b8e22 ;border-radius:3px;border-color:#3b8e22 ;padding:10px 10px 10px 10px; font-size:15px;" /></p>
 </div>
 
 
@@ -89,7 +89,8 @@
 
     function ThanhToan() {
         var s = $('#checkemail').val();
-        if (s == "") {
+        var s1 = $('#checkemail1').val();
+        if (s == "" && s1=="") {
             window.location.href = "/Account/LoginSSO";
         }
         else if ($('#MaSach').val() != null) {

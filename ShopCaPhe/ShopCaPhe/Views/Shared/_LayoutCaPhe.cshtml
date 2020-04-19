@@ -11,9 +11,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="BookManage.css">
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
-          integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-    <link href="~/Content/Layout.css" rel="stylesheet" />
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
+    <link href="~/Content/Layout1.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @*<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>*@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -29,9 +28,13 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="~/Scripts/GioHang1.js"></script>
+
+    <script src="~/Scripts/numeral.js"></script>
+    <script src="~/Scripts/GioHang55.js"></script>
     <script src="~/Scripts/Chitiet.js"></script>
+
     <script type="text/javascript">
+
         var gmap = new google.maps.LatLng(11.0282148, 106.6229131, 17);
         var marker;
         function initialize() {
@@ -100,27 +103,71 @@
 
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-    @*<style>
-            .activetop:focus{
-                background-color:red;
-            }
-            [tabindex="-1"]:focus {
-                outline: 0 !important;
-            }
 
-            .topnav a[href]:visited {
-                background-color: red;
+    <style>
+        .hide {
+            display:none;
+        }
+
+        .fab {
+            padding: 9px;
+            font-size: 50px;
+            width: 70px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50%;
+        }
+
+        .fab:hover {
+            font-size:58px;
+            width:80px;
+            transition:all .2s;
+
+        }
+
+        .fa-facebook-messenger {
+            background: #3B5998;
+            color: white;
+        }
+
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+        if (localStorage.getItem("fbchatclose") == 1) {
+
+            jQuery('.fbchatbox').toggleClass('hide');
+
+            jQuery('#closefbchat').html('<i  class="fab fa-facebook-messenger"></i>').css({ 'bottom': 0, 'width': 87, 'background': 'none' });
+        }
+
+        setTimeout(function () {
+            $("#closefbchat").removeClass("hide");
+        }, 1000);
+
+
+        jQuery('#closefbchat').click(function () {
+            jQuery('.fbchatbox').toggleClass('hide');
+            if (jQuery('.fbchatbox').hasClass('hide')) {
+                localStorage.setItem("fbchatclose", 1);
+
+                jQuery('#closefbchat').html('<i  class="fab fa-facebook-messenger"></i>').css({ 'bottom': 0, 'width': 87, 'background': 'none' });
             }
-            .topnav a[href]:active{
-                background-color: red;
+            else {
+                localStorage.setItem("fbchatclose", 0);
+                jQuery('#closefbchat').text('x').css({ 'bottom': 270, 'width': 35, 'background':'red', 'padding':3 });
             }
-            .topnav a[href]:hover {
-                background-color: red;
-            }
-            .topav a:not([href]):not([tabindex]) {
-                 background-color: red;
-            }
-        </style>*@
+            });
+        });
+    </script>
+
+
+
+
 </head>
 
 <body>
@@ -138,19 +185,43 @@
                         <span><p style="color:red; display:inline-block;padding:0;margin:0">@Session["TongSL"] </p> Sản phẩm - <p style="color:red;display:inline-block;padding:0;margin:0">@Session["TongTien"]</p> VNĐ</span>
                     </a>
                 </li>
-
-                @if (User.Identity.IsAuthenticated)
+                @if (Session["username"] != null)
                 {
-                    <li> <a href="@Url.Action("LoginSSO","Account")" class="rightz">Sign Out</a></li>
-                    <li><a href="#" class="rightz">Hello @User.Identity.Name</a></li>
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        <li> <a href="@Url.Action("SignOut","Account")" class="rightz">Đăng Xuất</a></li>
+                        <li><a href="#" class="rightz">Hello @User.Identity.Name</a></li>
+
+                    }
+                    else
+                    {
+                        <li><a href="@Url.Action("dangky","Home")" class="rightz activetop">Đăng Ký</a></li>
+                        <li><a href="@Url.Action("LoginSSO","Account")" class="rightz activetop">Đăng Nhập</a></li>
 
 
+
+                    }
                 }
                 else
                 {
-                    <li><a href="@Url.Action("LoginSSO","Account")" class="rightz activetop">Đăng Nhập</a></li>
+
+                    if (Session["Email"] != null)
+                    {
+                        <li> <a href="@Url.Action("DangXuat","Home")" class="rightz">Đăng Xuất</a></li>
+                        <li><a href="#" class="rightz">Hello @Session["Email"]</a></li>
+
+
+                    }
+                    else
+                    {
+                        <li><a href="@Url.Action("dangky","Home")" class="rightz activetop">Đăng Ký</a></li>
+                        <li><a href="@Url.Action("LoginSSO","Account")" class="rightz activetop">Đăng Nhập</a></li>
+
+                    }
 
                 }
+
+
             </ul>
         </div>
     </nav>
@@ -175,7 +246,7 @@
     </aside>
     <footer>
         <div class="footer-left">
-            <img src="~/Images/bocongthuong.png" width="60%" class="bct" />
+            <h2 style="margin-bottom:12px">LIÊN HỆ</h2>
             <p>
                 <img src="~/Images/map-icon.png" class="footer-icon" /> Số 421, đường Lê Chí Dân, Khu Phố 7, Phường Tân An, Thị Xã Thủ Dầu Một, Tỉnh Bình Dương.
             </p>
@@ -225,7 +296,7 @@
                         <a><img src="~/Images/facebook-icon.png" /></a>
                         <a><img src="~/Images/instagram-icon.png" /></a>
                         <a><img src="~/Images/twitter-icon.png" /></a>
-                       <a><img src="~/Images/pinterest-icon.png" /></a>
+                        <a><img src="~/Images/pinterest-icon.png" /></a>
                     </div>
 
                 </div>
@@ -244,5 +315,29 @@
         }
     </script>
 
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.10";
+            fjs.parentNode.insertBefore(js, fjs);
+
+        }(document, 'script', 'facebook-jssdk'));</script>
+    <div class="baongoai" style="position:fixed;right:10px;bottom:0;z-index:9999">
+        <div class="fbchatbox hidden-xs">
+            <div class="fb-page" data-href="108701114146441" data-small-header="true" data-adapt-container-width="false" data-height="300" data-width="300" data-hide-cover="true" data-show-facepile="true" data-show-posts="false" data-tabs="messages"><div class="fb-xfbml-parse-ignore"><blockquote cite="108701114146441"><a href="108701114146441">108701114146441</a></blockquote></div></div>
+        </div>
+        <span class="hide" id="closefbchat" style="text-align:center; right:0px;white-space: nowrap;position:absolute;bottom:270px;width:35px;padding:3px;background:red ;color: #fff;cursor: pointer;">x</span>
+    </div>
+
 </body>
 </html>
+
+
+
+
+
+

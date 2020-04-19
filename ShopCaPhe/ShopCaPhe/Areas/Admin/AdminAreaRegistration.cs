@@ -16,8 +16,8 @@ namespace ShopCaPhe.Areas.Admin
         {
             context.MapRoute(
                 "Admin_default",
-                "Admin/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional}
+                "{language}/Admin/{controller}/{action}/{id}",
+                new { action = "Index", id = UrlParameter.Optional, language="vi-vn"}
             );
         }
     }

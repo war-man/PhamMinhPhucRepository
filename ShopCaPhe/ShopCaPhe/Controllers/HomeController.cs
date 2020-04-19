@@ -29,7 +29,45 @@ namespace ShopCaPhe.Controllers
         {
             return View();
         }
-     
+        public ActionResult dangky()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Dangky(FormCollection frmTao, KHACHHANG kh)
+        {
+            using (db)
+            {
+
+                var user = db.KHACHHANGs.Where(x => x.TenDN == kh.TenDN).FirstOrDefault();
+                var email = db.KHACHHANGs.Where(x => x.Email == kh.Email).FirstOrDefault();
+
+
+
+                if (user != null || email != null)
+                {
+                    ViewBag.loidangky = "Tên đăng nhập hoặc Email đã tồn tại xin vui lòng thay đổi tên đăng nhập hoặc Email";
+                    return View("dangky", kh);
+                }
+                else
+                {
+                    kh.HoTenKH = frmTao["HoTenKH"];
+                    kh.Email = frmTao["Email"];
+                    kh.DienThoaiKH = frmTao["DienThoaiKH"];
+                    kh.DiaChiKH = frmTao["DiaChiKH"];
+                    kh.TenDN = frmTao["TenDN"];
+                    kh.MatKhau = frmTao["MatKhau"];
+                    db.KHACHHANGs.Add(kh);
+                    db.SaveChanges();
+                    ViewBag.dangkythanhcong = "zz";
+                    return RedirectToAction("Login", "Home");
+
+                }
+            }
+
+        }
+
 
         [HttpPost]
         public ActionResult Login(KHACHHANG model)
@@ -66,6 +104,7 @@ namespace ShopCaPhe.Controllers
             Session["Email"] = null;
             Session["Email"] = null;
             Session["Password"] = null;
+            Session["GioHang"] = null;
             return Redirect("/");
 
         }
